@@ -19,14 +19,23 @@
     </head>
     <body>
         <header class="clzk-header">
+            {% block pre_header %}{% endblock %}
             {% block header %}
-                {#} Top Navbar {#}
-                <div class="clzk-header-cover-container">
-                    <div class="container">
-                        
-                    </div>
-                </div>
                 <div class="navbar navbar-default clzk-navbar">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <a class="navbar-brand" href="{{ path('colzak_home_homepage') }}"><img src="/img/bfc_logo_text.png" class="img-responsive clzk-brand"></a>
+                        </div>
+                         <div class="collapse navbar-collapse">
+                            <ul class="nav navbar-nav navbar-right clzk-menu">
+                                <li><a href="{{ path('colzak_blog_articles') }}">Actualités</a></li>
+                                <li><a href="{{ path('colzak_home_pages', {'name': 'team'}) }}">L'équipe</a></li>
+                                <li><a href="{{ path('colzak_home_pages', {'name': 'games'}) }}">Les matchs</a></li>
+                                <li><a href="{{ path('colzak_home_pages', {'name': 'stats'}) }}">Les stats</a></li>
+                                <li><a href="#">Multimédia</a></li>
+                                <li><a href="{{ path('colzak_home_pages', {'name': 'about'}) }}">A propos</a></li>
+                         </div>
+                    </div>
                 </div>
             {% endblock %}
         </header>
@@ -38,7 +47,11 @@
         </div>
         <footer class="clzk-footer">
             {% block footer %}
-                youhou
+                <div class="navbar navbar-default" role="navigation">
+                    <div class="container">
+                        <p class="text-center clzk-footer-text">Copyright © 2014 Colzak</p>
+                    </div>
+                </div>
             {% endblock %}
         </footer>
         {% block modal %}

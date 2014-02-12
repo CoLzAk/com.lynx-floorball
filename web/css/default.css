@@ -2,6 +2,36 @@ body {
     padding: 0;
     background: #f7f7f7;
 }
+
+/*HEADER*/
 .clzk-header-cover-container {
-    height: 500px;
+    height: 550px;
+    /*background-color: #333;*/
+    background: url("/img/bfc_cover2.png") no-repeat scroll 45% 35% / 50% auto #333;
+    /*background-position: 45% 45%;*/
+    /*background-size: 50%;*/
+    /*background-repeat: no-repeat;*/
+
+}
+.clzk-brand {
+    max-height: 25px;
+}
+.clzk-menu > li > a:hover {
+    border-top: 6px #ffff28 solid;
+    margin-top: -6px;
+}
+/*BODY*/
+.clzk-body {
+    min-height: 340px;
+}
+.clzk-img-rounded {
+    border-radius: 100px;
+    margin: auto;
+}
+/*FOOTER*/
+.clzk-footer .navbar {
+    margin-bottom: 0;
+}
+.clzk-footer-text {
+    margin-top: 15px;
 }

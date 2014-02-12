@@ -1,5 +1,32 @@
 {% extends 'ColzakHomeBundle::layout.html.twig' %}
-
+{% block pre_header %}
+    {#} Top Navbar {#}
+    <div class="clzk-header-cover-container">
+        <!-- <img src="/img/bfc_cover.jpg" class="img-responsive"> -->
+        <div class="container">
+            <!-- <img src="/img/bfc_logo.png" class="img-responsive col-md-4"> -->
+        </div>
+    </div>
+{% endblock %}
 {% block body %}
-This is home
+    <h1 class="text-center">Bienvenue sur le site officiel des Lynx de Bordeaux !</h1>
+    <br />
+    <div class="row">
+        <div class="col-md-4">
+            <img src="/img/floorball1.png" alt="" class="clzk-img-rounded img-responsive">
+        </div>
+        <div class="col-md-4">
+            <img src="/img/i_love_floorball.png" alt="" class="clzk-img-rounded img-responsive">
+        </div>
+        <div class="col-md-4">
+            <img src="/img/floorball2.png" alt="" class="clzk-img-rounded img-responsive">
+        </div>
+    </div>
+    <hr>
+    <!-- <div class="row">
+        <div class="col-md-2"><img class="img-responsive" src="/img/direct_floorball.jpg"></div>
+        <div class="col-md-2"><img class="img-responsive" src="/img/france_floorball.jpg"></div>
+        <div class="col-md-2"><img class="img-responsive" src="/img/lady33b.png"></div>
+        <div class="col-md-2"><img class="img-responsive" src="/img/smr.gif"></div>
+    </div> -->
 {% endblock %}

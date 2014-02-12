@@ -1,0 +1,3 @@
+colzak_blog_articles:
+    pattern:  /articles
+    defaults: { _controller: ColzakBlogBundle:Articles:index }
