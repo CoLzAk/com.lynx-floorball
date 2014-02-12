@@ -1,0 +1,4 @@
+colzak_home:
+    resource: "@ColzakHomeBundle/Resources/config/routing.yml"
+    prefix:   /
+

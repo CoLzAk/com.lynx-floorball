@@ -1,0 +1,3 @@
+colzak_home_homepage:
+    pattern:  /
+    defaults: { _controller: ColzakHomeBundle:Home:index }

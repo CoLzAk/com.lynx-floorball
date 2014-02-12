@@ -1,0 +1,7 @@
+parameters:
+#    colzak_home.example.class: Colzak\HomeBundle\Example
+
+services:
+#    colzak_home.example:
+#        class: %colzak_home.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
