@@ -67,3 +67,22 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
+
+doctrine_mongodb:
+    connections:
+        default:
+            server: mongodb://localhost:27017
+            options: {}
+    default_database: clzk_bfc
+    document_managers:
+        default:
+            auto_mapping: true
+
+fos_user:
+    db_driver: mongodb
+    firewall_name: main
+    user_class: Colzak\UserBundle\Document\User
+    registration:
+        form:
+            type: colzak_user_registration
+            validation_groups:  [Registration]

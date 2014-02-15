@@ -1,3 +1,7 @@
+colzak_user:
+    resource: "@ColzakUserBundle/Resources/config/routing.yml"
+    prefix:   /
+
 colzak_blog:
     resource: "@ColzakBlogBundle/Resources/config/routing.yml"
     prefix:   /
@@ -6,3 +10,5 @@ colzak_home:
     resource: "@ColzakHomeBundle/Resources/config/routing.yml"
     prefix:   /
 
+fos_user_security:
+    resource: "@FOSUserBundle/Resources/config/routing/security.xml"

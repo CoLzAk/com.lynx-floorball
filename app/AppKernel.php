@@ -18,6 +18,9 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new Colzak\HomeBundle\ColzakHomeBundle(),
             new Colzak\BlogBundle\ColzakBlogBundle(),
+            new Doctrine\Bundle\MongoDBBundle\DoctrineMongoDBBundle(),
+            new FOS\UserBundle\FOSUserBundle(),
+            new Colzak\UserBundle\ColzakUserBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
