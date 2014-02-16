@@ -12,6 +12,16 @@ class HomeController extends Controller
     }
 
     public function loadPageAction($name) {
-        return $this->render('ColzakHomeBundle:Home:'.$name.'.html.twig');
+    	$dm = $this->get('doctrine_mongodb')->getManager();
+    	switch ($name) {
+    		case 'team':
+    			$data = $dm->getRepository('ColzakUserBundle:User')->findAll();
+    			break;
+    		
+    		default:
+    			# code...
+    			break;
+    	}
+        return $this->render('ColzakHomeBundle:Home:'.$name.'.html.twig', array('data' => $data));
     }
 }

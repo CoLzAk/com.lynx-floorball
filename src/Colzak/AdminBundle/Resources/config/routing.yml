@@ -1,7 +1,9 @@
+# Index
 colzak_admin_homepage:
     pattern:  /
     defaults: { _controller: ColzakAdminBundle:AdminDefault:index }
 
+# Articles
 colzak_admin_articles:
     pattern:  /articles/list
     defaults: { _controller: ColzakAdminBundle:AdminArticle:list }
@@ -14,6 +16,7 @@ colzak_admin_article_edit:
     pattern:  /articles/edit/{id}
     defaults: { _controller: ColzakAdminBundle:AdminArticle:edit }
 
+# Categories
 colzak_admin_categories:
     pattern:  /categories/list
     defaults: { _controller: ColzakAdminBundle:AdminCategory:list }
@@ -21,3 +24,33 @@ colzak_admin_categories:
 colzak_admin_category_new:
     pattern:  /categories/new
     defaults: { _controller: ColzakAdminBundle:AdminCategory:new }
+
+colzak_admin_category_edit:
+    pattern:  /categories/edit/{id}
+    defaults: { _controller: ColzakAdminBundle:AdminCategory:edit }
+
+# Users
+colzak_admin_users:
+    pattern:  /users/list
+    defaults: { _controller: ColzakAdminBundle:AdminUser:list }
+
+colzak_admin_user_new:
+    pattern:  /users/new
+    defaults: { _controller: ColzakAdminBundle:AdminUser:new }
+
+colzak_admin_user_edit:
+    pattern:  /users/edit/{id}
+    defaults: { _controller: ColzakAdminBundle:AdminUser:edit }
+
+# Games
+colzak_admin_games:
+    pattern:  /events/games/list
+    defaults: { _controller: ColzakAdminBundle:AdminEvent:listGames }
+
+colzak_admin_game_new:
+    pattern:  /events/games/new
+    defaults: { _controller: ColzakAdminBundle:AdminEvent:newGame }
+
+colzak_admin_game_edit:
+    pattern:  /events/games/edit/{id}
+    defaults: { _controller: ColzakAdminBundle:AdminEvent:editGame }

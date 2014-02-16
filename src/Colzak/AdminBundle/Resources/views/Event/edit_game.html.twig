@@ -1,0 +1,15 @@
+{% extends 'ColzakAdminBundle::layout.html.twig' %}
+
+{% block pre_body %}
+    <div class="col-md-3 col-md-offset-9">
+        <a href="" class="btn btn-block btn-default">Annuler</a>
+    </div>
+{% endblock %}
+{% block body %}
+    <h1>Nouveau match</h1>
+
+    {{ form_start(form) }}
+    	{{ form_rest(form) }}
+    	<button type="submit" class="btn btn-primary">Valider</button>
+    {{ form_end(form) }}
+{% endblock %}

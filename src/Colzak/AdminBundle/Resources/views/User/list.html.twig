@@ -1,0 +1,46 @@
+{% extends 'ColzakAdminBundle::layout.html.twig' %}
+
+{% block pre_body %}
+    <div class="col-md-3 col-md-offset-9">
+        <a href="{{ path('colzak_admin_user_new') }}" class="btn btn-block btn-default">Nouveau membre</a>
+    </div>
+{% endblock %}
+{% block body %}
+    <h1>Liste des membres</h1>
+
+    {% if users is not null %}
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Photo</th>
+                        <th>Nom complet</th>
+                        <th>Numéro</th>
+                        <th>Poste</th>
+                        <th>Rôle</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for user in users %}
+
+                        <tr>
+                            <td>{{ user.id }}</td>
+                            <td><img src="{{ user.userPicturePath }}" class="img-responsive"></td>
+                            <td>{{ [user.firstname, user.lastname]|join(' ') }}&nbsp;({{ user.nickname }})</td>
+                            <td>{{ user.number }}</td>
+                            <td>{{ user.position }}</td>
+                            <td>conversion array2string for roles</td>
+                            <td><a href="{{ path('colzak_admin_user_edit', {id: user.id}) }}" class="btn btn-block btn-default">Editer</a></td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% else %}
+        <p class="text-center">
+            Aucun joueurs disponible
+        </p>
+    {% endif %}
+{% endblock %}

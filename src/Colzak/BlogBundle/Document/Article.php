@@ -297,7 +297,7 @@ class Article {
         return $this->file;
     }
 
-        public function getAbsolutePath()
+    public function getAbsolutePath()
     {
         return null === $this->filePath
             ? null

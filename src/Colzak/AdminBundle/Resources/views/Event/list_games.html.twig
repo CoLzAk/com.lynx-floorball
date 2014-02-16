@@ -1,0 +1,48 @@
+{% extends 'ColzakAdminBundle::layout.html.twig' %}
+
+{% block pre_body %}
+    <div class="col-md-3 col-md-offset-9">
+        <a href="{{ path('colzak_admin_game_new') }}" class="btn btn-block btn-default">Nouveau match</a>
+    </div>
+{% endblock %}
+{% block body %}
+    <h1>Liste des matchs</h1>
+
+    {% if games is not null %}
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Adversaire</th>
+                        <th>Adresse</th>
+                        <th>Date</th>
+                        <th>Domicile</th>
+                        <th>Score</th>
+                        <th>Score adv.</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for game in games %}
+
+                        <tr>
+                            <td>{{ game.id }}</td>
+                            <td>{{ game.opponent }}</td>
+                            <td>{{ game.place }}</td>
+                            <td>{{ game.date|date('d/m/Y') }}</td>
+                            <td>{{ game.inHome }}</td>
+                            <td>{{ game.score }}</td>
+                            <td>{{ game.opponentScore }}</td>
+                            <td><a href="{{ path('colzak_admin_game_edit', {id: game.id}) }}" class="btn btn-block btn-default">Editer</a></td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% else %}
+        <p class="text-center">
+            Aucun article disponible
+        </p>
+    {% endif %}
+{% endblock %}

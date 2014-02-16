@@ -22,6 +22,7 @@ class AppKernel extends Kernel
             new FOS\UserBundle\FOSUserBundle(),
             new Colzak\UserBundle\ColzakUserBundle(),
             new Colzak\AdminBundle\ColzakAdminBundle(),
+            new Colzak\EventBundle\ColzakEventBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
