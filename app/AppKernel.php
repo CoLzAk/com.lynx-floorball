@@ -21,6 +21,7 @@ class AppKernel extends Kernel
             new Doctrine\Bundle\MongoDBBundle\DoctrineMongoDBBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new Colzak\UserBundle\ColzakUserBundle(),
+            new Colzak\AdminBundle\ColzakAdminBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

@@ -6,10 +6,14 @@ namespace Colzak\BlogBundle\Document;
 use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
 
 /**
- * @MongoDB\EmbeddedDocument
+ * @MongoDB\Document
  */
 class Status
 {
+    /**
+     * @MongoDB\Id(strategy="auto")
+     */
+    protected $id;
 
     /**
      * @MongoDB\String
@@ -20,6 +24,16 @@ class Status
      * @MongoDB\String
      */
     protected $description;
+
+    /**
+     * Get id
+     *
+     * @return id $id
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
 
     /**
      * Set code

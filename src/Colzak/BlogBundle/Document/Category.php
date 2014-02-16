@@ -6,10 +6,14 @@ namespace Colzak\BlogBundle\Document;
 use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
 
 /**
- * @MongoDB\EmbeddedDocument
+ * @MongoDB\Document
  */
 class Category
 {
+    /**
+     * @MongoDB\Id(strategy="auto")
+     */
+    protected $id;
 
     /**
      * @MongoDB\String
@@ -17,14 +21,19 @@ class Category
     protected $name;
 
     /**
-     * @MongoDB\Int
-     */
-    protected $level;
-
-    /**
-     * @MongoDB\String
+     * @MongoDB\ReferenceOne(targetDocument="Category")
      */
     protected $parent;
+
+    /**
+     * Get id
+     *
+     * @return id $id
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
 
     /**
      * Set name
@@ -49,34 +58,12 @@ class Category
     }
 
     /**
-     * Set level
-     *
-     * @param int $level
-     * @return self
-     */
-    public function setLevel($level)
-    {
-        $this->level = $level;
-        return $this;
-    }
-
-    /**
-     * Get level
-     *
-     * @return int $level
-     */
-    public function getLevel()
-    {
-        return $this->level;
-    }
-
-    /**
      * Set parent
      *
-     * @param string $parent
+     * @param Colzak\BlogBundle\Document\Category $parent
      * @return self
      */
-    public function setParent($parent)
+    public function setParent(\Colzak\BlogBundle\Document\Category $parent)
     {
         $this->parent = $parent;
         return $this;
@@ -85,7 +72,7 @@ class Category
     /**
      * Get parent
      *
-     * @return string $parent
+     * @return Colzak\BlogBundle\Document\Category $parent
      */
     public function getParent()
     {

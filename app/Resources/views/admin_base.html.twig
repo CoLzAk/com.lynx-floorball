@@ -9,6 +9,7 @@
                 "bootstrap/css/bootstrap.min.css"
                 "css/theme.css"
                 "css/default.css"
+                "css/admin.css"
                 filter="cssrewrite"
             %}
                 <link href="{{ asset_url }}" type="text/css" rel="stylesheet" media="screen" />
@@ -19,7 +20,6 @@
     </head>
     <body>
         <header class="clzk-header">
-            {% block pre_header %}{% endblock %}
             {% block header %}
                 <div class="navbar navbar-default clzk-navbar">
                     <div class="container">

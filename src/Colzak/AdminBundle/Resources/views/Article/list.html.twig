@@ -1,0 +1,42 @@
+{% extends 'ColzakAdminBundle::layout.html.twig' %}
+
+{% block pre_body %}
+    <div class="col-md-3 col-md-offset-9">
+        <a href="{{ path('colzak_admin_article_new') }}" class="btn btn-block btn-default">Nouvel article</a>
+    </div>
+{% endblock %}
+{% block body %}
+    <h1>Liste des articles</h1>
+
+    {% if articles is not null %}
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Image</th>
+                        <th>Titre</th>
+                        <th>Contenu</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for article in articles %}
+
+                        <tr>
+                            <td>{{ article.id }}</td>
+                            <td><img src="{{ article.filePath }}" class="img-responsive"></td>
+                            <td>{{ article.title }}</td>
+                            <td>{{ article.content }}</td>
+                            <td><a href="{{ path('colzak_admin_article_edit', {id: article.id}) }}" class="btn btn-block btn-default">Editer</a></td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% else %}
+        <p class="text-center">
+            Aucun article disponible
+        </p>
+    {% endif %}
+{% endblock %}

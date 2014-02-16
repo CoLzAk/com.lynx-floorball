@@ -1,0 +1,27 @@
+{% extends 'ColzakAdminBundle::layout.html.twig' %}
+
+{% block pre_body %}
+    <div class="col-md-3 col-md-offset-9">
+        <a href="{{ path('colzak_admin_category_new') }}" class="btn btn-block btn-default">Nouvelle catégorie</a>
+    </div>
+{% endblock %}
+{% block body %}
+    <h1>Liste des categories</h1>
+
+    {% for category in categories if categories %}
+        <div class="row">
+            <div class="col-md-12">
+                {{ category.name }}
+            </div>
+            <div class="col-md-12">
+                {% if category.parent is not null %}
+                    Parent : {{ category.parent.name }}
+                {% endif %}
+            </div>
+        </div>
+    {% else %}
+        <p class="text-center">
+            Aucune catégorie disponible
+        </p>
+    {% endfor %}
+{% endblock %}

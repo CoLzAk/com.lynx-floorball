@@ -5,9 +5,12 @@
 namespace Colzak\BlogBundle\Document;
 
 use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 /**
  * @MongoDB\Document
+ * @MongoDB\HasLifecycleCallbacks
  */
 class Article {
 
@@ -27,14 +30,29 @@ class Article {
     protected $content;
 
     /**
-     * @MongoDB\EmbedOne(targetDocument="Category")
+     * @Assert\File(maxSize="6000000")
+     */
+    protected $file;
+
+    /**
+     * @MongoDB\String
+     */
+    protected $filePath;
+
+    /**
+     * @MongoDB\ReferenceOne(targetDocument="Category")
      */
     protected $category;
 
     /**
      * @MongoDB\ReferenceOne(targetDocument="Colzak\UserBundle\Document\User")
      */
-    protected $publisher;
+    protected $createdBy;
+
+    /**
+     * @MongoDB\ReferenceOne(targetDocument="Colzak\UserBundle\Document\User")
+     */
+    protected $lastModifiedBy;
 
     /**
      * @MongoDB\Timestamp
@@ -47,10 +65,9 @@ class Article {
     protected $updatedAt;
 
     /**
-     * @MongoDB\EmbedOne(targetDocument="Status")
+     * @MongoDB\ReferenceOne(targetDocument="Status")
      */
     protected $status;
-
 
     /**
      * Get id
@@ -107,6 +124,28 @@ class Article {
     }
 
     /**
+     * Set filePath
+     *
+     * @param string $filePath
+     * @return self
+     */
+    public function setFilePath($filePath)
+    {
+        $this->filePath = $filePath;
+        return $this;
+    }
+
+    /**
+     * Get filePath
+     *
+     * @return string $filePath
+     */
+    public function getFilePath()
+    {
+        return $this->filePath;
+    }
+
+    /**
      * Set category
      *
      * @param Colzak\BlogBundle\Document\Category $category
@@ -129,25 +168,47 @@ class Article {
     }
 
     /**
-     * Set publisher
+     * Set createdBy
      *
-     * @param Colzak\UserBundle\Document\User $publisher
+     * @param Colzak\UserBundle\Document\User $createdBy
      * @return self
      */
-    public function setPublisher(\Colzak\UserBundle\Document\User $publisher)
+    public function setCreatedBy(\Colzak\UserBundle\Document\User $createdBy)
     {
-        $this->publisher = $publisher;
+        $this->createdBy = $createdBy;
         return $this;
     }
 
     /**
-     * Get publisher
+     * Get createdBy
      *
-     * @return Colzak\UserBundle\Document\User $publisher
+     * @return Colzak\UserBundle\Document\User $createdBy
      */
-    public function getPublisher()
+    public function getCreatedBy()
     {
-        return $this->publisher;
+        return $this->createdBy;
+    }
+
+    /**
+     * Set lastModifiedBy
+     *
+     * @param Colzak\UserBundle\Document\User $lastModifiedBy
+     * @return self
+     */
+    public function setLastModifiedBy(\Colzak\UserBundle\Document\User $lastModifiedBy)
+    {
+        $this->lastModifiedBy = $lastModifiedBy;
+        return $this;
+    }
+
+    /**
+     * Get lastModifiedBy
+     *
+     * @return Colzak\UserBundle\Document\User $lastModifiedBy
+     */
+    public function getLastModifiedBy()
+    {
+        return $this->lastModifiedBy;
     }
 
     /**
@@ -214,5 +275,83 @@ class Article {
     public function getStatus()
     {
         return $this->status;
+    }
+
+    /**
+     * Sets file.
+     *
+     * @param UploadedFile $file
+     */
+    public function setFile(UploadedFile $file = null)
+    {
+        $this->file = $file;
+    }
+
+    /**
+     * Get file.
+     *
+     * @return UploadedFile
+     */
+    public function getFile()
+    {
+        return $this->file;
+    }
+
+        public function getAbsolutePath()
+    {
+        return null === $this->filePath
+            ? null
+            : $this->getUploadRootDir().'/'.$this->filePath;
+    }
+
+    public function getWebPath()
+    {
+        return null === $this->filePath
+            ? null
+            : $this->getUploadDir().'/'.$this->filePath;
+    }
+
+    protected function getUploadRootDir()
+    {
+        // the absolute directory path where uploaded
+        // documents should be saved
+        return __DIR__.'/../../../../web/'.$this->getUploadDir();
+    }
+
+    protected function getUploadDir()
+    {
+        // get rid of the __DIR__ so it doesn't screw up
+        // when displaying uploaded doc/image in the view.
+        return '/uploads/articles/'.$this->getId().'/';
+    }
+
+    /**
+     * @MongoDB\PostPersist()
+     */
+    public function upload()
+    {
+        // the file property can be empty if the field is not required
+        if (null === $this->getFile()) {
+            return;
+        }
+
+        $fileExtension = $this->getFile()->guessExtension();
+
+        // use the original file name here but you should
+        // sanitize it at least to avoid any security issues
+
+        // move takes the target directory and then the
+        // target filename to move to
+        $this->getFile()->move(
+            $this->getUploadRootDir(),
+            $this->getId().'.'.$this->getFile()->guessExtension()
+        );
+        
+
+        // set the path property to the filename where you've saved the file
+        $this->filePath = $this->getUploadDir().$this->getId().'.'.$fileExtension;
+
+        // clean up the file property as you won't need it anymore
+        $this->file = null;
     }
 }

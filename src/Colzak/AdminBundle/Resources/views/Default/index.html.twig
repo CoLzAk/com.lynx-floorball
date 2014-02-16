@@ -1,0 +1,10 @@
+{% extends 'ColzakAdminBundle::layout.html.twig' %}
+
+{% block body %}
+    <h1>Admin</h1>
+
+    <ul class="list-unstyled">
+        <li><a href="{{ path('colzak_admin_articles') }}">Articles</a></li>
+        <li><a href="{{ path('colzak_admin_categories') }}">Categories</a></li>
+    </ul>
+{% endblock %}

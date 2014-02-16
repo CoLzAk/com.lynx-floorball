@@ -1,0 +1,23 @@
+colzak_admin_homepage:
+    pattern:  /
+    defaults: { _controller: ColzakAdminBundle:AdminDefault:index }
+
+colzak_admin_articles:
+    pattern:  /articles/list
+    defaults: { _controller: ColzakAdminBundle:AdminArticle:list }
+
+colzak_admin_article_new:
+    pattern:  /articles/new
+    defaults: { _controller: ColzakAdminBundle:AdminArticle:new }
+
+colzak_admin_article_edit:
+    pattern:  /articles/edit/{id}
+    defaults: { _controller: ColzakAdminBundle:AdminArticle:edit }
+
+colzak_admin_categories:
+    pattern:  /categories/list
+    defaults: { _controller: ColzakAdminBundle:AdminCategory:list }
+
+colzak_admin_category_new:
+    pattern:  /categories/new
+    defaults: { _controller: ColzakAdminBundle:AdminCategory:new }
