@@ -4,10 +4,12 @@ namespace Colzak\EventBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-class DefaultController extends Controller
+class EventController extends Controller
 {
-    public function indexAction($name)
+    public function gamesAction()
     {
-        return $this->render('ColzakEventBundle:Default:index.html.twig', array('name' => $name));
+    	$dm = $this->get('doctrine_mongodb')->getManager();
+    	$games = $dm->getRepository('ColzakEventBundle:Game')->findAll();
+        return $this->render('ColzakEventBundle:Game:index.html.twig', array('games' => $games));
     }
 }
