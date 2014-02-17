@@ -12,4 +12,12 @@ use Doctrine\ODM\MongoDB\DocumentRepository;
  */
 class ArticleRepository extends DocumentRepository
 {
+    public function getLastArticles($limit = 5) {
+        return $this->createQueryBuilder('Article')
+            ->select('id', 'title', 'content', 'filePath')
+            ->sort('createdAt', 'desc')
+            ->limit($limit)
+            ->getQuery()
+            ->execute();
+    }
 }

@@ -9,7 +9,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 /**
- * @MongoDB\Document
+ * @MongoDB\Document(repositoryClass="Colzak\BlogBundle\Repository\ArticleRepository")
  * @MongoDB\HasLifecycleCallbacks
  */
 class Article {
@@ -55,12 +55,12 @@ class Article {
     protected $lastModifiedBy;
 
     /**
-     * @MongoDB\Timestamp
+     * @MongoDB\Date
      */
     protected $createdAt;
 
     /**
-     * @MongoDB\Timestamp
+     * @MongoDB\Date
      */
     protected $updatedAt;
 
@@ -285,6 +285,13 @@ class Article {
     public function setFile(UploadedFile $file = null)
     {
         $this->file = $file;
+    }
+
+    /**
+     * @MongoDB\PrePersist()
+     */
+    public function doStuffOnPrePersist() {
+        $this->createdAt = new \MongoDate();
     }
 
     /**

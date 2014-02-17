@@ -180,18 +180,6 @@
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff428bca', endColorstr='#ff357ebd', GradientType=0);
 }
 
-.clzk-navbar {
-  padding-top: 2px;
-}
-.clzk-navbar .btn {
-  margin: 5px 0;
-}
-
-.clzk-nav > li > a {
-    padding-top: 12px;
-    padding-bottom: 12px;
-}
-
 .navbar {
   background: #3a3f44;
   background-repeat: repeat-x;

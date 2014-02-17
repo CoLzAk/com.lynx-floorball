@@ -21,7 +21,7 @@
         <header class="clzk-header">
             {% block pre_header %}{% endblock %}
             {% block header %}
-                <div class="navbar navbar-default clzk-navbar">
+                <div class="navbar navbar-default">
                     <div class="container">
                         <div class="navbar-header">
                             <a class="navbar-brand" href="{{ path('colzak_home_homepage') }}"><img src="/img/bfc_logo_text.png" class="img-responsive clzk-brand"></a>
@@ -42,18 +42,20 @@
         </header>
         <div class="clzk-body">
             {% block pre_body %}{% endblock %}
-            <div class="container">
+            <div class="container"><div class="clzk-container">
                 {% block body %}{% endblock %}
-            </div>
+            </div></div>
         </div>
         <footer class="clzk-footer">
-            {% block footer %}
-                <div class="navbar navbar-default" role="navigation">
-                    <div class="container">
-                        <p class="text-center clzk-footer-text">Copyright © 2014 Colzak</p>
+            <div class="container">
+                {% block footer %}
+                    <div class="navbar navbar-default" role="navigation">
+                        <div class="container">
+                            <p class="text-center clzk-footer-text">Copyright © 2014 Colzak</p>
+                        </div>
                     </div>
-                </div>
-            {% endblock %}
+                {% endblock %}
+            </div>
         </footer>
         {% block modal %}
             <div class="modal fade" id="clzk-modal" role="dialog">
