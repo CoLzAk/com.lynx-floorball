@@ -37,38 +37,28 @@
     </div>
 {% endblock %#}
 {% block body %}
-    <div class="clzk-index-part-one">
+    <div class="row">
         <div class="col-md-8">
-            <h3>Dernières actualités</h3>
             <div class="clzk-last-articles-container">
+                <h3>Dernières actualités</h3>
                 {{ render(controller('ColzakBlogBundle:Article:lastArticles')) }}
             </div>
         </div>
         <div class="col-md-4">
-            <h3>Prochain match</h3>
             <div class="clzk-next-game-container">
+                <h3>Prochain match</h3>
                 prochain match
             </div>
         </div>
         <div class="clearfix"></div>
     </div>
-    <div class="clzk-index-part-two">
-        <div class="col-md-8">
-            <h3>Dernières actualités</h3>
-            <div class="clzk-sponsors-container">
-                ...
-            </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="clzk-index-part-container"></div>
         </div>
-        <div class="col-md-4">
-            <h3>Prochain match</h3>
-            <div class="clzk-stats-container">
-                ...
-            </div>
-        </div>
-        <div class="clearfix"></div>
         {#} les sponsors {#}
     </div>
-    <div class="clzk-index-part-three">
+    <div class="row">
         {#} des images + liens fb {#}
         ...
     </div>
