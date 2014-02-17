@@ -6,7 +6,7 @@ namespace Colzak\EventBundle\Document;
 use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
 
 /**
- * @MongoDB\Document
+ * @MongoDB\Document(repositoryClass="Colzak\EventBundle\Repository\GameRepository")
  */
 class Game
 {
