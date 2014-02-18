@@ -14,7 +14,7 @@ class ArticleRepository extends DocumentRepository
 {
     public function getLastArticles($limit = 5) {
         return $this->createQueryBuilder('Article')
-            ->select('id', 'title', 'content', 'filePath')
+            ->select('id', 'title', 'content', 'filePath', 'category')
             ->sort('createdAt', 'desc')
             ->limit($limit)
             ->getQuery()

@@ -12,10 +12,13 @@ class AdminGameFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('opponent', 'text', array('label' => 'Adversaire'))
+            ->add('opponent', 'document', array(
+                'class' => 'Colzak\EventBundle\Document\Team',
+                'property' => 'name'
+            ))
             ->add('place', 'text', array('label' => 'Lieu'))
             ->add('date', 'date', array('label' => 'Date'))
-            ->add('inHome', null, array('label' => 'Domicile'))
+            ->add('inHome', null, array('label' => 'Domicile', 'required' => false))
             ->add('score', null, array('label' => 'Score', 'required' => false))
             ->add('opponentScore', null, array('label' => 'Score adv.', 'required' => false))
         ;

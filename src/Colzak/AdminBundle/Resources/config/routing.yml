@@ -54,3 +54,16 @@ colzak_admin_game_new:
 colzak_admin_game_edit:
     pattern:  /events/games/edit/{id}
     defaults: { _controller: ColzakAdminBundle:AdminEvent:editGame }
+
+# Teams
+colzak_admin_teams:
+    pattern:  /events/teams/list
+    defaults: { _controller: ColzakAdminBundle:AdminEvent:listTeams }
+
+colzak_admin_team_new:
+    pattern:  /events/teams/new
+    defaults: { _controller: ColzakAdminBundle:AdminEvent:newTeam }
+
+colzak_admin_team_edit:
+    pattern:  /events/teams/edit/{id}
+    defaults: { _controller: ColzakAdminBundle:AdminEvent:editTeam }

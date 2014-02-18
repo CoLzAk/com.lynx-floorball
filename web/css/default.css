@@ -38,6 +38,12 @@ body {
 .clzk-brand {
     max-height: 25px;
 }
+.clzk-brand-full-logo {
+    margin-left: -25px;
+    max-height: 180px;
+    position: absolute;
+    top: -140px;
+}
 .clzk-menu > li > a:hover {
     border-top: 2px #ffff28 solid;
     margin-top: -2px;
@@ -49,52 +55,53 @@ body {
     margin-top:30px;
 }
 /*INDEX*/
-/*.clzk-index-part-one {
-    background: #F7F7F7;
-    padding-top: 10px; 
-    border-radius: 10px 10px 0 0;
-}*/
+/*SOCIALITE*/
+.cf:after { visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }
+* html .cf { zoom: 1; }
+*:first-child+html .cf { zoom: 1; }
+
+.text p, .text li { font-size: 1em; line-height: 1.5em; margin: 0 0 0.5em 0; }
+.text li { margin: 0 0 0.25em 0; }
+
+.vhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
+
+.social-buttons { display: block; list-style: none; padding: 0; margin: 0; text-align: center; margin-left: 15%}
+.social-buttons > li { display: block; margin: 0; padding: 10px; float: left; }
+.social-buttons .socialite { display: block; position: relative; }
+.social-buttons .socialite-loaded { background: none !important; }
+
+.social-buttons .twitter-share { width: 55px; height: 65px; background-position: 0 0; }
+.social-buttons .googleplus-one { width: 50px; height: 65px; background-position: -75px 0; }
+.social-buttons .facebook-like { width: 55px; height: 65px; background-position: -145px 0; }
+.social-buttons .linkedin-share { width: 60px; height: 65px; background-position: -215px 0; }
+
 .clzk-img-rounded {
     border-radius: 100px;
-    margin: auto;
+    margin: 25% auto;
 }
-/*.clzk-index-part-two {
-    background: #0195dd;
-    border-top: 4px #FFF solid;
-    color: #FFF;
-    height: 450px;
-}*/
+.clzk-index-block-container {
+    width: 100%;
+    border: 4px #ccc solid;
+    background: #F7F7F7;
+    padding: 5px;
+    margin-bottom: 30px;
+}
+.clzk-long-block {
+    min-height: 498px;
+}
 .clzk-last-articles-container {
     height: 305px;
     width: 100%;
     border: 4px #000 solid;
     background: #333;
     color: #FFF;
+    margin-bottom: 30px;
 }
 .clzk-last-articles-container h3 {
     margin-top: 10px;
     width: 100%;
     padding-top: 5px;
-    padding-left: 5px;
-}
-.clzk-next-game-container {
-    height: 305px;
-    width: 100%;
-    border: 4px #ccc solid;
-    background: #F7F7F7;
-}
-.clzk-next-game-container h3 {
-    margin-top: 10px;
-    width: 100%;
-    padding-top: 5px;
-    padding-left: 5px;
-}
-.clzk-index-part-container {
-    min-height: 300px;
-    width: 100%;
-    border: 4px #ccc solid;
-    background: #F7F7F7;
-    margin-top: 30px;
+    padding-left: 15px;
 }
 /*ARTICLES*/
 .clzk-last-articles-tab-container {
@@ -135,15 +142,19 @@ body {
     color: #F7F7F7;
     padding: 10px;
 }
+.clzk-edito {
+    background: #eee;
+    color: #999;
+    padding: 15px;
+    padding-top: 5px;
+    margin-bottom: 10px;
+}
 /**/
 /*TEAM*/
 .clzk-user-thumbnail-container {
     margin: 10px auto;
 }
 /*FOOTER*/
-.clzk-footer {
-    margin-top: 30px;
-}
 .clzk-footer .navbar {
     margin-bottom: 0;
 }

@@ -2,9 +2,7 @@
 {% block pre_header %}
     {#} Top Navbar {#}
     <div class="clzk-header-cover-container">
-        <!-- <img src="/img/bfc_cover.jpg" class="img-responsive"> -->
         <div class="container">
-            <!-- <img src="/img/bfc_logo.png" class="img-responsive col-md-4"> -->
         </div>
     </div>
 {% endblock %}
@@ -13,7 +11,7 @@
     <div class="navbar navbar-default clzk-navbar">
         <div class="container">
             <div class="navbar-header">
-                <a class="navbar-brand" href="{{ path('colzak_home_homepage') }}"><img src="/img/bfc_logo_text.png" class="img-responsive clzk-brand"></a>
+                <a class="navbar-brand" href="{{ path('colzak_home_homepage') }}"><img src="/img/bfc_logo.png" class="img-responsive clzk-brand-full-logo"></a>
             </div>
              <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right clzk-menu">
@@ -29,110 +27,160 @@
     </div>
     <div class="clearfix"></div>
 {% endblock %}
-{#% block pre_body %}
-    <div class="container">
-        <div class="col-md-2 col-md-offset-3"> <img src="/img/floorball1.png" alt="" class="clzk-img-rounded img-responsive"></div>
-        <div class="col-md-2"><img src="/img/i_love_floorball.png" alt="" class="clzk-img-rounded img-responsive"></div>
-        <div class="col-md-2"><img src="/img/floorball2.png" alt="" class="clzk-img-rounded img-responsive"></div>
-    </div>
-{% endblock %#}
 {% block body %}
     <div class="row">
+        {#} Left part {#}
         <div class="col-md-8">
             <div class="clzk-last-articles-container">
                 <h3>Dernières actualités</h3>
                 {{ render(controller('ColzakBlogBundle:Article:lastArticles')) }}
             </div>
-        </div>
-        <div class="col-md-4">
-            <div class="clzk-next-game-container">
-                <h3 class="text-center">Prochain match</h3>
-                {{ render(controller('ColzakEventBundle:Event:nextGame')) }}
-            </div>
-        </div>
-        <div class="clearfix"></div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-            <div class="clzk-index-part-container">
-                <div class="col-md-8">
 
+            <div class="clzk-index-block-container clzk-long-block">
+                {#} Edito {#}
+                {{ render(controller('ColzakBlogBundle:Article:lastArticles', {'category': 'edito'})) }}
+
+                {#} Le floorball {#}
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img src="/img/i_love_floorball.png" class="img-responsive clzk-img-rounded">
+                        </div>
+                        <div class="col-md-8">
+                            <h3>Le floorball, c'est quoi ?</h3>
+                            <p>Brisket ham hock leberkas short loin. Hamburger short loin venison kevin jerky t-bone turkey pancetta ham ball tip meatloaf. Turkey pork chop andouille pork loin. Andouille pork belly ham hock biltong drumstick.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-4">
-                    {#} render classement {#}
-                    <h3 class="text-center">Classement</h3>
-                    <hr>
-                    <div class="table-responsive">
-                        <table class="table table-hover">
-                            <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>Equipes</th>
-                                    <th>J</th>
-                                    <th>Pts</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Gladiateurs d'Orléans</td>
-                                    <td>8</td>
-                                    <td>17</td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>Griffons d'Oc</td>
-                                    <td>8</td>
-                                    <td>13</td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>IFK Paris 2</td>
-                                    <td>8</td>
-                                    <td>13</td>
-                                </tr>
-                                <tr>
-                                    <td>4</td>
-                                    <td>Impacts de Tours</td>
-                                    <td>8</td>
-                                    <td>13</td>
-                                </tr>
-                                <tr>
-                                    <td>5</td>
-                                    <td>Lynx de Bordeaux</td>
-                                    <td>8</td>
-                                    <td>9</td>
-                                </tr>
-                                <tr>
-                                    <td>6</td>
-                                    <td>PUC 2</td>
-                                    <td>8</td>
-                                    <td>7</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                {#} Le club {#}
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img src="/img/bdx.png" class="img-responsive clzk-img-rounded">
+                        </div>
+                        <div class="col-md-8">
+                            <h3>Le club</h3>
+                            <p>Brisket ham hock leberkas short loin. Hamburger short loin venison kevin jerky t-bone turkey pancetta ham ball tip meatloaf. Turkey pork chop andouille pork loin. Andouille pork belly ham hock biltong drumstick.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                {#} Dernier résultat {#}
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img src="/img/team.png" class="img-responsive clzk-img-rounded">
+                        </div>
+                        <div class="col-md-8">
+                            <h3>Dernier résultat</h3>
+                            <p>Brisket ham hock leberkas short loin. Hamburger short loin venison kevin jerky t-bone turkey pancetta ham ball tip meatloaf. Turkey pork chop andouille pork loin. Andouille pork belly ham hock biltong drumstick.</p>
+                        </div>
+                    </div>
+                </div>
+                {#} Contact {#}
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img src="/img/contact.png" class="img-responsive clzk-img-rounded">
+                        </div>
+                        <div class="col-md-8">
+                            <h3>Contact</h3>
+                            <p>Brisket ham hock leberkas short loin. Hamburger short loin venison kevin jerky t-bone turkey pancetta ham ball tip meatloaf. Turkey pork chop andouille pork loin. Andouille pork belly ham hock biltong drumstick.</p>
+                        </div>
                     </div>
                 </div>
                 <div class="clearfix"></div>
             </div>
         </div>
-        {#} les sponsors {#}
+
+        {#} right part {#}
+        <div class="col-md-4">
+            {#} social actions {#}
+            <div class="clzk-index-block-container">
+                <h3 class="text-center">Ne manque rien !</h3>
+                <ul class="social-buttons cf list-unstyled">
+                    <li>
+                        <a href="http://twitter.com/share" class="socialite twitter-share" data-text="Les lynx de bordeaux" data-url="http://socialitejs.com" data-count="vertical" rel="nofollow" target="_blank"><span class="vhidden">Share on Twitter</span></a>
+                    </li>
+                    <li>
+                        <a href="https://plus.google.com/share?url=http://socialitejs.com" class="socialite googleplus-one" data-size="tall" data-href="http://socialitejs.com" rel="nofollow" target="_blank"><span class="vhidden">Share on Google+</span></a>
+                    </li>
+                    <li>
+                        <a href="http://www.facebook.com/sharer.php?u=http://www.socialitejs.com&t=Socialite.js" class="socialite facebook-like" data-href="http://socialitejs.com" data-send="false" data-layout="box_count" data-width="80" data-show-faces="false" rel="nofollow" target="_blank"><span class="vhidden">Share on Facebook</span></a>
+                    </li>
+                </ul>
+            </div>
+
+            {#} next game {#}
+            <div class="clzk-index-block-container">
+                <h3 class="text-center">Prochain match</h3>
+                {{ render(controller('ColzakEventBundle:Event:nextGame')) }}
+            </div>
+
+            {#} ranking {#}
+            <div class="clzk-index-block-container">
+                <h3 class="text-center">Classement</h3>
+                <hr>
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Equipes</th>
+                                <th>J</th>
+                                <th>Pts</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Gladiateurs d'Orléans</td>
+                                <td>8</td>
+                                <td>17</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Griffons d'Oc</td>
+                                <td>8</td>
+                                <td>13</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>IFK Paris 2</td>
+                                <td>8</td>
+                                <td>13</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Impacts de Tours</td>
+                                <td>8</td>
+                                <td>13</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Lynx de Bordeaux</td>
+                                <td>8</td>
+                                <td>9</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>PUC 2</td>
+                                <td>8</td>
+                                <td>7</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
     </div>
-    <div class="row">
-        {#} des images + liens fb {#}
-    </div>
-    <div class="clearfix"></div>
-    <!-- <div class="row">
-        <div class="col-md-2"><img class="img-responsive" src="/img/direct_floorball.jpg"></div>
-        <div class="col-md-2"><img class="img-responsive" src="/img/france_floorball.jpg"></div>
-        <div class="col-md-2"><img class="img-responsive" src="/img/lady33b.png"></div>
-        <div class="col-md-2"><img class="img-responsive" src="/img/smr.gif"></div>
-    </div> -->
 {% endblock %}
 
 {% block extra_javascripts %}
     {% javascripts
         "js/index.js"
+        "js/socialite.min.js"
     %}
         <script src="{{ asset_url }}" type="text/javascript"></script>
     {% endjavascripts %}

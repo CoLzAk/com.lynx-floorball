@@ -19,7 +19,7 @@ class AdminArticleFormType extends AbstractType
                 'property' => 'name',
                 'required' => false
             ))
-            ->add('file', 'file')
+            ->add('file', 'file', array('required' => false))
         ;
     }
 

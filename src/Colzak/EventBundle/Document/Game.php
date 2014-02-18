@@ -16,7 +16,7 @@ class Game
     protected $id;
 
     /**
-     * @MongoDB\String
+     * @MongoDB\ReferenceOne(targetDocument="Team")
      */
     protected $opponent;
 
@@ -58,28 +58,6 @@ class Game
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Set opponent
-     *
-     * @param string $opponent
-     * @return self
-     */
-    public function setOpponent($opponent)
-    {
-        $this->opponent = $opponent;
-        return $this;
-    }
-
-    /**
-     * Get opponent
-     *
-     * @return string $opponent
-     */
-    public function getOpponent()
-    {
-        return $this->opponent;
     }
 
     /**
@@ -212,5 +190,27 @@ class Game
     public function getGameStatus()
     {
         return $this->gameStatus;
+    }
+
+    /**
+     * Set opponent
+     *
+     * @param Colzak\EventBundle\Document\Team $opponent
+     * @return self
+     */
+    public function setOpponent(\Colzak\EventBundle\Document\Team $opponent)
+    {
+        $this->opponent = $opponent;
+        return $this;
+    }
+
+    /**
+     * Get opponent
+     *
+     * @return Colzak\EventBundle\Document\Team $opponent
+     */
+    public function getOpponent()
+    {
+        return $this->opponent;
     }
 }
