@@ -1,0 +1,71 @@
+{% extends 'ColzakAdminBundle::layout.html.twig' %}
+
+{% block body %}
+    <div class="table-responsive">
+        <table class="table-hover table table-bordered">
+            <thead>
+                <tr>
+                    <th>&nbsp;</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>Categories</th>
+                    <td>
+                        <a href="{{ path('colzak_admin_categories') }}" class="btn btn-default btn-sm">
+                            <span class="glyphicon glyphicon-th-list"></span> Liste
+                        </a>
+                        <a href="{{ path('colzak_admin_category_new') }}" class="btn btn-default btn-sm">
+                            <span class="glyphicon glyphicon-plus"></span> Ajouter
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Articles</th>
+                    <td>
+                        <a href="{{ path('colzak_admin_articles') }}" class="btn btn-default btn-sm">
+                            <span class="glyphicon glyphicon-th-list"></span> Liste
+                        </a>
+                        <a href="{{ path('colzak_admin_article_new') }}" class="btn btn-default btn-sm">
+                            <span class="glyphicon glyphicon-plus"></span> Ajouter
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Membres</th>
+                    <td>
+                        <a href="{{ path('colzak_admin_users') }}" class="btn btn-default btn-sm">
+                            <span class="glyphicon glyphicon-th-list"></span> Liste
+                        </a>
+                        <a href="{{ path('colzak_admin_user_new') }}" class="btn btn-default btn-sm">
+                            <span class="glyphicon glyphicon-plus"></span> Ajouter
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Matches</th>
+                    <td>
+                        <a href="{{ path('colzak_admin_games') }}" class="btn btn-default btn-sm">
+                            <span class="glyphicon glyphicon-th-list"></span> Liste
+                        </a>
+                        <a href="{{ path('colzak_admin_game_new') }}" class="btn btn-default btn-sm">
+                            <span class="glyphicon glyphicon-plus"></span> Ajouter
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Equipes</th>
+                    <td>
+                        <a href="{{ path('colzak_admin_teams') }}" class="btn btn-default btn-sm">
+                            <span class="glyphicon glyphicon-th-list"></span> Liste
+                        </a>
+                        <a href="{{ path('colzak_admin_team_new') }}" class="btn btn-default btn-sm">
+                            <span class="glyphicon glyphicon-plus"></span> Ajouter
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

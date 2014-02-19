@@ -1,7 +1,7 @@
 # Index
 colzak_admin_homepage:
     pattern:  /
-    defaults: { _controller: ColzakAdminBundle:AdminDefault:index }
+    defaults: { _controller: ColzakAdminBundle:Admin:index }
 
 # Articles
 colzak_admin_articles:

@@ -4,10 +4,10 @@ namespace Colzak\AdminBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-class AdminDefaultController extends Controller
+class AdminController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('ColzakAdminBundle:Default:index.html.twig');
+        return $this->render('ColzakAdminBundle:Admin:index.html.twig');
     }
 }
