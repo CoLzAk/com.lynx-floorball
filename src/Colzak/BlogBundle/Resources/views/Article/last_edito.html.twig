@@ -1,5 +1,5 @@
 <div class="clzk-edito">
-    {% for article in articles if article.category.name == 'edito' %}
+    {% for article in articles if articles is not null %}
         {% if loop.first %}
             <h3>{{ article.title }}</h3>
             <div class="col-md-12">{{ article.content }}</div>

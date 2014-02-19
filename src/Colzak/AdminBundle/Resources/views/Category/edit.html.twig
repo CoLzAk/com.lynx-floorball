@@ -1,14 +1,21 @@
 {% extends 'ColzakAdminBundle::layout.html.twig' %}
-
-{% block pre_body %}
-    <div class="col-md-3 col-md-offset-9">
-        <a href="" class="btn btn-block btn-default">Annuler</a>
-    </div>
-{% endblock %}
 {% block body %}
-    <h1>Nouvelle catégorie</h1>
-    {{ form_start(form) }}
+    <div class="row">
+        <div class="col-md-9">
+            <h2 class="clzk-admin-title">Nouvelle catégorie</h2>
+        </div>
+        <div class="col-md-3">
+            <a href="{{ path('colzak_admin_category_new') }}" class="btn btn-block btn-default">Annuler</a>
+        </div>
+    </div>
+    <hr>
+    {{ form_start(form, {'attr' : {'class':'form-horizontal'}}) }}
     	{{ form_rest(form) }}
-    	<button type="submit" class="btn btn-primary">Valider</button>
+    	
+    	<div class="form-group">
+    		<div class="col-md-3 col-md-offset-9">
+    			<button type="submit" class="btn btn-primary btn-block">Valider</button>
+    		</div>
+    	</div>
     {{ form_end(form) }}
 {% endblock %}

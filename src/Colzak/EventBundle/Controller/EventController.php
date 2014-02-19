@@ -15,6 +15,7 @@ class EventController extends Controller
 
     public function nextGameAction() {
         $dm = $this->get('doctrine_mongodb')->getManager();
+        // $game = $dm->getRepository('ColzakEventBundle:Game')->findOneBy(array('date'))
         $game = $dm->getRepository('ColzakEventBundle:Game')->getNextGame();
         return $this->render('ColzakEventBundle:Game:next_game.html.twig', array('game' => $game));
     }

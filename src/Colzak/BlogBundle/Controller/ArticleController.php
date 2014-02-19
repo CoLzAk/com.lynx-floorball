@@ -11,18 +11,19 @@ class ArticleController extends Controller
         return $this->render('ColzakBlogBundle:Article:index.html.twig');
     }
 
-    public function lastArticlesAction($category = 'news') {
+    public function lastArticlesAction($categoryName = 'news') {
         $dm = $this->get('doctrine_mongodb')->getManager();
 
         //a tester
-        $category = $dm->getRepository('ColzakBlogBundle:Category')->findOneBy(array('name' => 'news'));
+        $category = $dm->getRepository('ColzakBlogBundle:Category')->findOneBy(array('name' => $categoryName));
         $articles = $dm->createQueryBuilder('ColzakBlogBundle:Article')
                         ->field('category')->references($category)
+                        ->limit(5)
                         ->getQuery()->execute();
         //fin test
 
-        $articles = $dm->getRepository('ColzakBlogBundle:Article')->findAll();
-        if ($category == 'edito') {
+
+        if ($categoryName == 'edito') {
             return $this->render('ColzakBlogBundle:Article:last_edito.html.twig', array('articles' => $articles));
         }
         return $this->render('ColzakBlogBundle:Article:last_articles.html.twig', array('articles' => $articles));
