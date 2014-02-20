@@ -18,7 +18,7 @@
                         <th>Id</th>
                         <th>Nom</th>
                         <th>Parent</th>
-                        <th>Actions</th>
+                        <th colspan="2">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -27,7 +27,16 @@
                             <td>{{ category.id }}</td>
                             <td>{{ category.name }}</td>
                             <td>{% if category.parent is not null %}{{ category.parent.name }}{% endif %}</td>
-                            <td><a href="{{ path('colzak_admin_category_edit', {id: category.id}) }}" class="btn btn-block btn-default">Editer</a></td>
+                            <td>
+                                <a href="{{ path('colzak_admin_category_edit', {id: category.id}) }}" class="btn btn-sm btn-default">
+                                    <span class="glyphicon glyphicon-edit"></span> Editer
+                                </a>
+                            </td>
+                            <td>
+                                <a href="{{ path('colzak_admin_category_delete', {id: category.id}) }}" class="btn btn-sm btn-danger">
+                                    <span class="glyphicon glyphicon-remove"></span> Supprimer
+                                </a>
+                            </td>
                         </tr>
                     {% endfor %}
                 </tbody>

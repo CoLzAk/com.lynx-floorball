@@ -27,6 +27,11 @@ class Article {
     /**
      * @MongoDB\String
      */
+    protected $description;
+
+    /**
+     * @MongoDB\String
+     */
     protected $content;
 
     /**
@@ -360,5 +365,27 @@ class Article {
 
         // clean up the file property as you won't need it anymore
         $this->file = null;
+    }
+
+    /**
+     * Set description
+     *
+     * @param string $description
+     * @return self
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+        return $this;
+    }
+
+    /**
+     * Get description
+     *
+     * @return string $description
+     */
+    public function getDescription()
+    {
+        return $this->description;
     }
 }

@@ -1,12 +1,15 @@
 {% extends 'ColzakAdminBundle::layout.html.twig' %}
 
-{% block pre_body %}
-    <div class="col-md-3 col-md-offset-9">
-        <a href="{{ path('colzak_admin_user_new') }}" class="btn btn-block btn-default">Nouveau membre</a>
-    </div>
-{% endblock %}
 {% block body %}
-    <h1>Liste des membres</h1>
+    <div class="row">
+        <div class="col-md-9">
+            <h2 class="clzk-admin-title">Liste des membres</h2>
+        </div>
+        <div class="col-md-3">
+            <a href="{{ path('colzak_admin_user_new') }}" class="btn btn-block btn-primary">Nouveau membre</a>
+        </div>
+    </div>
+    <hr>
 
     {% if users is not null %}
         <div class="table-responsive">
@@ -19,7 +22,7 @@
                         <th>Numéro</th>
                         <th>Poste</th>
                         <th>Rôle</th>
-                        <th>Actions</th>
+                        <th colspan="2">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -27,12 +30,21 @@
 
                         <tr>
                             <td>{{ user.id }}</td>
-                            <td><img src="{{ user.userPicturePath }}" class="img-responsive"></td>
-                            <td>{{ [user.firstname, user.lastname]|join(' ') }}&nbsp;({{ user.nickname }})</td>
+                            <td><img src="{{ user.userPicturePath }}" class="img-responsive clzk-admin-img-table"></td>
+                            <td>{{ [user.firstname, user.lastname]|join(' ') }}&nbsp;{% if user.nickname %}({{ user.nickname }}){% endif %}</td>
                             <td>{{ user.number }}</td>
                             <td>{{ user.position }}</td>
                             <td>conversion array2string for roles</td>
-                            <td><a href="{{ path('colzak_admin_user_edit', {id: user.id}) }}" class="btn btn-block btn-default">Editer</a></td>
+                            <td>
+                                <a href="{{ path('colzak_admin_user_edit', {id: user.id}) }}" class="btn btn-sm btn-default">
+                                    <span class="glyphicon glyphicon-edit"></span> Editer
+                                </a>
+                            </td>
+                            <td>
+                                <a href="{{ path('colzak_admin_user_delete', {id: user.id}) }}" class="btn btn-sm btn-danger">
+                                    <span class="glyphicon glyphicon-remove"></span> Supprimer
+                                </a>
+                            </td>
                         </tr>
                     {% endfor %}
                 </tbody>

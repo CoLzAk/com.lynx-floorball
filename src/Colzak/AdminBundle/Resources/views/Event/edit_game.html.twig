@@ -1,15 +1,22 @@
 {% extends 'ColzakAdminBundle::layout.html.twig' %}
 
-{% block pre_body %}
-    <div class="col-md-3 col-md-offset-9">
-        <a href="" class="btn btn-block btn-default">Annuler</a>
-    </div>
-{% endblock %}
 {% block body %}
-    <h1>Nouveau match</h1>
+    <div class="row">
+        <div class="col-md-9">
+            <h2 class="clzk-admin-title">Nouveau match</h2>
+        </div>
+        <div class="col-md-3">
+            <a href="{{ path('colzak_admin_game_delete', {'id': game.id}) }}" class="btn btn-block btn-danger">Annuler</a>
+        </div>
+    </div>
+    <hr>
 
     {{ form_start(form) }}
     	{{ form_rest(form) }}
-    	<button type="submit" class="btn btn-primary">Valider</button>
+    	<div class="form-group">
+            <div class="col-md-3 col-md-offset-9">
+                <button type="submit" class="btn btn-primary btn-block">Valider</button>
+            </div>
+        </div>
     {{ form_end(form) }}
 {% endblock %}

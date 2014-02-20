@@ -37,6 +37,7 @@ body {
 .clzk-nav > li > a {
     padding-top: 12px;
     padding-bottom: 12px;
+    color: #FFF;
 }
 .clzk-brand {
     max-height: 25px;
@@ -50,6 +51,7 @@ body {
 .clzk-menu > li > a:hover {
     border-top: 2px #ffff28 solid;
     margin-top: -2px;
+    color: #F7F7F7;
 }
 /*BODY*/
 .clzk-body {

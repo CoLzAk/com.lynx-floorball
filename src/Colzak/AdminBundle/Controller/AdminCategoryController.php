@@ -40,6 +40,15 @@ class AdminCategoryController extends Controller {
             }
         }
 
-        return $this->render('ColzakAdminBundle:Category:edit.html.twig', array('form' => $form->createView()));
+        return $this->render('ColzakAdminBundle:Category:edit.html.twig', array('form' => $form->createView(), 'category' => $category));
+    }
+
+    public function deleteAction($id) {
+        $dm = $this->get('doctrine_mongodb')->getManager();
+        $category = $dm->getRepository('ColzakBlogBundle:Category')->find($id);
+
+        $dm->remove($category);
+        $dm->flush();
+        return new RedirectResponse($this->container->get('router')->generate('colzak_admin_categories'));
     }
 }

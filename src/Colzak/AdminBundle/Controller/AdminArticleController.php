@@ -48,6 +48,14 @@ class AdminArticleController extends Controller {
             }
         }
 
-        return $this->render('ColzakAdminBundle:Article:edit.html.twig', array('form' => $form->createView()));
+        return $this->render('ColzakAdminBundle:Article:edit.html.twig', array('form' => $form->createView(), 'article' => $article));
+    }
+
+    public function deleteAction($id) {
+        $dm = $this->get('doctrine_mongodb')->getManager();
+        $article = $dm->getRepository('ColzakBlogBundle:Article')->find($id);
+        $dm->remove($article);
+        $dm->flush();
+        return new RedirectResponse($this->container->get('router')->generate('colzak_admin_articles'));
     }
 }

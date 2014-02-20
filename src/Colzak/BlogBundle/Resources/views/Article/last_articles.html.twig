@@ -4,7 +4,7 @@
         {% for article in articles if article.category is not null %}
             <div class="tab-pane fade {% if loop.first %} in active {% endif %}" id="{{ article.id }}">
                 <img src="{{ article.filePath }}" class="img-responsive">
-                <p class="clzk-article-summary text-center">{{ article.content|slice(0,100) }}...</p>
+                <p class="clzk-article-summary text-center">{{ article.description|slice(0,100) }}...</p>
             </div>
         {% endfor %}
     </div>

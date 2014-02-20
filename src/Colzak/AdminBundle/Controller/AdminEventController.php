@@ -45,7 +45,17 @@ class AdminEventController extends Controller {
             }
         }
 
-        return $this->render('ColzakAdminBundle:Event:edit_game.html.twig', array('form' => $form->createView()));
+        return $this->render('ColzakAdminBundle:Event:edit_game.html.twig', array('form' => $form->createView(), 'game' => $game));
+    }
+
+    public function deleteGameAction($id) {
+        $dm = $this->get('doctrine_mongodb')->getManager();
+        $game = $dm->getRepository('ColzakEventBundle:Game')->find($id);
+
+        $dm->remove($game);
+        $dm->flush();
+        return new RedirectResponse($this->container->get('router')->generate('colzak_admin_games'));
+    
     }
 
     public function listTeamsAction() {
@@ -83,6 +93,16 @@ class AdminEventController extends Controller {
             }
         }
 
-        return $this->render('ColzakAdminBundle:Event:edit_team.html.twig', array('form' => $form->createView()));
+        return $this->render('ColzakAdminBundle:Event:edit_team.html.twig', array('form' => $form->createView(), 'team' => $team));
+    }
+
+    public function deleteTeamAction($id) {
+        $dm = $this->get('doctrine_mongodb')->getManager();
+        $team = $dm->getRepository('ColzakEventBundle:Team')->find($id);
+
+        $dm->remove($team);
+        $dm->flush();
+        return new RedirectResponse($this->container->get('router')->generate('colzak_admin_teams'));
+    
     }
 }

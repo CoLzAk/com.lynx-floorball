@@ -17,9 +17,11 @@ class AdminUserFormType extends AbstractType
             ->add('password', 'text', array('label' => 'Mot de passe'))
             ->add('firstname', 'text', array('label' => 'Prénom'))
             ->add('lastname', 'text', array('label' => 'Nom'))
+            ->add('nickname', 'text', array('label' => 'Surnom'))
             ->add('position', 'choice', array(
                     'label' => 'Position',
-                    'choices' => User::getPositionList()
+                    'choices' => User::getPositionList(),
+                    'required' => false
                 ))
             ->add('number', 'number', array('label' => 'Numéro'))
             ->add('userPicture', 'file')

@@ -44,6 +44,14 @@ class AdminUserController extends Controller {
             }
         }
 
-        return $this->render('ColzakAdminBundle:User:edit.html.twig', array('form' => $form->createView()));
+        return $this->render('ColzakAdminBundle:User:edit.html.twig', array('form' => $form->createView(), 'user' => $user));
+    }
+
+    public function deleteAction($id) {
+        $dm = $this->get('doctrine_mongodb')->getManager();
+        $user = $dm->getRepository('ColzakUserBundle:User')->find($id);
+        $dm->remove($user);
+        $dm->flush();
+        return new RedirectResponse($this->container->get('router')->generate('colzak_admin_users'));
     }
 }

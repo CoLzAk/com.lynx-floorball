@@ -16,6 +16,10 @@ colzak_admin_article_edit:
     pattern:  /articles/edit/{id}
     defaults: { _controller: ColzakAdminBundle:AdminArticle:edit }
 
+colzak_admin_article_delete:
+    pattern:  /articles/delete/{id}
+    defaults: { _controller: ColzakAdminBundle:AdminArticle:delete }
+
 # Categories
 colzak_admin_categories:
     pattern:  /categories/list
@@ -28,6 +32,10 @@ colzak_admin_category_new:
 colzak_admin_category_edit:
     pattern:  /categories/edit/{id}
     defaults: { _controller: ColzakAdminBundle:AdminCategory:edit }
+
+colzak_admin_category_delete:
+    pattern:  /categories/delete/{id}
+    defaults: { _controller: ColzakAdminBundle:AdminCategory:delete }
 
 # Users
 colzak_admin_users:
@@ -42,6 +50,10 @@ colzak_admin_user_edit:
     pattern:  /users/edit/{id}
     defaults: { _controller: ColzakAdminBundle:AdminUser:edit }
 
+colzak_admin_user_delete:
+    pattern:  /users/delete/{id}
+    defaults: { _controller: ColzakAdminBundle:AdminUser:delete }
+
 # Games
 colzak_admin_games:
     pattern:  /events/games/list
@@ -55,6 +67,10 @@ colzak_admin_game_edit:
     pattern:  /events/games/edit/{id}
     defaults: { _controller: ColzakAdminBundle:AdminEvent:editGame }
 
+colzak_admin_game_delete:
+    pattern:  /events/games/delete/{id}
+    defaults: { _controller: ColzakAdminBundle:AdminEvent:deleteGame }
+
 # Teams
 colzak_admin_teams:
     pattern:  /events/teams/list
@@ -67,3 +83,7 @@ colzak_admin_team_new:
 colzak_admin_team_edit:
     pattern:  /events/teams/edit/{id}
     defaults: { _controller: ColzakAdminBundle:AdminEvent:editTeam }
+
+colzak_admin_team_delete:
+    pattern:  /events/teams/delete/{id}
+    defaults: { _controller: ColzakAdminBundle:AdminEvent:deleteTeam }

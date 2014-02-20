@@ -1,12 +1,15 @@
 {% extends 'ColzakAdminBundle::layout.html.twig' %}
 
-{% block pre_body %}
-    <div class="col-md-3 col-md-offset-9">
-        <a href="{{ path('colzak_admin_team_new') }}" class="btn btn-block btn-default">Nouvelle équipe</a>
-    </div>
-{% endblock %}
 {% block body %}
-    <h1>Liste des équipes</h1>
+    <div class="row">
+        <div class="col-md-9">
+            <h2 class="clzk-admin-title">Liste des équipes</h2>
+        </div>
+        <div class="col-md-3">
+            <a href="{{ path('colzak_admin_team_new') }}" class="btn btn-block btn-primary">Nouvelle équipe</a>
+        </div>
+    </div>
+    <hr>
 
     {% if teams is not null %}
         <div class="table-responsive">
@@ -24,7 +27,7 @@
                         <th>Matches gagnés</th>
                         <th>Matches perdus</th>
                         <th>Matches nuls</th>
-                        <th>Actions</th>
+                        <th colspan="2">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -33,7 +36,7 @@
                         <tr>
                             <td>{{ team.id }}</td>
                             <td>{{ team.name }}</td>
-                            <td><img src="{{ team.teamLogoPath }}" class="img-responsive"></td>
+                            <td><img src="{{ team.teamLogoPath }}" class="img-responsive clzk-admin-img-table"></td>
                             <td>{{ team.pool }}</td>
                             <td>{{ team.point }}</td>
                             <td>{{ team.gamePlayed }}</td>
@@ -42,7 +45,16 @@
                             <td>{{ team.win }}</td>
                             <td>{{ team.defeat }}</td>
                             <td>{{ team.draw }}</td>
-                            <td><a href="{{ path('colzak_admin_team_edit', {id: team.id}) }}" class="btn btn-block btn-default">Editer</a></td>
+                            <td>
+                                <a href="{{ path('colzak_admin_team_edit', {id: team.id}) }}" class="btn btn-sm btn-default">
+                                    <span class="glyphicon glyphicon-edit"></span> Editer
+                                </a>
+                            </td>
+                            <td>
+                                <a href="{{ path('colzak_admin_team_delete', {id: team.id}) }}" class="btn btn-sm btn-danger">
+                                    <span class="glyphicon glyphicon-remove"></span> Supprimer
+                                </a>
+                            </td>
                         </tr>
                     {% endfor %}
                 </tbody>
