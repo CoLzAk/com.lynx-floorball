@@ -19,7 +19,7 @@
                     <li><a href="{{ path('colzak_users') }}">L'équipe</a></li>
                     <li><a href="{{ path('colzak_event_games') }}">Les matchs</a></li>
                     <li><a href="{{ path('colzak_home_pages', {'name': 'stats'}) }}">Les stats</a></li>
-                    <li><a href="#">Multimédia</a></li>
+                    <li><a href="{{ path('colzak_blog_media') }}">Multimédia</a></li>
                     <li><a href="{{ path('colzak_home_pages', {'name': 'about'}) }}">A propos</a></li>
                 </ul>
              </div>
@@ -36,7 +36,7 @@
                 {{ render(controller('ColzakBlogBundle:Article:lastArticles')) }}
             </div>
 
-            <div class="clzk-index-block-container clzk-long-block">
+            <div class="clzk-block-container clzk-long-block">
                 {#} Edito {#}
                 {{ render(controller('ColzakBlogBundle:Article:lastArticles', {'categoryName': 'edito'})) }}
 
@@ -96,7 +96,7 @@
         {#} right part {#}
         <div class="col-md-4">
             {#} social actions {#}
-            <div class="clzk-index-block-container">
+            <div class="clzk-block-container">
                 <h3 class="text-center">Ne manque rien !</h3>
                 <ul class="social-buttons cf list-unstyled">
                     <li>
@@ -112,13 +112,13 @@
             </div>
 
             {#} next game {#}
-            <div class="clzk-index-block-container">
+            <div class="clzk-block-container">
                 <h3 class="text-center">Prochain match</h3>
                 {{ render(controller('ColzakEventBundle:Event:nextGame')) }}
             </div>
 
             {#} ranking {#}
-            <div class="clzk-index-block-container">
+            <div class="clzk-block-container">
                 <h3 class="text-center">Classement</h3>
                 <div class="table-responsive">
                     <table class="table table-hover">

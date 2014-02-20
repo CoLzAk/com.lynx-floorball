@@ -1,3 +1,7 @@
 colzak_blog_articles:
     pattern:  /articles
-    defaults: { _controller: ColzakBlogBundle:Articles:index }
+    defaults: { _controller: ColzakBlogBundle:Article:articles }
+
+colzak_blog_media:
+    pattern:  /media
+    defaults: { _controller: ColzakBlogBundle:Article:media }

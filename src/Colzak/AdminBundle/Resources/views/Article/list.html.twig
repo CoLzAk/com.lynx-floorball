@@ -5,46 +5,126 @@
             <h2 class="clzk-admin-title">Liste des articles</h2>
         </div>
         <div class="col-md-3">
-            <a href="{{ path('colzak_admin_category_new') }}" class="btn btn-block btn-primary">Nouvel article</a>
+            <a href="{{ path('colzak_admin_article_new') }}" class="btn btn-block btn-primary">Nouvel article</a>
         </div>
     </div>
     <hr>
 
     {% if articles is not null %}
-        <div class="table-responsive">
-            <table class="table table-hover">
-                <thead>
-                    <tr>
-                        <th>Id</th>
-                        <th>Image</th>
-                        <th>Titre</th>
-                        <th>Résumé</th>
-                        <th>Categorie</th>
-                        <th colspan="2">Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for article in articles %}
-                        <tr>
-                            <td>{{ article.id }}</td>
-                            <td>{% if article.filePath is not null %}<img src="{{ article.filePath }}" class="img-responsive clzk-admin-img-table">{% endif %}</td>
-                            <td>{{ article.title }}</td>
-                            <td>{{ article.description }}</td>
-                            <td>{% if article.category is not null %}{{ article.category.name }}{% endif %}</td>
-                            <td>
-                                <a href="{{ path('colzak_admin_article_edit', {id: article.id}) }}" class="btn btn-default btn-sm">
-                                     <span class="glyphicon glyphicon-edit"></span> Editer
-                                </a>
-                            </td>
-                            <td>
-                                <a href="{{ path('colzak_admin_article_delete', {id: article.id}) }}" class="btn btn-danger btn-sm">
-                                    <span class="glyphicon glyphicon-remove"></span> Supprimer
-                                </a>
-                            </td>
-                        </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs">
+          <li class="active"><a href="#news" data-toggle="tab">Actualités</a></li>
+          <li><a href="#edito" data-toggle="tab">Edito</a></li>
+          <li><a href="#media" data-toggle="tab">Multimedia</a></li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <div class="tab-pane active" id="news">
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Image</th>
+                                <th>Titre</th>
+                                <th>Résumé</th>
+                                <th colspan="2">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for article in articles if article.category.name == 'news' %}
+                                <tr>
+                                    <td>{{ article.id }}</td>
+                                    <td>{% if article.filePath is not null %}<img src="{{ article.filePath }}" class="img-responsive clzk-admin-img-table">{% endif %}</td>
+                                    <td>{{ article.title }}</td>
+                                    <td>{{ article.description }}</td>
+                                    <td>
+                                        <a href="{{ path('colzak_admin_article_edit', {id: article.id}) }}" class="btn btn-default btn-sm">
+                                             <span class="glyphicon glyphicon-edit"></span> Editer
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a href="{{ path('colzak_admin_article_delete', {id: article.id}) }}" class="btn btn-danger btn-sm">
+                                            <span class="glyphicon glyphicon-remove"></span> Supprimer
+                                        </a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="tab-pane" id="edito">
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Image</th>
+                                <th>Titre</th>
+                                <th>Résumé</th>
+                                <th colspan="2">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for article in articles if article.category.name == 'edito' %}
+                                <tr>
+                                    <td>{{ article.id }}</td>
+                                    <td>{% if article.filePath is not null %}<img src="{{ article.filePath }}" class="img-responsive clzk-admin-img-table">{% endif %}</td>
+                                    <td>{{ article.title }}</td>
+                                    <td>{{ article.description }}</td>
+                                    <td>
+                                        <a href="{{ path('colzak_admin_article_edit', {id: article.id}) }}" class="btn btn-default btn-sm">
+                                             <span class="glyphicon glyphicon-edit"></span> Editer
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a href="{{ path('colzak_admin_article_delete', {id: article.id}) }}" class="btn btn-danger btn-sm">
+                                            <span class="glyphicon glyphicon-remove"></span> Supprimer
+                                        </a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="tab-pane" id="media">
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Image</th>
+                                <th>Titre</th>
+                                <th>Résumé</th>
+                                <th colspan="2">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for article in articles if article.category.name == 'media' %}
+                                <tr>
+                                    <td>{{ article.id }}</td>
+                                    <td>{% if article.filePath is not null %}<img src="{{ article.filePath }}" class="img-responsive clzk-admin-img-table">{% endif %}</td>
+                                    <td>{{ article.title }}</td>
+                                    <td>{{ article.description }}</td>
+                                    <td>
+                                        <a href="{{ path('colzak_admin_article_edit', {id: article.id}) }}" class="btn btn-default btn-sm">
+                                             <span class="glyphicon glyphicon-edit"></span> Editer
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a href="{{ path('colzak_admin_article_delete', {id: article.id}) }}" class="btn btn-danger btn-sm">
+                                            <span class="glyphicon glyphicon-remove"></span> Supprimer
+                                        </a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     {% else %}
         <p class="text-center">

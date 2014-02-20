@@ -5,3 +5,8 @@ services:
 #    colzak_blog.example:
 #        class: %colzak_blog.example.class%
 #        arguments: [@service_id, "plain_value", %parameter%]
+
+    colzak.twig.blog_extension:
+        class: Colzak\BlogBundle\Twig\BlogExtension
+        tags:
+            - { name: twig.extension }

@@ -1,20 +1,23 @@
 {% extends 'ColzakHomeBundle::layout.html.twig' %}
 
 {% block body %}
-    <h1 class="text-center">L'équipe</h1>
-    <br />
+    <div class="clzk-block-container">
+        <h1 class="text-center">L'équipe</h1>
+        <br />
 
-    <div class="row">
-	    {% for user in users %}
-	    	<div class="col-md-3 clzk-user-thumbnail-container">
-	    		<div class="thumbnail">
-      				<img data-src="holder.js/300x200" alt="..." src="{{ user.userPicturePath }}">
-      				<div class="caption">
-        				<h4 class="text-center"><a href="#">{{ [user.firstname, user.lastname]|join(' ') }}</a></h4>
-        				<p class="text-center">{{ user.number }} - {{ user.position }}</p>
-      				</div>
-    			</div>
-	    	</div>
-	    {% endfor %}
-   	</div>
+        <div class="col-md-12">
+    	    {% for user in users %}
+    	    	<div class="col-md-3 clzk-user-thumbnail-container">
+    	    		<div class="thumbnail">
+          				<img data-src="holder.js/300x200" alt="..." src="{{ user.userPicturePath }}">
+          				<div class="caption">
+            				<h4 class="text-center"><a href="#">{{ [user.firstname, user.lastname]|join(' ') }}</a></h4>
+            				<p class="text-center">{{ user.number }} - {{ user.position }}</p>
+          				</div>
+        			</div>
+    	    	</div>
+    	    {% endfor %}
+          <div class="clearfix"></div>
+       	</div>
+     </div>
 {% endblock %}
