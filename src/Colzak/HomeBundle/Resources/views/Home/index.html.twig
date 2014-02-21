@@ -48,7 +48,7 @@
                         <div class="col-md-8">
                             <h3>Le floorball, c'est quoi ?</h3>
                             <p>Brisket ham hock leberkas short loin. Hamburger short loin venison kevin jerky t-bone turkey pancetta ham ball tip meatloaf. Turkey pork chop andouille pork loin. Andouille pork belly ham hock biltong drumstick.</p>
-                            <a href="{{ path('colzak_home_pages', {name:'what-is-floorball'}) }}">en savoir plus >></a>
+                            <p class="text-right"><a href="{{ path('colzak_home_pages', {name:'what-is-floorball'}) }}">en savoir plus >></a></p>
                         </div>
                     </div>
                 </div>
@@ -61,7 +61,7 @@
                         <div class="col-md-8">
                             <h3>Le club</h3>
                             <p>Brisket ham hock leberkas short loin. Hamburger short loin venison kevin jerky t-bone turkey pancetta ham ball tip meatloaf. Turkey pork chop andouille pork loin. Andouille pork belly ham hock biltong drumstick.</p>
-                            <a href="{{ path('colzak_home_pages', {name:'club'}) }}">en savoir plus >></a>
+                            <p class="text-right"><a href="{{ path('colzak_home_pages', {name:'club'}) }}">en savoir plus >></a></p>
                         </div>
                     </div>
                 </div>
@@ -73,8 +73,9 @@
                             <img src="/img/team.png" class="img-responsive clzk-img-rounded">
                         </div>
                         <div class="col-md-8">
-                            <h3>Dernier résultat</h3>
+                            <h3>Derniers résultats</h3>
                             <p>Brisket ham hock leberkas short loin. Hamburger short loin venison kevin jerky t-bone turkey pancetta ham ball tip meatloaf. Turkey pork chop andouille pork loin. Andouille pork belly ham hock biltong drumstick.</p>
+                            <p class="text-right"><a href="{{ path('colzak_event_games') }}">en savoir plus >></a></p>
                         </div>
                     </div>
                 </div>
@@ -87,6 +88,7 @@
                         <div class="col-md-8">
                             <h3>Contact</h3>
                             <p>Brisket ham hock leberkas short loin. Hamburger short loin venison kevin jerky t-bone turkey pancetta ham ball tip meatloaf. Turkey pork chop andouille pork loin. Andouille pork belly ham hock biltong drumstick.</p>
+                            <p class="text-right"><a href="{{ path('colzak_home_contact') }}">en savoir plus >></a></p>
                         </div>
                     </div>
                 </div>
@@ -113,7 +115,7 @@
             </div>
 
             {#} next game {#}
-            <div class="clzk-block-container">
+            <div class="clzk-block-container clzk-next-game-container">
                 <h3 class="text-center">Prochain match</h3>
                 {{ render(controller('ColzakEventBundle:Event:nextGame')) }}
             </div>

@@ -1,0 +1,27 @@
+{% extends 'ColzakHomeBundle::layout.html.twig' %}
+
+{% block body %}
+    <div class="clzk-block-container">
+        <h1 class="text-center">Contact</h1>
+        <br />
+
+        {{ form_start(form) }}
+        {{ form_row(form.from) }}
+        {{ form_row(form.subject) }}
+        <div class="form-group">
+            {{ form_label(form.body) }}
+            <div class="col-md-9">
+                {{ form_widget(form.body, {'attr': {'class': 'form-control'}}) }}
+            </div>
+        </div>
+        {{ form_rest(form) }}
+        <br />
+        <div class="form-group">
+            <div class="col-md-3 col-md-offset-9">
+                <button type="submit" class="btn btn-primary btn-block">Envoyer</button>
+            </div>
+        </div>
+        {{ form_end(form) }}
+        <div class="clearfix"></div>
+    </div>
+{% endblock %}

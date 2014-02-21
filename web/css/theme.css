@@ -50,28 +50,6 @@
   border-color: #e0e0e0;
 }
 
-.btn-primary {
-  background: #c6200e;
-  background-repeat: repeat-x;
-  border-color: #c6200e;
-}
-
-.btn-primary:hover {
-  background: #f25443;
-  border-color: #f25443;
-}
-
-.btn-primary:active,
-.btn-primary.active {
-  background-color: #f25443;
-  border-color: #c6200e;
-}
-
-.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary {
-  background-color: #f25443;
-  border-color: #c6200e;
-}
-
 .btn-secondary {
   background: #31B0D5;
   background-repeat: repeat-x;

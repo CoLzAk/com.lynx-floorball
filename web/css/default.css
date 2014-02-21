@@ -1,9 +1,22 @@
 body {
     padding: 0;
     background: #DDD;
+    color: #333;
+    background: url(/img/brickwall.png) repeat #DDD;
+    /*background: url(/img/cream_dust.png) repeat #DDD;*/
+    /*background: url(/img/fabric_of_squares_gray.png) repeat #DDD;*/
+}
+h1, h2, h3 {
+    font-family: 'Architects Daughter', cursive;
 }
 .navbar {
     box-shadow: 5px 5px 1px #AAA;
+    font-family: 'Architects Daughter', cursive;
+    font-size: 1.2em;
+}
+.form-control {
+    margin: 5px auto;
+    padding: 5px 12px;
 }
 
 /*HEADER*/
@@ -56,7 +69,7 @@ body {
 /*BODY*/
 .clzk-body {
     min-height: 340px;
-    background: #DDD;
+    /*background: #DDD;*/
     margin-top:30px;
 }
 /*INDEX*/
@@ -141,11 +154,12 @@ body {
 }
 .clzk-last-articles-tab-content img{
     margin:auto;
+    max-height: 250px;
 }
 .clzk-article-summary {
     background: #000;
     position: absolute;
-    bottom: -10px;
+    bottom: -14px;
     color: #F7F7F7;
     padding: 10px;
 }
@@ -156,7 +170,10 @@ body {
     padding-top: 5px;
     margin-bottom: 10px;
 }
-/**/
+/*GAMES*/
+.clzk-next-game-container {
+    background: url("/img/vs.png") no-repeat scroll 50% 50% / 22% auto #F7F7F7;
+}
 /*TEAM*/
 .clzk-user-thumbnail-container {
     margin: 10px auto;

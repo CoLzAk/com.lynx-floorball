@@ -5,3 +5,7 @@ colzak_home_homepage:
 colzak_home_pages:
     pattern:  /page/{name}
     defaults: { _controller: ColzakHomeBundle:Home:loadPage}
+
+colzak_home_contact:
+    pattern:  /contact
+    defaults: { _controller: ColzakHomeBundle:Home:contact}

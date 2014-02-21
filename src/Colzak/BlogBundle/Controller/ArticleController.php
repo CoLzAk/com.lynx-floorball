@@ -20,6 +20,7 @@ class ArticleController extends Controller
         $category = $dm->getRepository('ColzakBlogBundle:Category')->findOneBy(array('name' => $categoryName));
         $articles = $dm->createQueryBuilder('ColzakBlogBundle:Article')
                         ->field('category')->references($category)
+                        ->sort('createdAt', 'desc')
                         ->limit(($categoryName == 'edito' ? 1 : 5))
                         ->getQuery()->execute();
         //fin test
