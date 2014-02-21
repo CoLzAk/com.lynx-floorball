@@ -26,156 +26,73 @@
     </div>
     <div class="clearfix"></div>
 {% endblock %}
-{% block body %}
-    <div class="row">
-        {#} Left part {#}
-        <div class="col-md-8">
-            <div class="clzk-last-articles-container">
-                <h3>Dernières actualités</h3>
-                {{ render(controller('ColzakBlogBundle:Article:lastArticles')) }}
-            </div>
-
-            <div class="clzk-block-container clzk-long-block">
-                {#} Edito {#}
-                {{ render(controller('ColzakBlogBundle:Article:lastArticles', {'categoryName': 'edito'})) }}
-
-                {#} Le floorball {#}
-                <div class="col-md-6">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <img src="/img/i_love_floorball.png" class="img-responsive clzk-img-rounded">
-                        </div>
-                        <div class="col-md-8">
-                            <h3>Le floorball, c'est quoi ?</h3>
-                            <p>Brisket ham hock leberkas short loin. Hamburger short loin venison kevin jerky t-bone turkey pancetta ham ball tip meatloaf. Turkey pork chop andouille pork loin. Andouille pork belly ham hock biltong drumstick.</p>
-                            <p class="text-right"><a href="{{ path('colzak_home_pages', {name:'what-is-floorball'}) }}">en savoir plus >></a></p>
-                        </div>
-                    </div>
-                </div>
-                {#} Le club {#}
-                <div class="col-md-6">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <img src="/img/bdx.png" class="img-responsive clzk-img-rounded">
-                        </div>
-                        <div class="col-md-8">
-                            <h3>Le club</h3>
-                            <p>Brisket ham hock leberkas short loin. Hamburger short loin venison kevin jerky t-bone turkey pancetta ham ball tip meatloaf. Turkey pork chop andouille pork loin. Andouille pork belly ham hock biltong drumstick.</p>
-                            <p class="text-right"><a href="{{ path('colzak_home_pages', {name:'club'}) }}">en savoir plus >></a></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="clearfix"></div>
-                {#} Dernier résultat {#}
-                <div class="col-md-6">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <img src="/img/team.png" class="img-responsive clzk-img-rounded">
-                        </div>
-                        <div class="col-md-8">
-                            <h3>Derniers résultats</h3>
-                            <p>Brisket ham hock leberkas short loin. Hamburger short loin venison kevin jerky t-bone turkey pancetta ham ball tip meatloaf. Turkey pork chop andouille pork loin. Andouille pork belly ham hock biltong drumstick.</p>
-                            <p class="text-right"><a href="{{ path('colzak_event_games') }}">en savoir plus >></a></p>
-                        </div>
-                    </div>
-                </div>
-                {#} Contact {#}
-                <div class="col-md-6">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <img src="/img/contact.png" class="img-responsive clzk-img-rounded">
-                        </div>
-                        <div class="col-md-8">
-                            <h3>Contact</h3>
-                            <p>Brisket ham hock leberkas short loin. Hamburger short loin venison kevin jerky t-bone turkey pancetta ham ball tip meatloaf. Turkey pork chop andouille pork loin. Andouille pork belly ham hock biltong drumstick.</p>
-                            <p class="text-right"><a href="{{ path('colzak_home_contact') }}">en savoir plus >></a></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="clearfix"></div>
-            </div>
+{% block body_left %}
+    {#} Left part {#}
+    <div class="col-md-8">
+        <div class="clzk-last-articles-container">
+            <h3>Dernières actualités</h3>
+            {{ render(controller('ColzakBlogBundle:Article:lastArticles')) }}
         </div>
 
-        {#} right part {#}
-        <div class="col-md-4">
-            {#} social actions {#}
-            <div class="clzk-block-container">
-                <h3 class="text-center">Ne manque rien !</h3>
-                <ul class="social-buttons cf list-unstyled">
-                    <li>
-                        <a href="http://twitter.com/share" class="socialite twitter-share" data-text="Les lynx de bordeaux" data-url="http://socialitejs.com" data-count="vertical" rel="nofollow" target="_blank"><span class="vhidden">Share on Twitter</span></a>
-                    </li>
-                    <li>
-                        <a href="https://plus.google.com/share?url=http://socialitejs.com" class="socialite googleplus-one" data-size="tall" data-href="http://socialitejs.com" rel="nofollow" target="_blank"><span class="vhidden">Share on Google+</span></a>
-                    </li>
-                    <li>
-                        <a href="http://www.facebook.com/sharer.php?u=http://www.socialitejs.com&t=Socialite.js" class="socialite facebook-like" data-href="http://socialitejs.com" data-send="false" data-layout="box_count" data-width="80" data-show-faces="false" rel="nofollow" target="_blank"><span class="vhidden">Share on Facebook</span></a>
-                    </li>
-                </ul>
-            </div>
+        <div class="clzk-block-container clzk-long-block">
+            {#} Edito {#}
+            {{ render(controller('ColzakBlogBundle:Article:lastArticles', {'categoryName': 'edito'})) }}
 
-            {#} next game {#}
-            <div class="clzk-block-container clzk-next-game-container">
-                <h3 class="text-center">Prochain match</h3>
-                {{ render(controller('ColzakEventBundle:Event:nextGame')) }}
-            </div>
-
-            {#} ranking {#}
-            <div class="clzk-block-container">
-                <h3 class="text-center">Classement</h3>
-                <div class="table-responsive">
-                    <table class="table table-hover">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Equipes</th>
-                                <th>J</th>
-                                <th>Pts</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Gladiateurs d'Orléans</td>
-                                <td>8</td>
-                                <td>17</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Griffons d'Oc</td>
-                                <td>8</td>
-                                <td>13</td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>IFK Paris 2</td>
-                                <td>8</td>
-                                <td>13</td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td>Impacts de Tours</td>
-                                <td>8</td>
-                                <td>13</td>
-                            </tr>
-                            <tr>
-                                <td>5</td>
-                                <td>Lynx de Bordeaux</td>
-                                <td>8</td>
-                                <td>9</td>
-                            </tr>
-                            <tr>
-                                <td>6</td>
-                                <td>PUC 2</td>
-                                <td>8</td>
-                                <td>7</td>
-                            </tr>
-                        </tbody>
-                    </table>
+            {#} Le floorball {#}
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-4">
+                        <img src="/img/i_love_floorball.png" class="img-responsive clzk-img-rounded">
+                    </div>
+                    <div class="col-md-8">
+                        <h3>Le floorball, c'est quoi ?</h3>
+                        <p>Brisket ham hock leberkas short loin. Hamburger short loin venison kevin jerky t-bone turkey pancetta ham ball tip meatloaf. Turkey pork chop andouille pork loin. Andouille pork belly ham hock biltong drumstick.</p>
+                        <p class="text-right"><a href="{{ path('colzak_home_pages', {name:'what-is-floorball'}) }}">en savoir plus >></a></p>
+                    </div>
                 </div>
             </div>
+            {#} Le club {#}
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-4">
+                        <img src="/img/bdx.png" class="img-responsive clzk-img-rounded">
+                    </div>
+                    <div class="col-md-8">
+                        <h3>Le club</h3>
+                        <p>Brisket ham hock leberkas short loin. Hamburger short loin venison kevin jerky t-bone turkey pancetta ham ball tip meatloaf. Turkey pork chop andouille pork loin. Andouille pork belly ham hock biltong drumstick.</p>
+                        <p class="text-right"><a href="{{ path('colzak_home_pages', {name:'club'}) }}">en savoir plus >></a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            {#} Dernier résultat {#}
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-4">
+                        <img src="/img/team.png" class="img-responsive clzk-img-rounded">
+                    </div>
+                    <div class="col-md-8">
+                        <h3>Derniers résultats</h3>
+                        <p>Brisket ham hock leberkas short loin. Hamburger short loin venison kevin jerky t-bone turkey pancetta ham ball tip meatloaf. Turkey pork chop andouille pork loin. Andouille pork belly ham hock biltong drumstick.</p>
+                        <p class="text-right"><a href="{{ path('colzak_event_games') }}">en savoir plus >></a></p>
+                    </div>
+                </div>
+            </div>
+            {#} Contact {#}
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-4">
+                        <img src="/img/contact.png" class="img-responsive clzk-img-rounded">
+                    </div>
+                    <div class="col-md-8">
+                        <h3>Contact</h3>
+                        <p>Brisket ham hock leberkas short loin. Hamburger short loin venison kevin jerky t-bone turkey pancetta ham ball tip meatloaf. Turkey pork chop andouille pork loin. Andouille pork belly ham hock biltong drumstick.</p>
+                        <p class="text-right"><a href="{{ path('colzak_home_contact') }}">en savoir plus >></a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
         </div>
-        <div class="clearfix"></div>
     </div>
 {% endblock %}
 

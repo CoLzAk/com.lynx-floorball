@@ -13,6 +13,10 @@
 
     {{ form_start(form) }}
         {{ form_rest(form) }}
-        <button type="submit" class="btn btn-primary">Valider</button>
+        <div class="form-group">
+            <div class="col-md-3 col-md-offset-9">
+                <button type="submit" class="btn btn-primary btn-block">Valider</button>
+            </div>
+        </div>
     {{ form_end(form) }}
 {% endblock %}

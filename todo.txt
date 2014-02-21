@@ -1,0 +1,13 @@
+reduce images weight (lazy loading, sprite, etc)
+minify / uglify css and js
+upgrade EventBundle :
+    add status to event
+    chose the two opponents for new game and ask results when event is 'closed'
+    create automated team ranking based on games
+use articles status
+stats page
+upgrade UserBundle
+    more informations on member (for stats)
+    add floorball field drawing on background to place players on it
+design media page
+allow messages to be read in admin

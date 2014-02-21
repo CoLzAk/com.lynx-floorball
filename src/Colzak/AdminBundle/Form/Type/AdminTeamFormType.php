@@ -13,18 +13,18 @@ class AdminTeamFormType extends AbstractType
     {
         $builder
             ->add('name', 'text', array('label' => 'Nom'))
-            ->add('teamLogo', 'file')
+            ->add('teamLogo', 'file', array('label' => 'Logo', 'required' => false))
             ->add('pool', 'choice', array(
                     'label' => 'Poule',
                     'choices' => Team::getPoolList()
                 ))
-            ->add('point', 'number', array('label' => 'Points'))
-            ->add('gamePlayed', 'number', array('label' => 'Matches joués'))
-            ->add('goalScored', 'number', array('label' => 'But marqués'))
-            ->add('goalLet', 'number', array('label' => 'But encaissés'))
-            ->add('win', 'number', array('label' => 'Matches gagnés'))
-            ->add('defeat', 'number', array('label' => 'Matches perdus'))
-            ->add('draw', 'number', array('label' => 'Matches nuls'))
+            ->add('point', 'number', array('label' => 'Points', 'required' => false))
+            ->add('gamePlayed', 'number', array('label' => 'Matches joués', 'required' => false))
+            ->add('goalScored', 'number', array('label' => 'But marqués', 'required' => false))
+            ->add('goalLet', 'number', array('label' => 'But encaissés', 'required' => false))
+            ->add('win', 'number', array('label' => 'Matches gagnés', 'required' => false))
+            ->add('defeat', 'number', array('label' => 'Matches perdus', 'required' => false))
+            ->add('draw', 'number', array('label' => 'Matches nuls', 'required' => false))
         ;
     }
 
