@@ -14,14 +14,18 @@ class HomeController extends Controller
     public function loadPageAction($name) {
     	$dm = $this->get('doctrine_mongodb')->getManager();
     	switch ($name) {
-    		case 'team':
-    			$data = $dm->getRepository('ColzakUserBundle:User')->findAll();
+    		case 'what-is-floorball':
+    			$templateName = 'what_is_floorball';
     			break;
-    		
+            case 'about':
+                $templateName = 'about';
+                break;
+            case 'club':
+                $templateName = 'club';
+                break;
     		default:
-    			# code...
     			break;
     	}
-        return $this->render('ColzakHomeBundle:Home:'.$name.'.html.twig', array('data' => $data));
+        return $this->render('ColzakHomeBundle:Home:'.$templateName.'.html.twig');
     }
 }
