@@ -1,16 +1,18 @@
 {% if game is defined and game is not null %}
-	<div class="col-md-5">
-	    <img src="/img/bfc_logo.png" class="img-responsive">
-	    {#<p class="text-center">Lynx de Bordeaux</p>#}
+	<div class="clzk-next-game-container">
+		<div class="col-md-5">
+		    <img src="/img/bfc_logo.png" class="img-responsive">
+		    {#<p class="text-center">Lynx de Bordeaux</p>#}
+		</div>
+		<div class="col-md-2"><!-- <img src="/img/vs.png" class="clzk-img-versus"> --></div>
+		<div class="col-md-5">
+		    <img src="{{ game.opponent.teamLogoPath }}" class="img-responsive">
+		    {#<p class="text-center">{{ game.opponent.name }}</p>#}
+		</div>
+		<div class="clearfix"></div>
+		<br />
+		<p class="text-center"><strong>{{ game.date|date('d M Y') }} à {{ game.place }}</strong></p>
 	</div>
-	<div class="col-md-2"><!-- <img src="/img/vs.png" class="clzk-img-versus"> --></div>
-	<div class="col-md-5">
-	    <img src="{{ game.opponent.teamLogoPath }}" class="img-responsive">
-	    {#<p class="text-center">{{ game.opponent.name }}</p>#}
-	</div>
-	<div class="clearfix"></div>
-	<br />
-	<p class="text-center"><strong>{{ game.date|date('d M Y') }} à {{ game.place }}</strong></p>
 {% else %}
 	<p class="text-center">Aucun match prévu prochainement</p>
 {% endif %}

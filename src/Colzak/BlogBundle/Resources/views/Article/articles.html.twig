@@ -1,24 +1,27 @@
 {% extends 'ColzakHomeBundle::layout.html.twig' %}
 
-{% block body %}
+{% block body_left %}
 <div class="col-md-8">
     <div class="clzk-block-container">
-        <h1 class="text-left">Dernières actualités</h1>
         {% for article in articles %}
-            <h2 class="text-center">{{ article.title }}</h2>
-            <div class="clzk-article-img-container">
-                {% if article.filePath is not null %}
-                    <img src="{{ article.filePath }}" class="img-responsive">
-                {% else %}
-                    {#} img par defaut {#}
-                {% endif %}
-            </div>
-            <div class="clzk-article-content">
-                    {#} date container {#}
+            <h2 class="text-center clzk-article-title">{{ article.title }}</h2>
+
+            {% if article.filePath is not null %}
+                <img src="{{ article.filePath }}" class="clzk-article-img">
+            {% else %}
+                {#} img par defaut {#}
+            {% endif %}
+            <br />
+            <div class="clzk-article-content col-md-12">
+                {#} date container 
                 <div class="pull-left clzk-article-date-container col-md-3">
-                    {{ article.createdAt|date('D m Y') }}
+                    <p class="text-center clzk-article-date-month">{{ article.createdAt|date('M') }}</p>
+                    <p class="text-center clzk-article-date-day">{{ article.createdAt|date('d') }}</p>
+                    <p class="text-center clzk-article-date-year">{{ article.createdAt|date('Y') }}</p>
                 </div>
-                <p>{{ article.content }}</p>
+                {#}
+                <p>{{ article.content|raw }}</p>
+                <p class="text-right"><small><i>Le {{ article.createdAt|date('d M Y') }}</i></small></p>
                 <div class="clearfix"></div>
             </div>
             {% if not loop.last %}<hr>{% endif %}

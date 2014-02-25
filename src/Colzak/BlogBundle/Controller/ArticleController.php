@@ -48,8 +48,9 @@ class ArticleController extends Controller
         $dm = $this->get('doctrine_mongodb')->getManager();
         $category = $dm->getRepository('ColzakBlogBundle:Category')->findOneBy(array('name' => $categoryName));
         $q = $dm->createQueryBuilder('ColzakBlogBundle:Article')
-                        ->field('category')->references($category);
-        (null === $limit ?: $q->limit($limit));
+                ->field('category')->references($category)
+                ->sort('createdAt', 'desc');
+            (null === $limit ?: $q->limit($limit));
         return $q->getQuery()->execute();
     }
 }

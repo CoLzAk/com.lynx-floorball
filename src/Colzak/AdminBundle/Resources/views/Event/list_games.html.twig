@@ -10,51 +10,47 @@
         </div>
     </div>
     <hr>
-
-    {% if games is not null %}
-        <div class="table-responsive">
-            <table class="table table-hover">
-                <thead>
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Equipes</th>
+                    <th>Adresse</th>
+                    <th>Date</th>
+                    <th>Score</th>
+                    <th colspan="2">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for game in games if game is not null %}
                     <tr>
-                        <th>Id</th>
-                        <th>Adversaire</th>
-                        <th>Adresse</th>
-                        <th>Date</th>
-                        <th>Domicile</th>
-                        <th>Score</th>
-                        <th>Score adv.</th>
-                        <th colspan="2">Actions</th>
+                        <td>{{ game.id }}</td>
+                        <td>
+                            <img src="{{ game.team1.teamLogoPath }}" class="img-responsive clzk-admin-img-table pull-left">
+                            <p class="pull-left">V.S.</p>
+                            <img src="{{ game.team2.teamLogoPath }}" class="img-responsive clzk-admin-img-table">
+                        </td>
+                        <td>{{ game.place }}</td>
+                        <td>{{ game.date|date('d/m/Y') }}</td>
+                        <td>{{ game.team1Score }}-{{ game.team2Score }}</td>
+                        <td>
+                            <a href="{{ path('colzak_admin_game_edit', {id: game.id}) }}" class="btn btn-sm btn-default">
+                                <span class="glyphicon glyphicon-edit"></span> Editer
+                            </a>
+                        </td>
+                        <td>
+                            <a href="{{ path('colzak_admin_game_delete', {id: game.id}) }}" class="btn btn-sm btn-danger">
+                                <span class="glyphicon glyphicon-remove"></span> Supprimer
+                            </a>
+                        </td>
                     </tr>
-                </thead>
-                <tbody>
-                    {% for game in games %}
-
-                        <tr>
-                            <td>{{ game.id }}</td>
-                            <td>{% if game.opponent is not null %}<img src="{{ game.opponent.teamLogoPath }}" class="img-responsive clzk-admin-img-table">{{ game.opponent.name }}{% endif %}</td>
-                            <td>{{ game.place }}</td>
-                            <td>{{ game.date|date('d/m/Y') }}</td>
-                            <td>{{ game.inHome }}</td>
-                            <td>{{ game.score }}</td>
-                            <td>{{ game.opponentScore }}</td>
-                            <td>
-                                <a href="{{ path('colzak_admin_game_edit', {id: game.id}) }}" class="btn btn-sm btn-default">
-                                    <span class="glyphicon glyphicon-edit"></span> Editer
-                                </a>
-                            </td>
-                            <td>
-                                <a href="{{ path('colzak_admin_game_delete', {id: game.id}) }}" class="btn btn-sm btn-danger">
-                                    <span class="glyphicon glyphicon-remove"></span> Supprimer
-                                </a>
-                            </td>
-                        </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-        </div>
-    {% else %}
-        <p class="text-center">
-            Aucun article disponible
-        </p>
-    {% endif %}
+                {% else %}
+                    <tr>
+                        <td colspan="7"><p class="text-center">Aucun match à venir</p></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 {% endblock %}

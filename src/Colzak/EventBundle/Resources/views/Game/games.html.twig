@@ -1,0 +1,23 @@
+{% extends 'ColzakHomeBundle::layout.html.twig' %}
+
+{% block body_left %}
+<div class="col-md-8">
+    <div class="clzk-block-container">
+        <h1 class="text-center">Les matches</h1>
+        <div class="col-md-12">
+            {% for game in games %}
+                <div class="clzk-game-container">
+                    <p class="text-center">{{ game.date|date('d M Y') }} - {{ game.place }}
+                    <div class="col-md-3 col-md-offset-1"><img src="{{ game.team1.teamLogoPath }}" class="img-responsive"></div>
+                    <div class="col-md-2"></div>
+                    <div class="col-md-3 col-md-offset-2"><img src="{{ game.team2.teamLogoPath }}" class="img-responsive"></div>
+                    <div class="clearfix"></div><hr>
+                    <div class="col-md-2 col-md-offset-10"><a href="#" class="btn btn-block btn-primary">Détail</a></div>
+                    <div class="clearfix"></div>
+                </div>
+                {% if not loop.last %}<hr>{% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

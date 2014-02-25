@@ -169,9 +169,54 @@ h1, h2, h3 {
     padding-top: 5px;
     margin-bottom: 10px;
 }
+.clzk-article-title {
+    background: none repeat scroll 0 0 #0195DD;
+    color: #FFFFFF;
+    height: 50px;
+    margin: 0;
+    padding-top: 10px;
+    width: 100%;
+}
+.clzk-article-img{
+    margin: auto;
+    height: 250px;
+    display: block;
+}
+/*.clzk-article-date-container {
+    border-radius: 10px 0;
+    box-shadow: 3px 3px 5px #CCCCCC;
+    height: 100px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    width: 100px;
+    padding: 0;
+}
+.clzk-article-date-month {
+    background: none repeat scroll 0 0 #A80000;
+    border-radius: 10px 0 0;
+    color: #FFFFFF;
+    font-weight: bold;
+    height: 25px;
+    padding-top: 2px;
+    width: 100%;
+    margin: 0;
+}
+.clzk-article-date-day {
+    font-size: 2.7em;
+    margin: 0;
+}
+.clzk-article-date-year {
+    font-size: 0.8em;
+}*/
 /*GAMES*/
 .clzk-next-game-container {
     background: url("/img/vs.png") no-repeat scroll 50% 50% / 22% auto #F7F7F7;
+}
+.clzk-game-container {
+    background: url("/img/vs.png") no-repeat scroll 50% 50% / 8% auto #FFF;
+    border: 1px #ddd solid;
+    padding: 10px;
+    margin: 10px auto;
 }
 /*TEAM*/
 .clzk-user-thumbnail-container {

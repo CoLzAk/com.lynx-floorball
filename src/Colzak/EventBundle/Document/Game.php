@@ -18,7 +18,12 @@ class Game
     /**
      * @MongoDB\ReferenceOne(targetDocument="Team")
      */
-    protected $opponent;
+    protected $team1;
+
+    /**
+     * @MongoDB\ReferenceOne(targetDocument="Team")
+     */
+    protected $team2;
 
     /**
      * @MongoDB\String
@@ -31,24 +36,14 @@ class Game
     protected $date;
 
     /**
-     * @MongoDB\Boolean
+     * @MongoDB\Int
      */
-    protected $inHome; //match a domicile
+    protected $team1Score;
 
     /**
      * @MongoDB\Int
      */
-    protected $score;
-
-    /**
-     * @MongoDB\Int
-     */
-    protected $opponentScore;
-
-    /**
-     * @MongoDB\ReferenceOne(targetDocument="GameStatus")
-     */
-    protected $gameStatus;
+    protected $team2Score;
 
     /**
      * Get id
@@ -58,6 +53,50 @@ class Game
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Set team1
+     *
+     * @param Colzak\EventBundle\Document\Team $team1
+     * @return self
+     */
+    public function setTeam1(\Colzak\EventBundle\Document\Team $team1)
+    {
+        $this->team1 = $team1;
+        return $this;
+    }
+
+    /**
+     * Get team1
+     *
+     * @return Colzak\EventBundle\Document\Team $team1
+     */
+    public function getTeam1()
+    {
+        return $this->team1;
+    }
+
+    /**
+     * Set team2
+     *
+     * @param Colzak\EventBundle\Document\Team $team2
+     * @return self
+     */
+    public function setTeam2(\Colzak\EventBundle\Document\Team $team2)
+    {
+        $this->team2 = $team2;
+        return $this;
+    }
+
+    /**
+     * Get team2
+     *
+     * @return Colzak\EventBundle\Document\Team $team2
+     */
+    public function getTeam2()
+    {
+        return $this->team2;
     }
 
     /**
@@ -105,112 +144,46 @@ class Game
     }
 
     /**
-     * Set inHome
+     * Set team1Score
      *
-     * @param boolean $inHome
+     * @param int $team1Score
      * @return self
      */
-    public function setInHome($inHome)
+    public function setTeam1Score($team1Score)
     {
-        $this->inHome = $inHome;
+        $this->team1Score = $team1Score;
         return $this;
     }
 
     /**
-     * Get inHome
+     * Get team1Score
      *
-     * @return boolean $inHome
+     * @return int $team1Score
      */
-    public function getInHome()
+    public function getTeam1Score()
     {
-        return $this->inHome;
+        return $this->team1Score;
     }
 
     /**
-     * Set score
+     * Set team2Score
      *
-     * @param int $score
+     * @param int $team2Score
      * @return self
      */
-    public function setScore($score)
+    public function setTeam2Score($team2Score)
     {
-        $this->score = $score;
+        $this->team2Score = $team2Score;
         return $this;
     }
 
     /**
-     * Get score
+     * Get team2Score
      *
-     * @return int $score
+     * @return int $team2Score
      */
-    public function getScore()
+    public function getTeam2Score()
     {
-        return $this->score;
-    }
-
-    /**
-     * Set opponentScore
-     *
-     * @param int $opponentScore
-     * @return self
-     */
-    public function setOpponentScore($opponentScore)
-    {
-        $this->opponentScore = $opponentScore;
-        return $this;
-    }
-
-    /**
-     * Get opponentScore
-     *
-     * @return int $opponentScore
-     */
-    public function getOpponentScore()
-    {
-        return $this->opponentScore;
-    }
-
-    /**
-     * Set gameStatus
-     *
-     * @param Colzak\EventBundle\Document\GameStatus $gameStatus
-     * @return self
-     */
-    public function setGameStatus(\Colzak\EventBundle\Document\GameStatus $gameStatus)
-    {
-        $this->gameStatus = $gameStatus;
-        return $this;
-    }
-
-    /**
-     * Get gameStatus
-     *
-     * @return Colzak\EventBundle\Document\GameStatus $gameStatus
-     */
-    public function getGameStatus()
-    {
-        return $this->gameStatus;
-    }
-
-    /**
-     * Set opponent
-     *
-     * @param Colzak\EventBundle\Document\Team $opponent
-     * @return self
-     */
-    public function setOpponent(\Colzak\EventBundle\Document\Team $opponent)
-    {
-        $this->opponent = $opponent;
-        return $this;
-    }
-
-    /**
-     * Get opponent
-     *
-     * @return Colzak\EventBundle\Document\Team $opponent
-     */
-    public function getOpponent()
-    {
-        return $this->opponent;
+        return $this->team2Score;
     }
 }
