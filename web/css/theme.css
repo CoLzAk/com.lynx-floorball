@@ -166,10 +166,6 @@
   border-color: #3a3f44;
 }
 
-.navbar .navbar-nav > .active > a {
-  background-color: #f8f8f8;
-}
-
 .navbar-brand {
   margin-top: -5px;
 }

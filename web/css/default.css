@@ -63,8 +63,17 @@ h1, h2, h3 {
 }
 .clzk-menu > li > a:hover {
     border-top: 2px #ffff28 solid;
-    margin-top: -2px;
+    padding-top: 13px;
     color: #F7F7F7;
+}
+.navbar .navbar-nav > .active > a {
+    background: none;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: #F7F7F7;
+  background: none;
+  border-top: 2px #ffff28 solid;
+  padding-top: 13px;
 }
 /*BODY*/
 .clzk-body {

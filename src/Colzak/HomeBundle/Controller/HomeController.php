@@ -10,7 +10,8 @@ class HomeController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('ColzakHomeBundle:Home:index.html.twig');
+        // return $this->render('ColzakHomeBundle:Home:index.html.twig');
+        return $this->render('ColzakHomeBundle:Home:single_scroll.html.twig');
     }
 
     public function loadPageAction($name) {
