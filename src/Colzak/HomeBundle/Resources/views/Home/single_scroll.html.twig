@@ -45,6 +45,7 @@
              <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right clzk-menu">
                     <li><a href="#news">Actualités</a></li>
+                    <li><a href="#what-is-flooball">Le floorball, c'est quoi ?</a></li>
                     <li><a href="#team">L'équipe</a></li>
                     <li><a href="#games">Les matchs</a></li>
                     <li><a href="#stats">Les stats</a></li>
@@ -65,7 +66,20 @@
                 <div class="clzk-last-articles-container">
                     {{ render(controller('ColzakBlogBundle:Article:lastArticles')) }}
                 </div>
+                <br />
+                <a href="#team" class="next-page-container">
+                    <div class="col-md-12 text-center">
+                        <span class="glyphicon glyphicon-chevron-down"></span>
+                    </div>
+                </a>
             </div>
+        </section>
+
+        <section id="what-is-floorball" class="page">
+            <div class="clzk-home-page-title">
+                <h1 class="text-center">Le floorball, c'est quoi ?</h1>
+            </div>
+
         </section>
 
         <section id="team" class="page">
@@ -73,6 +87,13 @@
                 <h1 class="text-center">L'équipe</h1>
             </div>
             {{ render(controller('ColzakUserBundle:User:team')) }}
+            <div class="clearfix"></div>
+            <br />
+            <a href="#games" class="next-page-container">
+                <div class="text-center">
+                    <span class="glyphicon glyphicon-chevron-down"></span>
+                </div>
+            </a>
         </section>
 
         <section id="games" class="page">
