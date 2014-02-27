@@ -12,4 +12,10 @@ class UserController extends Controller
     	$users = $dm->getRepository('ColzakUserBundle:User')->findAll();
         return $this->render('ColzakUserBundle:User:index.html.twig', array('users' => $users));
     }
+
+    public function teamAction() {
+        $dm = $this->get('doctrine_mongodb')->getManager();
+        $users = $dm->getRepository('ColzakUserBundle:User')->findAll();
+        return $this->render('ColzakUserBundle:User:team.html.twig', array('users' => $users));
+    }
 }

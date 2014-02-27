@@ -1,16 +1,16 @@
 body {
     padding: 0;
-    background: #DDD;
+    background: #F7F7F7;
     color: #333;
-    background: url(/img/brickwall.png) repeat #DDD;
+    /*background: url(/img/brickwall.png) repeat #DDD;*/
     /*background: url(/img/cream_dust.png) repeat #DDD;*/
     /*background: url(/img/fabric_of_squares_gray.png) repeat #DDD;*/
 }
 h1, h2, h3 {
-    font-family: 'Architects Daughter', cursive;
+    /*font-family: 'Architects Daughter', cursive;*/
 }
 .navbar {
-    box-shadow: 5px 5px 1px #AAA;
+    /*box-shadow: 5px 5px 1px #AAA;*/
     font-family: 'Architects Daughter', cursive;
     font-size: 1.2em;
 }
@@ -78,7 +78,10 @@ h1, h2, h3 {
 /*BODY*/
 .clzk-body {
     min-height: 340px;
-    margin-top:30px;
+    /*margin-top:30px;*/
+}
+.clzk-body section {
+    padding-top: 60px;
 }
 /*INDEX*/
 /*SOCIALITE*/
@@ -117,7 +120,7 @@ h1, h2, h3 {
     min-height: 498px;
 }
 .clzk-last-articles-container {
-    height: 305px;
+    height: 400px;
     width: 100%;
     border: 4px #000 solid;
     background: #333;
@@ -130,6 +133,18 @@ h1, h2, h3 {
     width: 100%;
     padding-top: 5px;
     padding-left: 15px;
+}
+.clzk-last-articles-container img {
+    max-width: 100%;
+    max-height: 392px;
+}
+.carousel-inner > .item {
+    height: 400px;
+}
+.clzk-home-page-title {
+    height: 100px;
+    margin-top: 20px;
+    padding-top: 30px;
 }
 /*ARTICLES*/
 .clzk-last-articles-tab-container {
@@ -230,6 +245,10 @@ h1, h2, h3 {
 /*TEAM*/
 .clzk-user-thumbnail-container {
     margin: 10px auto;
+}
+.clzk-team-picture {
+    padding: 0;
+    margin: 0;
 }
 /*FOOTER*/
 .clzk-footer .navbar {

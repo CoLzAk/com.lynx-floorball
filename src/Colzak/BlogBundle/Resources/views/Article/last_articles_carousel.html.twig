@@ -1,0 +1,29 @@
+<div id="clzk-last-article-carousel" class="carousel slide" data-ride="carousel">
+    
+    {#<!-- Indicators -->
+    <ol class="carousel-indicators">
+        {% for article in articles %}
+            <li data-target="#clzk-last-article-carousel" data-slide-to="{{ loop.index }}" {% if loop.first %} class="active" {% endif %}></li>
+        {% endfor %}
+    </ol>#}
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+        {% for article in articles %}
+            <div class="item {% if loop.first %} active {% endif %}">
+                <img src="{{ article.filePath }}" alt="..." class="img-responsive clzk-article-img">
+                <div class="carousel-caption">
+                    <p class="text-center">{{ article.description|slice(0,100) }}...</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <!-- Controls -->
+    <a class="left carousel-control" href="#clzk-last-article-carousel" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <a class="right carousel-control" href="#clzk-last-article-carousel" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
+</div>

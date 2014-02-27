@@ -29,7 +29,8 @@ class ArticleController extends Controller
         if ($categoryName == 'edito') {
             return $this->render('ColzakBlogBundle:Article:last_edito.html.twig', array('articles' => $articles));
         }
-        return $this->render('ColzakBlogBundle:Article:last_articles.html.twig', array('articles' => $articles));
+        // return $this->render('ColzakBlogBundle:Article:last_articles.html.twig', array('articles' => $articles));
+        return $this->render('ColzakBlogBundle:Article:last_articles_carousel.html.twig', array('articles' => $articles));
     }
 
     public function mediaAction() {
