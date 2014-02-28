@@ -27,6 +27,7 @@
              <div class="collapse navbar-collapse" id="clzk-spy-nav">
                 <ul class="nav navbar-nav navbar-right clzk-menu">
                     <li class="active"><a href="#news">Actualités</a></li>
+                    <li><a href="#what-is-flooball">Le floorball, c'est quoi ?</a></li>
                     <li><a href="#team">L'équipe</a></li>
                     <li><a href="#games">Les matches</a></li>
                     <li><a href="#stats">Les stats</a></li>
@@ -110,77 +111,6 @@
     <!-- </div> -->
 {% endblock %}
 
-{#}
-{% block body_left %}
-    {#} {#} Left part {#} {#}
-    <div class="col-md-8">
-        <div class="clzk-last-articles-container">
-            <h3>Dernières actualités</h3>
-            {{ render(controller('ColzakBlogBundle:Article:lastArticles')) }}
-        </div>
-
-        <div class="clzk-block-container clzk-long-block">
-            {#} {#}Edito {#} {#}
-            {{ render(controller('ColzakBlogBundle:Article:lastArticles', {'categoryName': 'edito'})) }}
-
-            {#} {#} Le floorball {#} {#}
-            <div class="col-md-6">
-                <div class="row">
-                    <div class="col-md-4">
-                        <img src="/img/i_love_floorball.png" class="img-responsive clzk-img-rounded">
-                    </div>
-                    <div class="col-md-8">
-                        <h3>Le floorball, c'est quoi ?</h3>
-                        <p>Brisket ham hock leberkas short loin. Hamburger short loin venison kevin jerky t-bone turkey pancetta ham ball tip meatloaf. Turkey pork chop andouille pork loin. Andouille pork belly ham hock biltong drumstick.</p>
-                        <p class="text-right"><a href="{{ path('colzak_home_pages', {name:'what-is-floorball'}) }}">en savoir plus >></a></p>
-                    </div>
-                </div>
-            </div>
-            {#} {#} Le club {#} {#}
-            <div class="col-md-6">
-                <div class="row">
-                    <div class="col-md-4">
-                        <img src="/img/bdx.png" class="img-responsive clzk-img-rounded">
-                    </div>
-                    <div class="col-md-8">
-                        <h3>Le club</h3>
-                        <p>Brisket ham hock leberkas short loin. Hamburger short loin venison kevin jerky t-bone turkey pancetta ham ball tip meatloaf. Turkey pork chop andouille pork loin. Andouille pork belly ham hock biltong drumstick.</p>
-                        <p class="text-right"><a href="{{ path('colzak_home_pages', {name:'club'}) }}">en savoir plus >></a></p>
-                    </div>
-                </div>
-            </div>
-            <div class="clearfix"></div>
-            {#} {#} Dernier résultat {#} {#}
-            <div class="col-md-6">
-                <div class="row">
-                    <div class="col-md-4">
-                        <img src="/img/team.png" class="img-responsive clzk-img-rounded">
-                    </div>
-                    <div class="col-md-8">
-                        <h3>Derniers résultats</h3>
-                        <p>Brisket ham hock leberkas short loin. Hamburger short loin venison kevin jerky t-bone turkey pancetta ham ball tip meatloaf. Turkey pork chop andouille pork loin. Andouille pork belly ham hock biltong drumstick.</p>
-                        <p class="text-right"><a href="{{ path('colzak_event_games') }}">en savoir plus >></a></p>
-                    </div>
-                </div>
-            </div>
-            {#} {#} Contact {#} {#}
-            <div class="col-md-6">
-                <div class="row">
-                    <div class="col-md-4">
-                        <img src="/img/contact.png" class="img-responsive clzk-img-rounded">
-                    </div>
-                    <div class="col-md-8">
-                        <h3>Contact</h3>
-                        <p>Brisket ham hock leberkas short loin. Hamburger short loin venison kevin jerky t-bone turkey pancetta ham ball tip meatloaf. Turkey pork chop andouille pork loin. Andouille pork belly ham hock biltong drumstick.</p>
-                        <p class="text-right"><a href="{{ path('colzak_home_contact') }}">en savoir plus >></a></p>
-                    </div>
-                </div>
-            </div>
-            <div class="clearfix"></div>
-        </div>
-    </div>
-{% endblock %}
-{#}
 {% block extra_javascripts %}
     {% javascripts
         "js/index.js"
