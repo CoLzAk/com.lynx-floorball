@@ -22,7 +22,10 @@ h1, h2, h3 {
 /*HEADER*/
 .clzk-header-cover-container {
     height: 450px;
-    background: url("/img/bfc_cover2.png") no-repeat scroll 50% 20% / 70% auto #000;
+    /*background: url("/img/bfc_cover2.png") no-repeat scroll 50% 20% / 70% auto #000;*/
+    background: url("/img/bfc_cover2.png") no-repeat center center #000;
+    -moz-background-size: cover;
+    background-size: cover;
 
 }
 .clzk-navbar-container {
