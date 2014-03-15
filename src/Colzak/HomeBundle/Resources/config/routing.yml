@@ -2,9 +2,9 @@ colzak_home_homepage:
     pattern:  /
     defaults: { _controller: ColzakHomeBundle:Home:index }
 
-colzak_home_pages:
-    pattern:  /page/{name}
-    defaults: { _controller: ColzakHomeBundle:Home:loadPage}
+# colzak_home_pages:
+#     pattern:  /page/{name}
+#     defaults: { _controller: ColzakHomeBundle:Home:loadPage}
 
 colzak_home_contact:
     pattern:  /contact

@@ -626,12 +626,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/mongodb-odm.git",
-                "reference": "db5fd69432d2e5c031529e4a6a79e8da60b74dff"
+                "reference": "c25f282adccac62f9f70c36727e3520d2f4be70f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/mongodb-odm/zipball/db5fd69432d2e5c031529e4a6a79e8da60b74dff",
-                "reference": "db5fd69432d2e5c031529e4a6a79e8da60b74dff",
+                "url": "https://api.github.com/repos/doctrine/mongodb-odm/zipball/c25f282adccac62f9f70c36727e3520d2f4be70f",
+                "reference": "c25f282adccac62f9f70c36727e3520d2f4be70f",
                 "shasum": ""
             },
             "require": {
@@ -696,7 +696,7 @@
                 "odm",
                 "persistence"
             ],
-            "time": "2014-02-09 14:57:03"
+            "time": "2014-03-13 15:48:42"
         },
         {
             "name": "doctrine/mongodb-odm-bundle",
@@ -705,12 +705,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/DoctrineMongoDBBundle.git",
-                "reference": "b9a52dc9961d63f837af3b1bdbbb7759476d91d9"
+                "reference": "037e4d054364abd5ece804440fd8242639b021d6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/DoctrineMongoDBBundle/zipball/b9a52dc9961d63f837af3b1bdbbb7759476d91d9",
-                "reference": "b9a52dc9961d63f837af3b1bdbbb7759476d91d9",
+                "url": "https://api.github.com/repos/doctrine/DoctrineMongoDBBundle/zipball/037e4d054364abd5ece804440fd8242639b021d6",
+                "reference": "037e4d054364abd5ece804440fd8242639b021d6",
                 "shasum": ""
             },
             "require": {
@@ -750,7 +750,7 @@
                     "homepage": "http://avalanche123.com"
                 },
                 {
-                    "name": "Jonathan Wage",
+                    "name": "Jonathan H. Wage",
                     "email": "jonwage@gmail.com",
                     "homepage": "http://www.jwage.com/",
                     "role": "Creator"
@@ -767,7 +767,7 @@
                 "persistence",
                 "symfony"
             ],
-            "time": "2014-02-04 16:15:58"
+            "time": "2014-03-10 15:20:26"
         },
         {
             "name": "doctrine/orm",
@@ -953,12 +953,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfSymfony/FOSFacebookBundle.git",
-                "reference": "73192b835241d9b89fba9c50d8e458a0391604fb"
+                "reference": "2c327ca3148f32f14a9b891e52fe61453d7446bf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSFacebookBundle/zipball/73192b835241d9b89fba9c50d8e458a0391604fb",
-                "reference": "73192b835241d9b89fba9c50d8e458a0391604fb",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSFacebookBundle/zipball/2c327ca3148f32f14a9b891e52fe61453d7446bf",
+                "reference": "2c327ca3148f32f14a9b891e52fe61453d7446bf",
                 "shasum": ""
             },
             "require": {
@@ -1007,7 +1007,7 @@
             "keywords": [
                 "facebook"
             ],
-            "time": "2014-01-17 15:06:29"
+            "time": "2014-03-04 00:10:21"
         },
         {
             "name": "friendsofsymfony/jsrouting-bundle",
@@ -1194,12 +1194,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfSymfony/FOSUserBundle.git",
-                "reference": "ae2be6ca5886696ec6b20e31340387a3fd7d676e"
+                "reference": "c4103172903de83563790d42ea203e3758fe9794"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSUserBundle/zipball/ae2be6ca5886696ec6b20e31340387a3fd7d676e",
-                "reference": "ae2be6ca5886696ec6b20e31340387a3fd7d676e",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSUserBundle/zipball/c4103172903de83563790d42ea203e3758fe9794",
+                "reference": "c4103172903de83563790d42ea203e3758fe9794",
                 "shasum": ""
             },
             "require": {
@@ -1254,7 +1254,7 @@
             "keywords": [
                 "User management"
             ],
-            "time": "2014-02-19 14:32:53"
+            "time": "2014-03-14 17:10:00"
         },
         {
             "name": "gedmo/doctrine-extensions",
@@ -2326,12 +2326,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/stof/StofDoctrineExtensionsBundle.git",
-                "reference": "cbec28d1ed6dce13b0c18c2dfd8f6af81e65cbae"
+                "reference": "ec565406edc50453f9d61e2fd7c30c61e406c6b4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/stof/StofDoctrineExtensionsBundle/zipball/cbec28d1ed6dce13b0c18c2dfd8f6af81e65cbae",
-                "reference": "cbec28d1ed6dce13b0c18c2dfd8f6af81e65cbae",
+                "url": "https://api.github.com/repos/stof/StofDoctrineExtensionsBundle/zipball/ec565406edc50453f9d61e2fd7c30c61e406c6b4",
+                "reference": "ec565406edc50453f9d61e2fd7c30c61e406c6b4",
                 "shasum": ""
             },
             "require": {
@@ -2379,7 +2379,7 @@
                 "translatable",
                 "tree"
             ],
-            "time": "2014-01-23 11:00:25"
+            "time": "2014-02-21 11:10:28"
         },
         {
             "name": "swiftmailer/swiftmailer",

@@ -12,7 +12,8 @@ class AdminArticleController extends Controller {
     public function listAction() {
         $dm = $this->get('doctrine_mongodb')->getManager();
         $articles = $dm->getRepository('ColzakBlogBundle:Article')->findAll();
-        return $this->render('ColzakAdminBundle:Article:list.html.twig', array('articles' => $articles));
+        $categories = $dm->getRepository('ColzakBlogBundle:Category')->findAll();
+        return $this->render('ColzakAdminBundle:Article:list.html.twig', array('articles' => $articles, 'categories' => $categories));
     }
 
     public function newAction() {

@@ -2,6 +2,7 @@ body {
     padding: 0;
     background: #DDD;
     color: #333;
+    font-size: 16px;
     background: url(/img/brickwall.png) repeat #DDD;
     /*background: url(/img/cream_dust.png) repeat #DDD;*/
     /*background: url(/img/fabric_of_squares_gray.png) repeat #DDD;*/
@@ -23,7 +24,7 @@ h1, h2, h3 {
 .clzk-header-cover-container {
     height: 450px;
     /*background: url("/img/bfc_cover2.png") no-repeat scroll 50% 20% / 70% auto #000;*/
-    background: url("/img/bfc_cover2.png") no-repeat center center #000;
+    background: url("/img/bfc_cover2.png") no-repeat center 20% #000;
     -moz-background-size: cover;
     background-size: cover;
 
@@ -224,6 +225,13 @@ h1, h2, h3 {
 /*TEAM*/
 .clzk-user-thumbnail-container {
     margin: 10px auto;
+}
+/*WHAT IS FLOORBALL*/
+.what-is-floorball img {
+    margin: auto;
+}
+.what-is-floorball li, .what-is-floorball p {
+    font-size: 16px;
 }
 /*FOOTER*/
 .clzk-footer .navbar {

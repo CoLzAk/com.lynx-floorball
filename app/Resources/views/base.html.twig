@@ -32,9 +32,9 @@
                                 <li><a href="{{ path('colzak_blog_articles') }}">Actualités</a></li>
                                 <li><a href="{{ path('colzak_users') }}">L'équipe</a></li>
                                 <li><a href="{{ path('colzak_event_games') }}">Les matchs</a></li>
-                                <li><a href="{{ path('colzak_home_pages', {'name': 'stats'}) }}">Les stats</a></li>
+                                <li><a href="{{ path('colzak_blog_pages', {'name': 'stats'}) }}">Les stats</a></li>
                                 <li><a href="{{ path('colzak_blog_media') }}">Multimédia</a></li>
-                                <li><a href="{{ path('colzak_home_pages', {'name': 'about'}) }}">A propos</a></li>
+                                <li><a href="{{ path('colzak_blog_pages', {'name': 'about'}) }}">A propos</a></li>
                             </ul>
                          </div>
                     </div>
@@ -125,6 +125,11 @@
                                             </tbody>
                                         </table>
                                     </div>
+                                </div>
+                                <div class="clzk-block-container">
+                                    <h3 class="text-center">Contact</h3>
+                                    <p>Tu veux avoir des renseignements ? N'hésite pas à nous contacter via le site. Nous te répondrons dès que possible !</p>
+                                    <a href="{{ path('colzak_home_contact') }}" class="btn btn-primary btn-block">Contacter</a>
                                 </div>
                             </div>
                         {% endblock %}
