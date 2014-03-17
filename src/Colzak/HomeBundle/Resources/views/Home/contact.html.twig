@@ -2,8 +2,17 @@
 
 {% block body %}
     <div class="clzk-block-container">
+
         <h1 class="text-center">Contact</h1>
         <br />
+
+        {% for flashMessage in app.session.flashbag.get('success') %}
+            <div class="col-md-12">
+                <div class="alert alert-success">
+                    <p class="text-center">{{ flashMessage }}</p>
+                </div>
+            </div>
+        {% endfor %}
 
         {{ form_start(form) }}
         {{ form_row(form.from) }}
