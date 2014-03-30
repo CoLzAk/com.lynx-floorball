@@ -1,0 +1,13 @@
+{% extends 'ColzakAdminBundle::layout.html.twig' %}
+{% block body %}
+    <div class="row">
+        <div class="col-md-9">
+            <h2 class="clzk-admin-title">{{ message.subject }}</h2>
+        </div>
+    </div>
+    <hr>
+    <p>{{ message.body }}</p>
+    <p class="text-right">
+    	<small>{{ message.from }}, le {{ message.createdAt|date('d/m/Y') }}</small>
+    </p>
+{% endblock %}

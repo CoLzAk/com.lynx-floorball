@@ -1,0 +1,46 @@
+{% extends 'ColzakAdminBundle::layout.html.twig' %}
+{% block body %}
+    <div class="row">
+        <div class="col-md-9">
+            <h2 class="clzk-admin-title">Liste des messages</h2>
+        </div>
+        <div class="col-md-3">
+        </div>
+    </div>
+    <hr>
+
+    {% if messages is not null %}
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Sujet</th>
+                        <th>Emetteur</th>
+                        <th>Envoyé le</th>
+                        <th colspan="2">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for message in messages %}
+                        <tr>
+                            <td>{{ message.id }}</td>
+                            <td>{{ message.subject }}</td>
+                            <td>{{ message.from }}</td>
+                            <td>{{ message.createdAt|date('d/m/Y') }}</td>
+                            <td>
+                                <a href="{{ path('colzak_admin_message_view', { id: message.id }) }}" class="btn btn-sm btn-danger">
+                                    <span class="glyphicon glyphicon-eye-open"></span> Lire
+                                </a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% else %}
+        <p class="text-center">
+            Aucun message pour le moment
+        </p>
+    {% endif %}
+{% endblock %}

@@ -87,3 +87,12 @@ colzak_admin_team_edit:
 colzak_admin_team_delete:
     pattern:  /events/teams/delete/{id}
     defaults: { _controller: ColzakAdminBundle:AdminEvent:deleteTeam }
+
+# Messages
+colzak_admin_messages:
+    pattern:  /messages/list
+    defaults: { _controller: ColzakAdminBundle:AdminMessage:list }
+
+colzak_admin_message_view:
+    pattern:  /messages/{id}
+    defaults: { _controller: ColzakAdminBundle:AdminMessage:read }
