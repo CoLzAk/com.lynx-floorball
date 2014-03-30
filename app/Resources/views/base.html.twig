@@ -75,56 +75,7 @@
                                 {#} ranking {#}
                                 <div class="clzk-block-container">
                                     <h3 class="text-center">Classement</h3>
-                                    <div class="table-responsive">
-                                        <table class="table table-hover">
-                                            <thead>
-                                                <tr>
-                                                    <th>#</th>
-                                                    <th>Equipes</th>
-                                                    <th>J</th>
-                                                    <th>Pts</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td>Gladiateurs d'Orléans</td>
-                                                    <td>8</td>
-                                                    <td>17</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>2</td>
-                                                    <td>Griffons d'Oc</td>
-                                                    <td>8</td>
-                                                    <td>13</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>3</td>
-                                                    <td>IFK Paris 2</td>
-                                                    <td>8</td>
-                                                    <td>13</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>4</td>
-                                                    <td>Impacts de Tours</td>
-                                                    <td>8</td>
-                                                    <td>13</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>5</td>
-                                                    <td>Lynx de Bordeaux</td>
-                                                    <td>8</td>
-                                                    <td>9</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>6</td>
-                                                    <td>PUC 2</td>
-                                                    <td>8</td>
-                                                    <td>7</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
+                                    {{ render(controller('ColzakEventBundle:Event:ranking')) }}
                                 </div>
                                 <div class="clzk-block-container">
                                     <h3 class="text-center">Contact</h3>

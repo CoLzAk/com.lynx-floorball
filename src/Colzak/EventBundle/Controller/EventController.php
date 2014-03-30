@@ -19,4 +19,19 @@ class EventController extends Controller
         $game = $dm->getRepository('ColzakEventBundle:Game')->getNextGame();
         return $this->render('ColzakEventBundle:Game:next_game.html.twig', array('game' => $game));
     }
+
+    public function rankingAction() {
+        $dm = $this->get('doctrine_mongodb')->getManager();
+
+        $rankedTeams = $this->getRankedTeam();
+
+        return $this->render('ColzakEventBundle:Team:rank.html.twig', array('rankedTeams' => $rankedTeams));
+    }
+
+    private function getRankedTeam() {
+        $dm = $this->get('doctrine_mongodb')->getManager();
+        $q = $dm->createQueryBuilder('ColzakEventBundle:Team')
+                ->sort('point', 'desc');
+        return $q->getQuery()->execute();
+    }
 }
