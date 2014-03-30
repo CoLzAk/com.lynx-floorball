@@ -8,8 +8,8 @@ class EventController extends Controller
 {
     public function gamesAction()
     {
-    	$dm = $this->get('doctrine_mongodb')->getManager();
-    	$games = $dm->getRepository('ColzakEventBundle:Game')->findAll();
+        $dm = $this->get('doctrine_mongodb')->getManager();
+        $games = $dm->getRepository('ColzakEventBundle:Game')->findAll();
         return $this->render('ColzakEventBundle:Game:games.html.twig', array('games' => $games));
     }
 

@@ -1,19 +1,23 @@
 {% extends 'ColzakHomeBundle::layout.html.twig' %}
 
-{% block body %}
+{% block body_left %}
 <div class="col-md-8">
     <div class="clzk-block-container">
-        <h2 class="text-left">Gallerie</h2>
-        {% for medium in media %}
-            <div class="col-md-4">
-                <h4 class="text-center">{{ medium.title }}</h4>
-                <div class="clzk-article-content">
-                    {{ medium.content|raw }}
-                    <div class="clearfix"></div>
+        <h1 class="text-center">Galerie</h1><br>
+        {% if media|length > 0 %}
+            {% for medium in media %}
+                <div class="col-md-4">
+                    <h4 class="text-center">{{ medium.title }}</h4>
+                    <div class="clzk-article-content">
+                        {{ medium.content|raw }}
+                        <div class="clearfix"></div>
+                    </div>
                 </div>
-            </div>
-            {% if not loop.last %}<hr>{% endif %}
-        {% endfor %}
+                {% if not loop.last %}<hr>{% endif %}
+            {% endfor %}
+        {% else %}
+            <p class="text-center"><i>Rien pour le moment !</i></p>
+        {% endif %}
     </div>
 </div>
 {% endblock %}

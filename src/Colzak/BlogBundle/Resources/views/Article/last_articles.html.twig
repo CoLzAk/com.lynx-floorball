@@ -6,6 +6,8 @@
                 <img src="{{ article.filePath }}" class="img-responsive">
                 <p class="clzk-article-summary text-center">{{ article.description|slice(0,100) }}...</p>
             </div>
+        {% else %}
+            <p class="clzk-article-summary text-center"><i>Aucun article pour le moment</i></p>
         {% endfor %}
     </div>
 </div>

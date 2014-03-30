@@ -3,29 +3,36 @@
 {% block body_left %}
 <div class="col-md-8">
     <div class="clzk-block-container">
-        {% for article in articles %}
-            <h2 class="text-center clzk-article-title">{{ article.title }}</h2>
+        <h1 class="text-center">Actualités</h1>
+        <br />
+        {% if articles|length > 0 %}
+            {% for article in articles %}
+                <h2 class="text-center clzk-article-title">{{ article.title }}</h2>
 
-            {% if article.filePath is not null %}
-                <img src="{{ article.filePath }}" class="clzk-article-img">
-            {% else %}
-                {#} img par defaut {#}
-            {% endif %}
-            <br />
-            <div class="clzk-article-content col-md-12">
-                {#} date container 
-                <div class="pull-left clzk-article-date-container col-md-3">
-                    <p class="text-center clzk-article-date-month">{{ article.createdAt|date('M') }}</p>
-                    <p class="text-center clzk-article-date-day">{{ article.createdAt|date('d') }}</p>
-                    <p class="text-center clzk-article-date-year">{{ article.createdAt|date('Y') }}</p>
+                {% if article.filePath is not null %}
+                    <img src="{{ article.filePath }}" class="clzk-article-img">
+                {% else %}
+                    {#} img par defaut {#}
+                {% endif %}
+                <br />
+                <div class="clzk-article-content col-md-12">
+                    {#} date container 
+                    <div class="pull-left clzk-article-date-container col-md-3">
+                        <p class="text-center clzk-article-date-month">{{ article.createdAt|date('M') }}</p>
+                        <p class="text-center clzk-article-date-day">{{ article.createdAt|date('d') }}</p>
+                        <p class="text-center clzk-article-date-year">{{ article.createdAt|date('Y') }}</p>
+                    </div>
+                    {#}
+                    <p>{{ article.content|raw }}</p>
+                    <p class="text-right"><small><i>Le {{ article.createdAt|date('d M Y') }}</i></small></p>
+                    <div class="clearfix"></div>
                 </div>
-                {#}
-                <p>{{ article.content|raw }}</p>
-                <p class="text-right"><small><i>Le {{ article.createdAt|date('d M Y') }}</i></small></p>
-                <div class="clearfix"></div>
-            </div>
-            {% if not loop.last %}<hr>{% endif %}
-        {% endfor %}
+
+                {% if not loop.last %}<hr>{% endif %}
+            {% endfor %}
+        {% else %}
+            <p class="text-center"><i>Aucun article pour le moment</i></p>
+        {% endif %}
     </div>
 </div>
 {% endblock %}

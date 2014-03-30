@@ -14,6 +14,7 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
 class User extends BaseUser
 {
     // POSITIONS
+    const POSITION_GOAL_KEEPER = 'GOAL_KEEPER';
     const POSITION_DEFENSE = 'DEFENSE';
     const POSITION_LEFT_DEFENSE = 'LEFT_DEFENSE';
     const POSITION_RIGHT_DEFENSE = 'RIGHT_DEFENSE';
@@ -296,6 +297,7 @@ class User extends BaseUser
     public static function getPositionList()
     {
         return array(
+            self::POSITION_GOAL_KEEPER => 'Gardien',
             self::POSITION_DEFENSE => 'Défenseur',
             self::POSITION_RIGHT_DEFENSE => 'Défenseur droit',
             self::POSITION_LEFT_DEFENSE => 'Défenseur gauche',

@@ -1,23 +1,69 @@
 {% extends 'ColzakHomeBundle::layout.html.twig' %}
 
-{% block body %}
-    <div class="clzk-block-container">
-        <h1 class="text-center">L'équipe</h1>
-        <br />
+{% block body_left %}
+    <div class="col-md-8">
+        <div class="clzk-block-container">
+            <h1 class="text-center">L'équipe</h1><br />
 
-        <div class="col-md-12">
-    	    {% for user in users %}
-    	    	<div class="col-md-3 clzk-user-thumbnail-container">
-    	    		<div class="thumbnail">
-          				<img data-src="holder.js/300x200" alt="..." src="{{ user.userPicturePath }}">
-          				<div class="caption">
-            				<h4 class="text-center"><a href="#">{{ [user.firstname, user.lastname]|join(' ') }}</a></h4>
-            				<p class="text-center">{{ user.number }} - {{ user.position }}</p>
-          				</div>
-        			</div>
-    	    	</div>
-    	    {% endfor %}
-          <div class="clearfix"></div>
-       	</div>
-     </div>
+            <div class="col-md-12">
+
+                <h2>Gardien</h2>
+                {% for user in users if user.position == 'GOAL_KEEPER' %}
+                    <div class="col-md-4 clzk-user-thumbnail-container">
+                        <div class="thumbnail">
+                            <img data-src="holder.js/300x200" alt="..." src="{{ user.userPicturePath }}">
+                            <div class="caption">
+                                <h4 class="text-center"><a href="#">{{ [user.firstname, user.lastname]|join(' ') }}</a></h4>
+                                <p class="text-center"><strong>{{ user.number }}</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+                <div class="clearfix"></div>
+            
+                <h2>Défense</h2>
+                {% for user in users if user.position == 'DEFENSE' %}
+                    <div class="col-md-4 clzk-user-thumbnail-container">
+                        <div class="thumbnail">
+                            <img data-src="holder.js/300x200" alt="..." src="{{ user.userPicturePath }}">
+                            <div class="caption">
+                                <h4 class="text-center"><a href="#">{{ [user.firstname, user.lastname]|join(' ') }}</a></h4>
+                                <p class="text-center"><strong>{{ user.number }}</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+                <div class="clearfix"></div>
+            
+                <h2>Centre</h2>
+                {% for user in users if user.position == 'CENTER' %}
+                    <div class="col-md-4 clzk-user-thumbnail-container">
+                        <div class="thumbnail">
+                            <img data-src="holder.js/300x200" alt="..." src="{{ user.userPicturePath }}">
+                            <div class="caption">
+                                <h4 class="text-center"><a href="#">{{ [user.firstname, user.lastname]|join(' ') }}</a></h4>
+                                <p class="text-center"><strong>{{ user.number }}</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+                <div class="clearfix"></div>
+            
+                <h2>Attaque</h2>
+                {% for user in users if user.position == 'STRIKE' %}
+                    <div class="col-md-4 clzk-user-thumbnail-container">
+                        <div class="thumbnail">
+                            <img data-src="holder.js/300x200" alt="..." src="{{ user.userPicturePath }}">
+                            <div class="caption">
+                                <h4 class="text-center"><a href="#">{{ [user.firstname, user.lastname]|join(' ') }}</a></h4>
+                                <p class="text-center"><strong>{{ user.number }}</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+                <div class="clearfix"></div>
+
+            </div>
+        </div>
+    </div>
 {% endblock %}

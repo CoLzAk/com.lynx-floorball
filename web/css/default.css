@@ -12,7 +12,7 @@ h1, h2, h3 {
 }
 .navbar {
     box-shadow: 5px 5px 1px #AAA;
-    font-family: 'Architects Daughter', cursive;
+    /*font-family: 'Architects Daughter', cursive;*/
     font-size: 1.2em;
 }
 .form-control {
@@ -239,4 +239,5 @@ h1, h2, h3 {
 }
 .clzk-footer-text {
     margin-top: 15px;
+    font-size: 14px;
 }

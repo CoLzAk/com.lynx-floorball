@@ -6,7 +6,7 @@
 .btn-warning,
 .btn-danger {
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
-  border-radius: 5px;
+  border-radius: 0px;
   font-weight: bold;
 }
 
@@ -49,6 +49,13 @@
   background-color: #e6e6e6;
   border-color: #e0e0e0;
 }
+
+/*.btn-primary {
+  background: #00c0ef;
+  background-repeat: repeat-x;
+  border-color: #31B0D5;
+  color: #fff;
+}*/
 
 .btn-secondary {
   background: #31B0D5;
