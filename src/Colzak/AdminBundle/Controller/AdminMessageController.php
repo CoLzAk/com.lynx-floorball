@@ -15,9 +15,14 @@ class AdminMessageController extends Controller {
     }
 
     public function readAction($id) {
-    	$dm = $this->get('doctrine_mongodb')->getManager();
-    	$message = $dm->getRepository('ColzakHomeBundle:Message')->find($id);
-    	return $this->render('ColzakAdminBundle:Message:read.html.twig', array('message' => $message));
+        $dm = $this->get('doctrine_mongodb')->getManager();
+        $message = $dm->getRepository('ColzakHomeBundle:Message')->find($id);
+        if (false === $message->getIsRead()) {
+            $message->setIsRead(true);
+            $dm->persist($message);
+            $dm->flush();
+        }
+        return $this->render('ColzakAdminBundle:Message:read.html.twig', array('message' => $message));
     }
 
 

@@ -2,10 +2,20 @@
 {% block body %}
     <div class="row">
         <div class="col-md-9">
-            <h2 class="clzk-admin-title">Nouvelle catégorie</h2>
+            <h2 class="clzk-admin-title">
+                {% if category.name is null %}
+                    Nouvelle catégorie
+                {% else %}
+                    Editer
+                {% endif %}
+            </h2>
         </div>
         <div class="col-md-3">
-            <a href="{{ path('colzak_admin_category_delete', {'id': category.id}) }}" class="btn btn-block btn-danger">Annuler</a>
+            {% if category.name is null %}
+                <a href="{{ path('colzak_admin_category_delete', {'id': category.id}) }}" class="btn btn-block btn-danger">Annuler</a>
+            {% else %}
+                <a href="{{ path('colzak_admin_categories') }}" class="btn btn-block btn-danger">Annuler</a>
+            {% endif %}
         </div>
     </div>
     <hr>

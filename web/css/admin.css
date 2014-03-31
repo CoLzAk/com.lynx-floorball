@@ -18,3 +18,7 @@
 .tab-pane {
     margin-top: 20px;
 }
+.clzk-msg-unread {
+    background-color: #d9edf7;
+    font-weight: bold;
+}

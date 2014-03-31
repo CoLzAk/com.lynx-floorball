@@ -23,13 +23,13 @@
                 </thead>
                 <tbody>
                     {% for message in messages %}
-                        <tr>
+                        <tr {% if message.isRead == false %}class="clzk-msg-unread"{% endif %}>
                             <td>{{ message.id }}</td>
                             <td>{{ message.subject }}</td>
                             <td>{{ message.from }}</td>
                             <td>{{ message.createdAt|date('d/m/Y') }}</td>
                             <td>
-                                <a href="{{ path('colzak_admin_message_view', { id: message.id }) }}" class="btn btn-sm btn-danger">
+                                <a href="{{ path('colzak_admin_message_view', { id: message.id }) }}" class="btn btn-sm btn-default">
                                     <span class="glyphicon glyphicon-eye-open"></span> Lire
                                 </a>
                             </td>

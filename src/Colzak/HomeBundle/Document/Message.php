@@ -7,6 +7,7 @@ use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
 
 /**
  * @MongoDB\Document()
+ * @MongoDB\HasLifecycleCallbacks
  */
 class Message
 {
@@ -34,6 +35,22 @@ class Message
      * @MongoDB\Date
      */
     protected $createdAt;
+
+    /**
+     * @MongoDB\Boolean
+     */
+    protected $isRead;
+
+    public function __construct() {
+        $this->isRead = false;
+    }
+
+    /**
+     * @MongoDB\PrePersist()
+     */
+    public function doStuffOnPrePersist() {
+        $this->createdAt = new \MongoDate();
+    }
 
     /**
      * Get id
@@ -131,5 +148,27 @@ class Message
     public function getCreatedAt()
     {
         return $this->createdAt;
+    }
+
+    /**
+     * Set isRead
+     *
+     * @param boolean $isRead
+     * @return self
+     */
+    public function setIsRead($isRead)
+    {
+        $this->isRead = $isRead;
+        return $this;
+    }
+
+    /**
+     * Get isRead
+     *
+     * @return boolean $isRead
+     */
+    public function getIsRead()
+    {
+        return $this->isRead;
     }
 }

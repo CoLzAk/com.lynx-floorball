@@ -2,10 +2,20 @@
 {% block body %}
     <div class="row">
         <div class="col-md-9">
-            <h2 class="clzk-admin-title">Nouvel article</h2>
+            <h2 class="clzk-admin-title">
+                {% if article.description is null %}
+                    Nouvel article
+                {% else %}
+                    Editer
+                {% endif %}
+            </h2>
         </div>
         <div class="col-md-3">
-            <a href="{{ path('colzak_admin_article_delete', {'id': article.id}) }}" class="btn btn-block btn-danger">Annuler</a>
+            {% if article.description is null %}
+                <a href="{{ path('colzak_admin_article_delete', {'id': article.id}) }}" class="btn btn-block btn-danger">Annuler</a>
+            {% else %}
+                <a href="{{ path('colzak_admin_articles') }}" class="btn btn-block btn-danger">Annuler</a>
+            {% endif %}
         </div>
     </div>
     <hr>
