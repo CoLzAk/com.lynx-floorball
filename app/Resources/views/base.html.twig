@@ -44,6 +44,7 @@
             {% endblock %}
         </header>
         <div class="clzk-body">
+            <div id="fb-root"></div>
             <div class="container"><div class="clzk-container">
                 {% block body %}
                     <div class="row">
@@ -55,26 +56,30 @@
                             <div class="col-md-4">
                                 {% block breadcrumb %}{% endblock %}
 
-                                {#} social actions {#}
-                                <div class="clzk-block-container">
-                                    <h3 class="text-center">Ne manque rien !</h3>
-                                    <!-- <ul class="social-buttons cf list-unstyled">
-                                        <li>
-                                            <a href="http://twitter.com/share" class="socialite twitter-share" data-text="Les lynx de bordeaux" data-url="http://socialitejs.com" data-count="vertical" rel="nofollow" target="_blank"><span class="vhidden">Share on Twitter</span></a>
-                                        </li>
-                                        <li>
-                                            <a href="https://plus.google.com/share?url=http://socialitejs.com" class="socialite googleplus-one" data-size="tall" data-href="http://socialitejs.com" rel="nofollow" target="_blank"><span class="vhidden">Share on Google+</span></a>
-                                        </li>
-                                        <li>
-                                            <a href="http://www.facebook.com/sharer.php?u=http://www.socialitejs.com&t=Socialite.js" class="socialite facebook-like" data-href="http://socialitejs.com" data-send="false" data-layout="box_count" data-width="80" data-show-faces="false" rel="nofollow" target="_blank"><span class="vhidden">Share on Facebook</span></a>
-                                        </li>
-                                    </ul> -->
-                                </div>
-
                                 {#} next game {#}
                                 <div class="clzk-block-container">
                                     <h3 class="text-center">Prochain match</h3>
                                     {{ render(controller('ColzakEventBundle:Event:nextGame')) }}
+                                </div>
+
+                                {#} social actions {#}
+                                <div class="clzk-block-container">
+                                    <!-- <h3 class="text-center">Ne manque rien !</h3> -->
+
+                                    <div class="text-center">
+                                        <div class="col-md-3">
+                                            <div class="g-plusone" data-size="medium" data-href="http://www.lynx-floorball.com"></div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="fb-like" data-href="https://www.facebook.com/FloorballBordeaux" data-width="200" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="clzk-twitter-follow-btn">
+                                                <a href="https://twitter.com/LynxBordeaux" class="twitter-follow-button" data-show-count="true" data-lang="fr" data-show-screen-name="false" data-align="top"></a>
+                                            </div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
                                 </div>
 
                                 {#} ranking {#}
@@ -130,6 +135,18 @@
             %}
                 <script src="{{ asset_url }}" type="text/javascript"></script>
             {% endjavascripts %}
+            {#} google plus {#}
+            <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+            {#} facebook {#}
+            <script>(function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));</script>
+            {#} twitter {#}
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
             {% block extra_javascripts %}{% endblock %}
         {% endblock %}
     </body>
