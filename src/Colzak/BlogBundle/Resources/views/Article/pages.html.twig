@@ -1,5 +1,32 @@
 {% extends 'ColzakBlogBundle::layout.html.twig' %}
 
+{% block meta %}
+    <meta name="description" content="{{ article.description }}">
+{% endblock %}
+{% block breadcrumb %}
+    <ol class="breadcrumb">
+        <li><a href="{{ path('colzak_home_homepage') }}"><span class="glyphicon glyphicon-home"></span>&nbsp;Accueil</a></li>
+        <li class="active">
+            {% if article.title == 'what-is-floorball' %}
+                Le floorball, c'est quoi ?
+            {% endif %}
+
+            {% if article.title == 'the-club' %}
+                Le club
+            {% endif %}
+        </li>
+    </ol>
+{% endblock %}
+{% block title %}
+    {% if article.title == 'what-is-floorball' %}
+        Lynx-Floorball | Le floorball, c'est quoi ?
+    {% endif %}
+
+    {% if article.title == 'the-club' %}
+        Lynx-Floorball | Le club
+    {% endif %}
+{% endblock %}
+
 {% block page_content %}
-	{{ article.content|raw }}
+    {{ article.content|raw }}
 {% endblock %}

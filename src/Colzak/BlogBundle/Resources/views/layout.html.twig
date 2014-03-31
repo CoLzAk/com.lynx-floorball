@@ -1,9 +1,11 @@
 {% extends '::base.html.twig' %}
 
-{% block body %}
-	<div class="clzk-block-container">
-		<div class="col-md-12">
-			{% block page_content %}{% endblock %}
+{% block body_left %}
+	<div class="col-md-8">
+		<div class="clzk-block-container">
+			<div class="col-md-12">
+				{% block page_content %}{% endblock %}
+			</div>
 		</div>
 	</div>
 {% endblock %}

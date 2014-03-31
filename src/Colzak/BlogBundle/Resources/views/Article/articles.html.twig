@@ -1,7 +1,15 @@
 {% extends 'ColzakHomeBundle::layout.html.twig' %}
 
-{% block title %}Actualités des Lynx{% endblock %}
-
+{% block title %}Lynx-Floorball | Actualités {% endblock %}
+{% block meta %}
+    <meta name="description" content="Suivez l'actualité concernant le floorball en France et prenez des nouvelles des Lynx.">
+{% endblock %}
+{% block breadcrumb %}
+    <ol class="breadcrumb">
+        <li><a href="{{ path('colzak_home_homepage') }}"><span class="glyphicon glyphicon-home"></span>&nbsp;Accueil</a></li>
+        <li class="active">Actualités</li>
+    </ol>
+{% endblock %}
 {% block body_left %}
 <div class="col-md-8">
     <div class="clzk-block-container">

@@ -1,7 +1,15 @@
 {% extends 'ColzakHomeBundle::layout.html.twig' %}
 
-{% block title %}Galerie des Lynx{% endblock %}
-
+{% block title %}Lynx-Floorball | Multimédia{% endblock %}
+{% block meta %}
+    <meta name="description" content="Les Lynx sont fiers de partager en images, avec vous, les grands moments du championnat de 2e division de floorball en France, ainsi que les évènements sportifs dans lesquels l'équipe est impliquée.">
+{% endblock %}
+{% block breadcrumb %}
+    <ol class="breadcrumb">
+        <li><a href="{{ path('colzak_home_homepage') }}"><span class="glyphicon glyphicon-home"></span>&nbsp;Accueil</a></li>
+        <li class="active">Multimédia</li>
+    </ol>
+{% endblock %}
 {% block body_left %}
 <div class="col-md-8">
     <div class="clzk-block-container">

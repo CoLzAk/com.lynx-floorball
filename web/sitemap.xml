@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0">
+        
+        <url>
+            <loc>http://www.lynx-floorball.com/</loc>
+            <changefreq>monthly</changefreq>
+        </url>
+
+        <url>
+            <loc>http://www.lynx-floorball.com/articles</loc>
+            <changefreq>monthly</changefreq>
+        </url>
+
+        <url>
+            <loc>http://www.lynx-floorball.com/team</loc>
+            <changefreq>monthly</changefreq>
+        </url>
+
+        <url>
+            <loc>http://www.lynx-floorball.com/events/games</loc>
+            <changefreq>monthly</changefreq>
+        </url>
+
+        <url>
+            <loc>http://www.lynx-floorball.com/media</loc>
+            <changefreq>monthly</changefreq>
+        </url>
+
+        <url>
+            <loc>http://www.lynx-floorball.com/contact</loc>
+            <changefreq>never</changefreq>
+        </url>
+
+        <url>
+            <loc>http://www.lynx-floorball.com/page/what-is-floorball</loc>
+            <changefreq>monthly</changefreq>
+        </url>
+
+        <url>
+            <loc>http://www.lynx-floorball.com/page/the-club</loc>
+            <changefreq>monthly</changefreq>
+        </url>
+
+    </urlset>

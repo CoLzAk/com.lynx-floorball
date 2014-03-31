@@ -3,7 +3,10 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>{% block title %}Lynx - Floorball{% endblock %}</title>
+        <title>{% block title %}Lynx-Floorball | Le site officiel des Lynx{% endblock %}</title>
+        {% block meta %}
+            <meta name="description" content="Les Lynx vous souhaitent la bienvenue sur son site officiel. Vous y trouverez des informations sur le monde du floorball, ainsi que l'actualité des Lynx dans le championnat de 2e division.">
+        {% endblock %}
         {% block stylesheets %}
             {% stylesheets
                 "bootstrap/css/bootstrap.min.css"
@@ -41,14 +44,17 @@
             {% endblock %}
         </header>
         <div class="clzk-body">
-            {% block pre_body %}{% endblock %}
             <div class="container"><div class="clzk-container">
                 {% block body %}
                     <div class="row">
+
                         {% block body_left %}{% endblock %}
+
                         {% block body_right %}
                             {#} right part {#}
                             <div class="col-md-4">
+                                {% block breadcrumb %}{% endblock %}
+
                                 {#} social actions {#}
                                 <div class="clzk-block-container">
                                     <h3 class="text-center">Ne manque rien !</h3>
@@ -94,6 +100,14 @@
                     <div class="navbar navbar-default" role="navigation">
                         <div class="container">
                             <p class="text-center clzk-footer-text">Copyright © 2014 - CoLzAk</p>
+                            <ul class="nav nav-pills clzk-footer-text col-md-7 col-md-offset-3">
+                                <li><a href="{{ path('colzak_blog_articles') }}">Actualités</a></li>
+                                <li><a href="{{ path('colzak_users') }}">L'équipe</a></li>
+                                <li><a href="{{ path('colzak_event_games') }}">Les matches</a></li>
+                                <li><a href="{{ path('colzak_blog_media') }}">Multimédia</a></li>
+                                <li><a href="{{ path('colzak_home_contact') }}">Contact</a></li>
+                                <li class="disabled"><a href="#">A propos</a></li>
+                            </ul>
                         </div>
                     </div>
                 {% endblock %}

@@ -1,5 +1,15 @@
 {% extends 'ColzakHomeBundle::layout.html.twig' %}
 
+{% block title %}Lynx-Floorball | L'équipe {% endblock %}
+{% block meta %}
+    <meta name="description" content="Les Lynx vous présentent la composition de son équipe, le nom des joueurs ainsi que leur position dans le jeu.">
+{% endblock %}
+{% block breadcrumb %}
+    <ol class="breadcrumb">
+        <li><a href="{{ path('colzak_home_homepage') }}"><span class="glyphicon glyphicon-home"></span>&nbsp;Accueil</a></li>
+        <li class="active">L'équipe</li>
+    </ol>
+{% endblock %}
 {% block body_left %}
     <div class="col-md-8">
         <div class="clzk-block-container">

@@ -241,3 +241,9 @@ h1, h2, h3 {
     margin-top: 15px;
     font-size: 14px;
 }
+.clzk-footer-text a {
+    color: #ddd !important;
+}
+.clzk-footer-text a:hover {
+    color: #333 !important;
+}
