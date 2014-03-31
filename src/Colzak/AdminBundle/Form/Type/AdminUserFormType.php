@@ -24,7 +24,7 @@ class AdminUserFormType extends AbstractType
                     'required' => false
                 ))
             ->add('number', 'number', array('label' => 'Numéro'))
-            ->add('userPicture', 'file')
+            ->add('userPicture', 'file', array('required' => false))
             // ->add('roles')
         ;
     }

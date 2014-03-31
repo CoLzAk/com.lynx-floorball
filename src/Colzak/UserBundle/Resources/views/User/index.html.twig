@@ -21,9 +21,9 @@
                 {% for user in users if user.position == 'GOAL_KEEPER' %}
                     <div class="col-md-4 clzk-user-thumbnail-container">
                         <div class="thumbnail">
-                            <img data-src="holder.js/300x200" alt="..." src="{{ user.userPicturePath }}">
+                            <img alt="{{ [user.firstname, user.lastname]|join(' ') }}" src="{{ user.userPicturePath }}">
                             <div class="caption">
-                                <h4 class="text-center"><a href="#">{{ [user.firstname, user.lastname]|join(' ') }}</a></h4>
+                                <h5 class="text-center">{{ [user.firstname, user.lastname]|join(' ') }}</h5>
                                 <p class="text-center"><strong>{{ user.number }}</strong></p>
                             </div>
                         </div>
@@ -35,9 +35,9 @@
                 {% for user in users if user.position == 'DEFENSE' %}
                     <div class="col-md-4 clzk-user-thumbnail-container">
                         <div class="thumbnail">
-                            <img data-src="holder.js/300x200" alt="..." src="{{ user.userPicturePath }}">
+                            <img alt="{{ [user.firstname, user.lastname]|join(' ') }}" src="{{ user.userPicturePath }}">
                             <div class="caption">
-                                <h4 class="text-center"><a href="#">{{ [user.firstname, user.lastname]|join(' ') }}</a></h4>
+                                <h5 class="text-center">{{ [user.firstname, user.lastname]|join(' ') }}</h5>
                                 <p class="text-center"><strong>{{ user.number }}</strong></p>
                             </div>
                         </div>
@@ -49,9 +49,9 @@
                 {% for user in users if user.position == 'CENTER' %}
                     <div class="col-md-4 clzk-user-thumbnail-container">
                         <div class="thumbnail">
-                            <img data-src="holder.js/300x200" alt="..." src="{{ user.userPicturePath }}">
+                            <img alt="{{ [user.firstname, user.lastname]|join(' ') }}" src="{{ user.userPicturePath }}">
                             <div class="caption">
-                                <h4 class="text-center"><a href="#">{{ [user.firstname, user.lastname]|join(' ') }}</a></h4>
+                                <h5 class="text-center">{{ [user.firstname, user.lastname]|join(' ') }}</h5>
                                 <p class="text-center"><strong>{{ user.number }}</strong></p>
                             </div>
                         </div>
@@ -63,9 +63,9 @@
                 {% for user in users if user.position == 'STRIKE' %}
                     <div class="col-md-4 clzk-user-thumbnail-container">
                         <div class="thumbnail">
-                            <img data-src="holder.js/300x200" alt="..." src="{{ user.userPicturePath }}">
+                            <img alt="{{ [user.firstname, user.lastname]|join(' ') }}" src="{{ user.userPicturePath }}">
                             <div class="caption">
-                                <h4 class="text-center"><a href="#">{{ [user.firstname, user.lastname]|join(' ') }}</a></h4>
+                                <h5 class="text-center">{{ [user.firstname, user.lastname]|join(' ') }}</h5>
                                 <p class="text-center"><strong>{{ user.number }}</strong></p>
                             </div>
                         </div>
