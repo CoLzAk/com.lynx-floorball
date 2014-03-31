@@ -10,11 +10,13 @@ body {
 h1, h2, h3 {
     font-family: 'Architects Daughter', cursive;
     color: #555;
+    font-weight: bold;
 }
 .navbar {
     box-shadow: 5px 5px 1px #AAA;
     /*font-family: 'Architects Daughter', cursive;*/
-    font-size: 1.2em;
+    font-size: 1em;
+    font-weight: normal;
 }
 .form-control {
     margin: 5px auto;
