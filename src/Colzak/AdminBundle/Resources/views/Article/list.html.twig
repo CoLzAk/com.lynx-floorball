@@ -29,8 +29,10 @@
                                 <tr>
                                     <th>Id</th>
                                     <th>Image</th>
+                                    <th>URL</th>
                                     <th>Titre</th>
                                     <th>Résumé</th>
+                                    <th>Status</th>
                                     <th colspan="2">Actions</th>
                                 </tr>
                             </thead>
@@ -39,8 +41,10 @@
                                     <tr>
                                         <td>{{ article.id }}</td>
                                         <td>{% if article.filePath is not null %}<img src="{{ article.filePath }}" class="img-responsive clzk-admin-img-table">{% endif %}</td>
+                                        <td>{{ article.url }}</td>
                                         <td>{{ article.title }}</td>
                                         <td>{{ article.description }}</td>
+                                        <td>{{ article.status.description }}</td>
                                         <td>
                                             <a href="{{ path('colzak_admin_article_edit', {id: article.id}) }}" class="btn btn-default btn-sm">
                                                  <span class="glyphicon glyphicon-edit"></span> Editer

@@ -22,6 +22,11 @@ class Article {
     /**
      * @MongoDB\String
      */
+    protected $url;
+
+    /**
+     * @MongoDB\String
+     */
     protected $title;
 
     /**
@@ -387,5 +392,27 @@ class Article {
     public function getDescription()
     {
         return $this->description;
+    }
+
+    /**
+     * Set url
+     *
+     * @param string $url
+     * @return self
+     */
+    public function setUrl($url)
+    {
+        $this->url = $url;
+        return $this;
+    }
+
+    /**
+     * Get url
+     *
+     * @return string $url
+     */
+    public function getUrl()
+    {
+        return $this->url;
     }
 }

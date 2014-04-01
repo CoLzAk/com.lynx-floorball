@@ -7,5 +7,5 @@ colzak_blog_media:
     defaults: { _controller: ColzakBlogBundle:Article:media }
 
 colzak_blog_pages:
-    pattern:  /page/{name}
+    pattern:  /page/{url}
     defaults: { _controller: ColzakBlogBundle:Article:loadPage}

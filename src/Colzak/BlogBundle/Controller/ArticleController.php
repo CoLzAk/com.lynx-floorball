@@ -54,21 +54,24 @@ class ArticleController extends Controller
         return $this->render('ColzakBlogBundle:Article:pages_preview.html.twig', array('previews' => $previews));
     }
 
-    // Load a page from page name /page/{name}
-    public function loadPageAction($name) {
+    // Load a page from page name /page/{url}
+    public function loadPageAction($url) {
         $dm = $this->get('doctrine_mongodb')->getManager();
-        $article = $dm->getRepository('ColzakBlogBundle:Article')->findOneByTitle($name);
+        $article = $dm->getRepository('ColzakBlogBundle:Article')->findOneByUrl($url);
         return $this->render('ColzakBlogBundle:Article:pages.html.twig', array('article' => $article));
     }
 
     // get articles from categoryName
     private function getArticles($categoryName = 'news', $limit = null) {
+        $sc = $this->get('security.context');
         $dm = $this->get('doctrine_mongodb')->getManager();
+        $status = $dm->getRepository('ColzakBlogBundle:Status')->findOneBy(array('code' => 'STATUS_ONLINE'));
         $category = $dm->getRepository('ColzakBlogBundle:Category')->findOneBy(array('name' => $categoryName));
-        $q = $dm->createQueryBuilder('ColzakBlogBundle:Article')
-                ->field('category')->references($category)
-                ->sort('createdAt', 'desc');
-            (null === $limit ?: $q->limit($limit));
+        $q = $dm->createQueryBuilder('ColzakBlogBundle:Article');
+        $q->field('category')->references($category);
+        ($sc->isGranted('ROLE_ADMIN') ?: $q->field('status')->references($status));
+        $q->sort('createdAt', 'desc');
+        (null === $limit ?: $q->limit($limit));
         return $q->getQuery()->execute();
     }
 }

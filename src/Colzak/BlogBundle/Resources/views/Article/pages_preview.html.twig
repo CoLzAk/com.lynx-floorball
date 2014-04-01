@@ -7,16 +7,11 @@
             <div class="col-md-8">
                 {#} to translate {#}
                 <h3>
-                    {#{ preview.title }#}
-                    {% if preview.title == 'what-is-floorball' %}
-                        Le floorball c'est quoi ?
-                    {% elseif preview.title == 'the-club' %}
-                        Le club
-                    {% endif %}
-                    
+                    {{ preview.title }}
+                    ({{ preview.url }})
                 </h3>
                 <p>{{ preview.description }}</p>
-                <p class="text-left"><a href="{{ path('colzak_blog_pages', { name: preview.title }) }}">en savoir plus >></a></p>
+                <p class="text-left"><a href="{{ path('colzak_blog_pages', { url: preview.url }) }}">en savoir plus >></a></p>
             </div>
         </div>
     </div>

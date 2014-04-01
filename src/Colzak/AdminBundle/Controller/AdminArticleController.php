@@ -42,10 +42,12 @@ class AdminArticleController extends Controller {
             if ($form->isValid()) {
                 $article = $form->getData();
                 $article->upload();
-                $article->setStatus($statusPending);
+                (null !== $article->getStatus() ?: $article->setStatus($statusPending));
                 $dm->persist($article);
                 $dm->flush();
                 return new RedirectResponse($this->container->get('router')->generate('colzak_admin_articles'));
+            } else {
+                var_dump($form->getErrorsAsString());
             }
         }
 

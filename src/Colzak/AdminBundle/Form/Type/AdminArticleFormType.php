@@ -12,9 +12,10 @@ class AdminArticleFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+            ->add('url', 'text', array('label' => 'URL', 'required' => false))
             ->add('title', 'text', array('label' => 'Titre'))
             ->add('description', 'textarea', array('label' => 'Résumé', 'required' => false))
-            ->add('content', 'ckeditor', array('label' => 'Contenu'))
+            ->add('content', 'ckeditor', array('label' => 'Contenu', 'required' => false))
             ->add('category', 'document', array(
                 'class' => 'Colzak\BlogBundle\Document\Category',
                 'property' => 'name',
