@@ -103,6 +103,5 @@ class AdminEventController extends Controller {
         $dm->remove($team);
         $dm->flush();
         return new RedirectResponse($this->container->get('router')->generate('colzak_admin_teams'));
-    
     }
 }

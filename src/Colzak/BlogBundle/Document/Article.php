@@ -361,12 +361,12 @@ class Article {
         // target filename to move to
         $this->getFile()->move(
             $this->getUploadRootDir(),
-            $this->getId().'.'.$this->getFile()->guessExtension()
+            $this->getUrl().'.'.$this->getFile()->guessExtension()
         );
         
 
         // set the path property to the filename where you've saved the file
-        $this->filePath = $this->getUploadDir().$this->getId().'.'.$fileExtension;
+        $this->filePath = $this->getUploadDir().$this->getUrl().'.'.$fileExtension;
 
         // clean up the file property as you won't need it anymore
         $this->file = null;
