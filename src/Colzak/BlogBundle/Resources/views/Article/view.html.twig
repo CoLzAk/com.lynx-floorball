@@ -25,4 +25,7 @@
     {% endif %}
     <br />
     {{ article.content|raw }}
+    <div class="clearfix"></div>
+    <br>
+    <p class="text-right"><small><i>Le {{ article.createdAt|date('d M Y') }}</i></small></p>
 {% endblock %}
