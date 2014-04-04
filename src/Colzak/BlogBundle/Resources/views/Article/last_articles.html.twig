@@ -15,9 +15,6 @@
 </div>
 {#} Title on the right {#}
 <div class="col-md-4">
-    {% for article in articles if article.category is not null %}
-        <a href="{{ path('colzak_blog_article', { url: article.url }) }}">{{ article.title }}</a>
-    {% endfor %}
     <ul class="nav nav-tabs nav-stacked row clzk-last-articles-tab-container" id="lastArticlesTabs">
     {% for article in articles  if article.category is not null %}
         <li {% if loop.first %} class="active" {% endif %}><a href="#">{{ article.title }}</a></li>
