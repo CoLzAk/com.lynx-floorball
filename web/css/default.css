@@ -1,3 +1,7 @@
+* { margin:0; }
+body, html {
+    height: 100%;
+}
 body {
     padding: 0;
     background: #DDD;
@@ -19,6 +23,17 @@ h1, h2, h3 {
 .form-control {
     margin: 5px auto;
     padding: 5px 12px;
+}
+.clzk-block-container {
+    width: 100%;
+    border: 4px #ccc solid;
+    background: #F7F7F7;
+    padding: 5px;
+    margin-bottom: 30px;
+    box-shadow: 5px 5px 1px #AAA;
+}
+.clzk-long-block {
+    min-height: 498px;
 }
 
 /*HEADER*/
@@ -71,25 +86,24 @@ h1, h2, h3 {
     color: #F7F7F7;
 }
 /*BODY*/
+.clzk-global-page-wrapper {
+    min-height: 99.8%;
+    margin-bottom: -100px;
+}
+.clzk-global-page-wrapper:after {
+    content: "";
+    display: block;
+}
 .clzk-body {
-    min-height: 340px;
-    margin-top:30px;
+    margin-top: 30px;
+}
+/*LOGIN*/
+.clzk-login-container {
 }
 /*INDEX*/
 .clzk-img-rounded {
     border-radius: 100px;
     margin: 25% auto;
-}
-.clzk-block-container {
-    width: 100%;
-    border: 4px #ccc solid;
-    background: #F7F7F7;
-    padding: 5px;
-    margin-bottom: 30px;
-    box-shadow: 5px 5px 1px #AAA;
-}
-.clzk-long-block {
-    min-height: 498px;
 }
 .clzk-last-articles-container {
     height: 305px;
@@ -215,7 +229,12 @@ h1, h2, h3 {
     font-size: 16px;
 }
 /*FOOTER*/
+.clzk-footer, .clzk-global-page-wrapper:after {
+  /* .push must be the same height as footer */
+  height: 100px; 
+}
 .clzk-footer .navbar {
+    /*height: 100px;*/
     margin-bottom: 0;
 }
 .clzk-footer-text {

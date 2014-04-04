@@ -17,31 +17,34 @@
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
-        <header class="clzk-header">
-            {% block header %}
-                <div class="navbar navbar-default">
-                    <div class="container">
-                        <div class="navbar-header">
-                            <a class="navbar-brand" href="{{ path('colzak_admin_homepage') }}">Administration</a>
+        <div class="clzk-global-page-wrapper">
+            <header class="clzk-header">
+                {% block header %}
+                    <div class="navbar navbar-default">
+                        <div class="container">
+                            <div class="navbar-header">
+                                <a class="navbar-brand" href="{{ path('colzak_admin_homepage') }}">Administration</a>
+                            </div>
+                             <div class="collapse navbar-collapse">
+                                <ul class="nav navbar-nav navbar-right clzk-menu">
+                                    <li><a href="{{ path('colzak_admin_categories') }}">Catégories</a></li>
+                                    <li><a href="{{ path('colzak_admin_articles') }}">Articles</a></li>
+                                    <li><a href="{{ path('colzak_admin_users') }}">Membres</a></li>
+                                    <li><a href="{{ path('colzak_admin_games') }}">Matches</a></li>
+                                    <li><a href="{{ path('colzak_admin_teams') }}">Equipes</a></li>
+                                    <li><a href="{{ path('colzak_admin_messages') }}">Messages</a></li>
+                                    <li><a href="{{ path('fos_user_security_logout') }}"><span class="text-danger"><span class="glyphicon glyphicon-off"></span>&nbsp;Déconnexion</span></a></li>
+                                </ul>
+                             </div>
                         </div>
-                         <div class="collapse navbar-collapse">
-                            <ul class="nav navbar-nav navbar-right clzk-menu">
-                                <li><a href="{{ path('colzak_admin_categories') }}">Catégories</a></li>
-                                <li><a href="{{ path('colzak_admin_articles') }}">Articles</a></li>
-                                <li><a href="{{ path('colzak_admin_users') }}">Membres</a></li>
-                                <li><a href="{{ path('colzak_admin_games') }}">Matches</a></li>
-                                <li><a href="{{ path('colzak_admin_teams') }}">Equipes</a></li>
-                                <li><a href="{{ path('colzak_admin_messages') }}">Messages</a></li>
-                            </ul>
-                         </div>
                     </div>
+                {% endblock %}
+            </header>
+            <div class="clzk-body">
+                {% block pre_body %}{% endblock %}
+                <div class="container">
+                    {% block body %}{% endblock %}
                 </div>
-            {% endblock %}
-        </header>
-        <div class="clzk-body">
-            {% block pre_body %}{% endblock %}
-            <div class="container">
-                {% block body %}{% endblock %}
             </div>
         </div>
         <footer class="clzk-footer">
