@@ -13,6 +13,12 @@ class ArticleController extends Controller
         return $this->render('ColzakBlogBundle:Article:articles.html.twig', array('articles' => $articles));
     }
 
+    public function viewAction($url) {
+        $dm = $this->get('doctrine_mongodb')->getManager();
+        $article = $dm->getRepository('ColzakBlogBundle:Article')->findOneByUrl($url);
+        return $this->render('ColzakBlogBundle:Article:view.html.twig', array('article' => $article));
+    }
+
     public function lastArticlesAction($categoryName = 'news') {
         $dm = $this->get('doctrine_mongodb')->getManager();
 

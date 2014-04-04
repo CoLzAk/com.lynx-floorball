@@ -3,8 +3,10 @@
     <div class="tab-content row clzk-last-articles-tab-content">
         {% for article in articles if article.category is not null %}
             <div class="tab-pane fade {% if loop.first %} in active {% endif %}" id="{{ article.id }}">
-                <img src="{{ article.filePath }}" class="img-responsive">
-                <p class="clzk-article-summary text-center">{{ article.description|slice(0,100) }}...</p>
+                <a href="{{ path('colzak_blog_article', { url: article.url }) }}">
+                    <img src="{{ article.filePath }}" class="img-responsive">
+                    <p class="clzk-article-summary text-center">{{ article.description|slice(0,100) }}...</p>
+                </a>
             </div>
         {% else %}
             <p class="clzk-article-summary text-center"><i>Aucun article pour le moment</i></p>
@@ -13,9 +15,12 @@
 </div>
 {#} Title on the right {#}
 <div class="col-md-4">
+    {% for article in articles if article.category is not null %}
+        <a href="{{ path('colzak_blog_article', { url: article.url }) }}">{{ article.title }}</a>
+    {% endfor %}
     <ul class="nav nav-tabs nav-stacked row clzk-last-articles-tab-container" id="lastArticlesTabs">
     {% for article in articles  if article.category is not null %}
-        <li {% if loop.first %} class="active" {% endif %}><a href="#{{ article.id }}">{{ article.title }}</a></li>
+        <li {% if loop.first %} class="active" {% endif %}><a href="#">{{ article.title }}</a></li>
     {% endfor %}
     </ul>
 </div>

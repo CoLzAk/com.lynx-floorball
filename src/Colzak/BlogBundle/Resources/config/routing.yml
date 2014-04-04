@@ -9,3 +9,7 @@ colzak_blog_media:
 colzak_blog_pages:
     pattern:  /page/{url}
     defaults: { _controller: ColzakBlogBundle:Article:loadPage}
+
+colzak_blog_article:
+    pattern:  /article/{url}
+    defaults: { _controller: ColzakBlogBundle:Article:view}

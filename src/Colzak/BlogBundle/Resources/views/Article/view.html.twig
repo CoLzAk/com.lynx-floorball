@@ -1,0 +1,28 @@
+{% extends 'ColzakBlogBundle::layout.html.twig' %}
+
+{% block meta %}
+    <meta name="description" content="{{ article.description }}">
+{% endblock %}
+{% block breadcrumb %}
+    <ol class="breadcrumb">
+        <li><a href="{{ path('colzak_home_homepage') }}"><span class="glyphicon glyphicon-home"></span>&nbsp;Accueil</a></li>
+        <li><a href="{{ path('colzak_blog_articles') }}">Actualités</a></li>
+        <li class="active">
+            {{ article.url }}
+        </li>
+    </ol>
+{% endblock %}
+{% block title %}
+    {{ article.title }}
+{% endblock %}
+
+{% block page_content %}
+	<h2 class="text-center clzk-article-title">{{ article.title }}</h2><br>
+    {% if article.filePath is not null %}
+        <img src="{{ article.filePath }}" class="clzk-article-img">
+    {% else %}
+        {#} img par defaut {#}
+    {% endif %}
+    <br />
+    {{ article.content|raw }}
+{% endblock %}
