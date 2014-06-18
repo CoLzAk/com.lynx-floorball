@@ -3,6 +3,7 @@
 namespace Colzak\EventBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Colzak\EventBundle\Document\Team;
 
 class EventController extends Controller
 {
@@ -22,7 +23,6 @@ class EventController extends Controller
 
     public function rankingAction() {
         $dm = $this->get('doctrine_mongodb')->getManager();
-
         $rankedTeams = $this->getRankedTeam();
 
         return $this->render('ColzakEventBundle:Team:rank.html.twig', array('rankedTeams' => $rankedTeams));
@@ -31,6 +31,7 @@ class EventController extends Controller
     private function getRankedTeam() {
         $dm = $this->get('doctrine_mongodb')->getManager();
         $q = $dm->createQueryBuilder('ColzakEventBundle:Team')
+                ->field('pool')->equals(Team::POOL_D2_C)
                 ->sort('point', 'desc');
         return $q->getQuery()->execute();
     }

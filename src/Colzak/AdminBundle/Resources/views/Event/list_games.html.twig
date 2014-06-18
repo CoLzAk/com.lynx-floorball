@@ -27,9 +27,13 @@
                     <tr>
                         <td>{{ game.id }}</td>
                         <td>
-                            <img src="{{ game.team1.teamLogoPath }}" class="img-responsive clzk-admin-img-table pull-left">
+                            {% if game.team1.teamLogoPath is defined %}
+                                <img src="{{ game.team1.teamLogoPath }}" class="img-responsive clzk-admin-img-table pull-left">
+                            {% endif %}
                             <p class="pull-left">V.S.</p>
-                            <img src="{{ game.team2.teamLogoPath }}" class="img-responsive clzk-admin-img-table">
+                            {% if game.team2.teamLogoPath is defined %}
+                                <img src="{{ game.team2.teamLogoPath }}" class="img-responsive clzk-admin-img-table">
+                            {% endif %}
                         </td>
                         <td>{{ game.place }}</td>
                         <td>{{ game.date|date('d/m/Y') }}</td>
