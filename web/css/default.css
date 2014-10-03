@@ -178,7 +178,7 @@ h1, h2, h3 {
 }
 .clzk-article-img{
     margin: auto;
-    height: 250px;
+    height: auto;
     display: block;
 }
 /*.clzk-article-date-container {
