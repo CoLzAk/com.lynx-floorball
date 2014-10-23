@@ -1,7 +1,8 @@
 $(document).ready(function() {
     $('#lastArticlesTabs a').click(function (e) {
         e.preventDefault();
-        $(this).tab('show');
+        console.log(this.id);
+        $('#tab-'+this.id).tab('show');
     });
 
     Socialite.load();
