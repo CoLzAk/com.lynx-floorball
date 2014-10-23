@@ -27,5 +27,9 @@
     {{ article.content|raw }}
     <div class="clearfix"></div>
     <br>
+    <p>Partager sur&nbsp;&nbsp;
+        <a href="http://www.facebook.com/sharer.php?u=http://www.lynx-floorball.com{{ path('colzak_blog_article', { url: article.url }) }}&t={{ article.description }}" rel="nofollow" target="_blank"><img class="social-logo" src="/img/FB_29.png" width="20"></a>&nbsp;&nbsp;
+        <a href="https://twitter.com/intent/tweet?url=http://www.lynx-floorball.com{{ path('colzak_blog_article', { url: article.url }) }}&text={{ article.title }}&hashtags=lynx,floorball" rel="nofollow" target="_blank"><img class="social-logo" src="/img/twitter.png" width="25"></a>&nbsp;&nbsp;
+    </p>
     <p class="text-right"><small><i>Le {{ article.createdAt|date('d M Y') }}</i></small></p>
 {% endblock %}
