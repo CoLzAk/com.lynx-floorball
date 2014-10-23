@@ -24,6 +24,7 @@ class AppKernel extends Kernel
             new Colzak\AdminBundle\ColzakAdminBundle(),
             new Colzak\EventBundle\ColzakEventBundle(),
             new Ivory\CKEditorBundle\IvoryCKEditorBundle(),
+            new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

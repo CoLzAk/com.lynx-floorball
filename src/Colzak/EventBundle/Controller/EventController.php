@@ -10,8 +10,18 @@ class EventController extends Controller
     public function gamesAction()
     {
         $dm = $this->get('doctrine_mongodb')->getManager();
-        $games = $dm->getRepository('ColzakEventBundle:Game')->findAll();
-        return $this->render('ColzakEventBundle:Game:games.html.twig', array('games' => $games));
+        $paginator  = $this->get('knp_paginator');
+
+        $q = $dm->createQueryBuilder('ColzakEventBundle:Game')
+                ->sort('date', 'desc');
+        $games = $q->getQuery()->execute()->toArray(false);
+
+        $pagination = $paginator->paginate(
+            $games,
+            $this->get('request')->query->get('page', 1)/*page number*/,
+            10/*limit per page*/
+        );
+        return $this->render('ColzakEventBundle:Game:games.html.twig', array('pagination' => $pagination));
     }
 
     public function nextGameAction() {
