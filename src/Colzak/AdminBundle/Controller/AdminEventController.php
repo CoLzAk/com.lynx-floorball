@@ -61,6 +61,8 @@ class AdminEventController extends Controller {
     public function listTeamsAction() {
         $dm = $this->get('doctrine_mongodb')->getManager();
         $teams = $dm->getRepository('ColzakEventBundle:Team')->findAll();
+        // echo '<pre>';
+        // \Doctrine\Common\Util\Debug::dump($teams);
         return $this->render('ColzakAdminBundle:Event:list_teams.html.twig', array('teams' => $teams));
     }
 

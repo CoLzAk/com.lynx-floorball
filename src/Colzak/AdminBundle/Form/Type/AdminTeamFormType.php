@@ -25,6 +25,11 @@ class AdminTeamFormType extends AbstractType
             ->add('win', 'number', array('label' => 'Matches gagnés', 'required' => false))
             ->add('defeat', 'number', array('label' => 'Matches perdus', 'required' => false))
             ->add('draw', 'number', array('label' => 'Matches nuls', 'required' => false))
+            ->add('enable', 'choice', array(
+                    'label' => 'Actif',
+                    'expanded' => true,
+                    'choices' => array(true => 'Oui', false => 'Non')
+                ))
         ;
     }
 

@@ -32,7 +32,9 @@ class EventController extends Controller
         $dm = $this->get('doctrine_mongodb')->getManager();
         $q = $dm->createQueryBuilder('ColzakEventBundle:Team')
                 ->field('pool')->equals(Team::POOL_D2_C)
-                ->sort('point', 'desc');
+                ->field('enable')->equals(true)
+                ->sort('point', 'desc')
+                ->sort('name', 'asc');
         return $q->getQuery()->execute();
     }
 }

@@ -77,6 +77,11 @@ class Team
     protected $draw;
 
     /**
+     * @MongoDB\Boolean
+     */
+    protected $enable;
+
+    /**
      * Get id
      *
      * @return id $id
@@ -392,5 +397,27 @@ class Team
             self::POOL_D2_C => 'Poule D2 C',
             self::POOL_D2_D => 'Poule D2 D'
         );
+    }
+
+    /**
+     * Set enable
+     *
+     * @param boolean $enable
+     * @return self
+     */
+    public function setEnable($enable)
+    {
+        $this->enable = $enable;
+        return $this;
+    }
+
+    /**
+     * Get enable
+     *
+     * @return boolean $enable
+     */
+    public function getEnable()
+    {
+        return $this->enable;
     }
 }
