@@ -33,8 +33,8 @@
                         <p class="text-center clzk-article-date-year">{{ article.createdAt|date('Y') }}</p>
                     </div>
                     {#}
-                    <p>{{ article.content|raw }}</p>
-                    <p class="text-right"><small><i>Le {{ article.createdAt|date('d M Y') }}</i></small></p>
+                    <p>{{ article.description }}</p>
+                    <p class="text-right"><a href="{{ path('colzak_blog_article', { url: article.url }) }}">Lire la suite >></a></p>
                     <div class="clearfix"></div>
                 </div>
 
