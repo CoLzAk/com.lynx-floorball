@@ -29,7 +29,9 @@
         "friendsofsymfony/jsrouting-bundle":    "~1.1",
         "doctrine/mongodb-odm": "1.0.*@dev",
         "doctrine/mongodb-odm-bundle": "3.0.*@dev",
-        "egeloen/ckeditor-bundle": "~2.0"
+        "egeloen/ckeditor-bundle": "~2.0",
+        "knplabs/knp-paginator-bundle": "~2.3@dev",
+        "knplabs/knp-components": "~1.2@dev"
     },
     "scripts": {
         "post-install-cmd": [
