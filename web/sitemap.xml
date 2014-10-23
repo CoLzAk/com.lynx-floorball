@@ -33,12 +33,17 @@
         </url>
 
         <url>
-            <loc>http://www.lynx-floorball.com/page/what-is-floorball</loc>
+            <loc>http://www.lynx-floorball.com/page/le-floorball-c-est-quoi</loc>
             <changefreq>monthly</changefreq>
         </url>
 
         <url>
-            <loc>http://www.lynx-floorball.com/page/the-club</loc>
+            <loc>http://www.lynx-floorball.com/page/bordeaux-floorball-club</loc>
+            <changefreq>monthly</changefreq>
+        </url>
+
+        <url>
+            <loc>http://www.lynx-floorball.com/article/championnat-2014-2015</loc>
             <changefreq>monthly</changefreq>
         </url>
 
