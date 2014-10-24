@@ -14,7 +14,6 @@ class GameRepository extends DocumentRepository
 {
     public function getNextGame() {
         return $this->createQueryBuilder('Game')
-            ->select('id', 'date', 'opponent', 'place', 'inHome')
             ->where("function() { return this.date >= new Date(); }")
             ->sort('date', 'asc')
             ->getQuery()

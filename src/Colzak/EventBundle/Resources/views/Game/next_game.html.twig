@@ -1,13 +1,11 @@
 {% if game is defined and game is not null %}
 	<div class="clzk-next-game-container">
 		<div class="col-md-5">
-		    <img src="/img/bfc_logo.png" class="img-responsive">
-		    {#<p class="text-center">Lynx de Bordeaux</p>#}
+		    <img src="{{ game.team1.teamLogoPath }}" class="img-responsive">
 		</div>
-		<div class="col-md-2"><!-- <img src="/img/vs.png" class="clzk-img-versus"> --></div>
+		<div class="col-md-2"></div>
 		<div class="col-md-5">
-		    <img src="{{ game.opponent.teamLogoPath }}" class="img-responsive">
-		    {#<p class="text-center">{{ game.opponent.name }}</p>#}
+		    <img src="{{ game.team2.teamLogoPath }}" class="img-responsive">
 		</div>
 		<div class="clearfix"></div>
 		<br />
