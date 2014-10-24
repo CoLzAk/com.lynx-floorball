@@ -89,6 +89,7 @@ h1, h2, h3 {
 .clzk-global-page-wrapper {
     min-height: 99.8%;
     margin-bottom: -100px;
+    position: relative;
 }
 .clzk-global-page-wrapper:after {
     content: "";
@@ -231,7 +232,7 @@ h1, h2, h3 {
 /*FOOTER*/
 .clzk-footer, .clzk-global-page-wrapper:after {
   /* .push must be the same height as footer */
-  height: 100px; 
+  height: 10px; 
 }
 .clzk-footer .navbar {
     /*height: 100px;*/

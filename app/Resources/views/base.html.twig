@@ -114,26 +114,26 @@
                     {% endblock %}
                 </div></div>
             </div>
-        </div>
-        <footer class="clzk-footer">
-            <div class="container">
-                {% block footer %}
-                    <div class="navbar navbar-default" role="navigation">
-                        <div class="container">
-                            <p class="text-center clzk-footer-text">Copyright © 2014 - CoLzAk</p>
-                            <ul class="nav nav-pills clzk-footer-text col-md-7 col-md-offset-3">
-                                <li><a href="{{ path('colzak_blog_articles') }}">Actualités</a></li>
-                                <li><a href="{{ path('colzak_users') }}">L'équipe</a></li>
-                                <li><a href="{{ path('colzak_event_games') }}">Les matches</a></li>
-                                <li><a href="{{ path('colzak_blog_media') }}">Multimédia</a></li>
-                                <li><a href="{{ path('colzak_home_contact') }}">Contact</a></li>
-                                <li class="disabled"><a href="#">A propos</a></li>
-                            </ul>
+            <footer class="clzk-footer">
+                <div class="container">
+                    {% block footer %}
+                        <div class="navbar navbar-default" role="navigation">
+                            <div class="container">
+                                <!-- <p class="text-center clzk-footer-text">Copyright © 2014 - CoLzAk</p> -->
+                                <ul class="nav nav-pills clzk-footer-text col-md-7 col-md-offset-3">
+                                    <li><a href="{{ path('colzak_blog_articles') }}">Actualités</a></li>
+                                    <li><a href="{{ path('colzak_users') }}">L'équipe</a></li>
+                                    <li><a href="{{ path('colzak_event_games') }}">Les matches</a></li>
+                                    <li><a href="{{ path('colzak_blog_media') }}">Multimédia</a></li>
+                                    <li><a href="{{ path('colzak_home_contact') }}">Contact</a></li>
+                                    <li class="disabled"><a href="#">A propos</a></li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-                {% endblock %}
-            </div>
-        </footer>
+                    {% endblock %}
+                </div>
+            </footer>
+        </div>
         {% block modal %}
             <div class="modal fade" id="clzk-modal" role="dialog">
                 <div class="modal-dialog container">
