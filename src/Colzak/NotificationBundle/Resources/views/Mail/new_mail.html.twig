@@ -1,0 +1,51 @@
+{% extends '::base_mail.html.twig' %}
+
+{% block subject %}Confirmation de votre inscription{% endblock %}
+
+{% block mail_content %}
+<table class="row">
+    <tr>
+        <td class="wrapper last">
+
+            <table class="twelve columns">
+                <tr>
+                    <td>
+                        <h3>Bonjour {{ recipient.profile.firstname }},</h3><br/>
+                        <p>Vous avez un nouveau message de {{ sender.firstname }}</p>
+                    </td>
+                    <td class="expander"></td>
+                </tr>
+            </table>
+
+        </td>
+    </tr>
+</table>
+
+<table class="row">
+    <tr>
+        <td class="wrapper last">
+
+            <table class="twelve columns">
+                <tr>
+                    <td>
+                        <table class="four column offset-by-four">
+                            <tr><td>
+                            <table class="button">
+                              <tr>
+                                <td>
+                                  <a href="http://www.buskeet.com/messages/{{ threadId }}">Voir le message</a>
+                                </td>
+                              </tr>
+                            </table>
+                        </td></tr>
+                        </table>
+                    </td>
+                    <td class="expander"></td>
+                </tr>
+            </table>
+
+        </td>
+    </tr>
+</table>
+{% endblock %}
+

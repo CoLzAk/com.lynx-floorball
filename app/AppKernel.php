@@ -22,9 +22,18 @@ class AppKernel extends Kernel
             new FOS\UserBundle\FOSUserBundle(),
             new Colzak\UserBundle\ColzakUserBundle(),
             new Colzak\AdminBundle\ColzakAdminBundle(),
+            new Colzak\NotificationBundle\ColzakNotificationBundle(),
+            new Colzak\CommandBundle\ColzakCommandBundle(),
             new Colzak\EventBundle\ColzakEventBundle(),
             new Ivory\CKEditorBundle\IvoryCKEditorBundle(),
             new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
+            new JMS\SerializerBundle\JMSSerializerBundle(),
+            new FOS\RestBundle\FOSRestBundle(),
+            new Nelmio\ApiDocBundle\NelmioApiDocBundle(),
+            new FOS\HttpCacheBundle\FOSHttpCacheBundle(),
+            new Bazinga\Bundle\HateoasBundle\BazingaHateoasBundle(),
+            new Hautelook\TemplatedUriBundle\HautelookTemplatedUriBundle(),
+            new Bazinga\Bundle\RestExtraBundle\BazingaRestExtraBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

@@ -12,6 +12,14 @@ use Doctrine\ODM\MongoDB\DocumentRepository;
  */
 class ArticleRepository extends DocumentRepository
 {
+	public function getByDateDesc() {
+		return $this->createQueryBuilder('Article')
+            ->select('id', 'title', 'content', 'filePath', 'category')
+            ->sort('createdAt', 'desc')
+            ->getQuery()
+            ->execute();
+	}
+
     public function getLastArticles($limit = 5) {
         return $this->createQueryBuilder('Article')
             ->select('id', 'title', 'content', 'filePath', 'category')

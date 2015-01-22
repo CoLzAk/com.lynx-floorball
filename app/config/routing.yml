@@ -1,3 +1,7 @@
+# colzak_blog_api:
+#     resource: "@ColzakBlogBundle/Resources/config/routing.yml"
+#     prefix:   /api
+
 colzak_event:
     resource: "@ColzakEventBundle/Resources/config/routing.yml"
     prefix:   /

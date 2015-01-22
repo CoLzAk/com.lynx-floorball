@@ -7,10 +7,12 @@ namespace Colzak\BlogBundle\Document;
 use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
+use JMS\Serializer\Annotation as SERIAL;
 
 /**
  * @MongoDB\Document(repositoryClass="Colzak\BlogBundle\Repository\ArticleRepository")
  * @MongoDB\HasLifecycleCallbacks
+ * @SERIAL\ExclusionPolicy("none")
  */
 class Article {
 

@@ -6,6 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Colzak\HomeBundle\Document\Message;
 use Colzak\HomeBundle\Form\Type\ContactFormType;
 use Symfony\Component\HttpFoundation\RedirectResponse;
+use Colzak\NotificationBundle\Document\Notification;
 
 class HomeController extends Controller
 {
@@ -27,6 +28,19 @@ class HomeController extends Controller
             if ($form->isValid()) {
                 $message = $form->getData();
                 $dm->persist($message);
+                $dm->flush();
+
+                //Notify admin about that (transform notif)
+                $senderEmail = $message->getFrom();
+                $recipientEmail = 'joel.lauret@gmail.com';
+                $notification = new Notification();
+                $notification->setStatus(Notification::STATUS_PENDING);
+                $notification->setFrom($senderEmail);
+                $notification->setFromName($senderEmail);
+                $notification->setTo($recipientEmail);
+                $notification->setSubject($message->getSubject());
+                $notification->setContent($message->getBody());
+                $dm->persist($notification);
                 $dm->flush();
 
                 $this->get('session')->getFlashBag()->add(

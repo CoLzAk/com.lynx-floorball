@@ -1,3 +1,7 @@
+# _clzk_article:
+#     resource: "@ColzakBlogBundle/Controller/ArticleAPIController.php"
+#     type:     rest
+
 colzak_blog_articles:
     pattern:  /articles
     defaults: { _controller: ColzakBlogBundle:Article:articles }
