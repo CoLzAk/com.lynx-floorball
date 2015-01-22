@@ -221,6 +221,7 @@ h1, h2, h3 {
 /*TEAM*/
 .clzk-user-thumbnail-container {
     margin: 10px auto;
+    height: 250px;
 }
 /*WHAT IS FLOORBALL*/
 .what-is-floorball img {
