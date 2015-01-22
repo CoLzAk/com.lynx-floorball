@@ -12,13 +12,25 @@ use Doctrine\ODM\MongoDB\DocumentRepository;
  */
 class GameRepository extends DocumentRepository
 {
-    public function getNextGame() {
+    public function getNextGame($team) {
+    	$now = new \Datetime();
+    	// $yesterday = $now->sub(new \DateInterval('P1D'));
+        $q = $this->createQueryBuilder('Game');
+        $q->field('date')->gte($now);
+        $q->addOr($q->expr()->field('team1')->references($team));
+        $q->addOr($q->expr()->field('team2')->references($team));
+        // $q->orWhere('team1')->references()
+        // $q->field('reference')
+
+        $q->limit(1);
+
+        return $q->getQuery()->execute()->toArray(false);
     	//531052e0d8291bca078b4568
-        return $this->createQueryBuilder('Game')
-            ->where("function() { return this.id == '531052e0d8291bca078b4568' && this.date >= new Date(); }")
-            ->sort('date', 'asc')
-            ->getQuery()
-            ->getSingleResult();
+        // return $this->createQueryBuilder('Game')
+        //     ->where("function() { return this.date >= new Date(); }")
+        //     ->sort('date', 'asc')
+        //     ->getQuery()
+        //     ->getSingleResult();
     }
 
     public function getByDate() {

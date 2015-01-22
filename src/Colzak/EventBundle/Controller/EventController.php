@@ -26,12 +26,13 @@ class EventController extends Controller
 
     public function nextGameAction() {
         $dm = $this->get('doctrine_mongodb')->getManager();
+        $team = $dm->getRepository('ColzakEventBundle:Team')->find('531052e0d8291bca078b4568');
         // $game = $dm->getRepository('ColzakEventBundle:Game')->findOneBy(array('date'))
-        $game = $dm->getRepository('ColzakEventBundle:Game')->getNextGame();
+        $game = $dm->getRepository('ColzakEventBundle:Game')->getNextGame($team);
 
         // \Doctrine\Common\Util\Debug::dump($game);
         // die();
-        return $this->render('ColzakEventBundle:Game:next_game.html.twig', array('game' => $game));
+        return $this->render('ColzakEventBundle:Game:next_game.html.twig', array('game' => (null !== $game ? $game[0] : null)));
     }
 
     public function rankingAction() {
