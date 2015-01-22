@@ -11,6 +11,13 @@
         <br />
 
         <div class="container">
+            {% for flashMessage in app.session.flashbag.get('success') %}
+                <div class="col-md-12">
+                    <div class="alert alert-success">
+                        <p class="text-center">{{ flashMessage }}</p>
+                    </div>
+                </div>
+            {% endfor %}
             <p><strong>Besoin d'un renseignement ? Tu peux contacter directement ces personnes :</strong></p>
             <br>
             <ul>
@@ -46,13 +53,5 @@
         </div>
         {{ form_end(form) }}
         <div class="clearfix"></div>
-
-        {% for flashMessage in app.session.flashbag.get('success') %}
-            <div class="col-md-12">
-                <div class="alert alert-success">
-                    <p class="text-center">{{ flashMessage }}</p>
-                </div>
-            </div>
-        {% endfor %}
     </div>
 {% endblock %}

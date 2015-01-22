@@ -10,7 +10,7 @@
         </thead>
         <tbody>
             {% for team in rankedTeams %}
-                <tr>
+                <tr {% if team.id == "531052e0d8291bca078b4568" %} class="info" {% endif %}>
                     <td>{{ loop.index }}</td>
                     <td>{{ team.name }}</td>
                     <td>{{ team.gamePlayed }}</td>

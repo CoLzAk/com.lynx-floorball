@@ -13,8 +13,9 @@ use Doctrine\ODM\MongoDB\DocumentRepository;
 class GameRepository extends DocumentRepository
 {
     public function getNextGame() {
+    	//531052e0d8291bca078b4568
         return $this->createQueryBuilder('Game')
-            ->where("function() { return this.date >= new Date(); }")
+            ->where("function() { return this.id == '531052e0d8291bca078b4568' && this.date >= new Date(); }")
             ->sort('date', 'asc')
             ->getQuery()
             ->getSingleResult();

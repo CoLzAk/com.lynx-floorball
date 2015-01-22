@@ -45,7 +45,7 @@ class HomeController extends Controller
 
                 $this->get('session')->getFlashBag()->add(
                     'success',
-                    'Votre message à bien été envoyé ! Vous recevrez une réponse dans les plus bref délais.'
+                    'Ton message à bien été envoyé ! Tu auras une réponse dans les plus bref délais.'
                 );
                 return new RedirectResponse($this->container->get('router')->generate('colzak_home_contact'));
             }
