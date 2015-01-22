@@ -10,13 +10,23 @@
         <h1 class="text-center">Contact</h1>
         <br />
 
-        {% for flashMessage in app.session.flashbag.get('success') %}
-            <div class="col-md-12">
-                <div class="alert alert-success">
-                    <p class="text-center">{{ flashMessage }}</p>
-                </div>
-            </div>
-        {% endfor %}
+        <div class="container">
+            <p><strong>Besoin d'un renseignement ? Tu peux contacter directement ces personnes :</strong></p>
+            <br>
+            <ul>
+                <li>Julien PINTA</li>
+                <ul class="list-unstyled">
+                    <li><span class="glyphicon glyphicon-phone"></span>&nbsp;:&nbsp; +33 6 50 09 16 48</li>
+                    <li>@ : julien.pinta@gmail.com</li>
+                </ul>
+                <li>Anne Lucie PIQUE</li>
+                <ul class="list-unstyled">
+                    <li>@ : floorballbordeaux@gmail.com</li>
+                </ul>
+            </ul>
+            <br>
+            <p><strong>Ou tu peux laisser un message directement ici !</strong></p>
+        </div>
 
         {{ form_start(form) }}
         {{ form_row(form.from) }}
@@ -36,5 +46,13 @@
         </div>
         {{ form_end(form) }}
         <div class="clearfix"></div>
+
+        {% for flashMessage in app.session.flashbag.get('success') %}
+            <div class="col-md-12">
+                <div class="alert alert-success">
+                    <p class="text-center">{{ flashMessage }}</p>
+                </div>
+            </div>
+        {% endfor %}
     </div>
 {% endblock %}

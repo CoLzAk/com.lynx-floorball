@@ -12,9 +12,9 @@ class ContactFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('from', 'text', array('label' => 'Votre adresse e-mail'))
+            ->add('from', 'text', array('label' => 'Ton adresse e-mail'))
             ->add('subject', 'text', array('label' => 'Sujet'))
-            ->add('body', 'textarea', array('label' => 'Corps du message'))
+            ->add('body', 'textarea', array('label' => 'Ton message'))
         ;
     }
 
