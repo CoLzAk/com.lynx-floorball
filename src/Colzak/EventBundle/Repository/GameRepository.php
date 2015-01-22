@@ -19,4 +19,11 @@ class GameRepository extends DocumentRepository
             ->getQuery()
             ->getSingleResult();
     }
+
+    public function getByDate() {
+    	return $this->createQueryBuilder('Game')
+            ->sort('date', 'desc')
+            ->getQuery()
+            ->execute();
+    }
 }

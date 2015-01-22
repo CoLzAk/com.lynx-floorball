@@ -13,7 +13,7 @@ class AdminEventController extends Controller {
 
     public function listGamesAction() {
         $dm = $this->get('doctrine_mongodb')->getManager();
-        $games = $dm->getRepository('ColzakEventBundle:Game')->findAll();
+        $games = $dm->getRepository('ColzakEventBundle:Game')->getByDate();
         return $this->render('ColzakAdminBundle:Event:list_games.html.twig', array('games' => $games));
     }
 
