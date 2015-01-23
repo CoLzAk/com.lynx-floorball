@@ -8,7 +8,7 @@ colzak_blog_articles:
 
 colzak_blog_media:
     pattern:  /media
-    defaults: { _controller: ColzakBlogBundle:Article:media }
+    defaults: { _controller: ColzakBlogBundle:Media:listAlbum }
 
 colzak_blog_pages:
     pattern:  /page/{url}

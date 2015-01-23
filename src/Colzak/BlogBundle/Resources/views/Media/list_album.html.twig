@@ -1,0 +1,84 @@
+{% extends 'ColzakHomeBundle::layout.html.twig' %}
+
+{% block title %}Lynx-Floorball | Multimédia{% endblock %}
+{% block meta %}
+    <meta name="description" content="Les Lynx sont fiers de partager en images, avec vous, les grands moments du championnat de 2e division de floorball en France, ainsi que les évènements sportifs dans lesquels l'équipe est impliquée.">
+{% endblock %}
+{% block breadcrumb %}
+    <ol class="breadcrumb">
+        <li><a href="{{ path('colzak_home_homepage') }}"><span class="glyphicon glyphicon-home"></span>&nbsp;Accueil</a></li>
+        <li class="active" id="galery-breadcrumb">Multimédia</li>
+        <li class="hidden" id="galery-breadcrumb-link"><a href="{{ path('colzak_blog_media') }}"><span class="glyphicon glyphicon-picture"></span>&nbsp;Multimédia</a></li>
+        <li class="hidden" id="album-breadcrumb"></li>
+    </ol>
+{% endblock %}
+{% block body_left %}
+<div class="col-md-8">
+    <div class="clzk-block-container">
+    	<a href="#" class="prev-button hidden"><< Retour</a>
+        <h1 class="text-center" id="album-title">Galerie</h1><br>
+        <div id="albums-container" class="row"></div>
+        <div id="photos-container" class="hidden"></div>
+        <div class="clearfix"></div>
+        <a href="#" class="prev-button hidden"><< Retour</a>
+        {#% if media|length > 0 %}
+            {% for medium in media %}
+                <div class="col-md-4">
+                    <h4 class="text-center">{{ medium.title }}</h4>
+                    <div class="clzk-article-content">
+                        {{ medium.content|raw }}
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                {% if not loop.last %}<hr>{% endif %}
+            {% endfor %}
+        {% else %#}
+            <!-- <p class="text-center"><i>Rien pour le moment !</i></p> -->
+        {#% endif %#}
+    </div>
+</div>
+{% endblock %}
+{% block javascripts %}
+{{ parent() }}
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		var facebookPageId = '176190392454776';
+		$.getJSON("https://graph.facebook.com/"+facebookPageId+"/albums?fields=id,name,description,link,cover_photo,count", function(results){
+            var albums = results.data;
+            $.each(albums, function(i,album){
+            	if (album.name != 'Timeline Photos' && album.name != 'Mobile Uploads' && album.name != 'Cover Photos' && album.name != 'Profile Pictures') {
+                	$('#albums-container').append('<div class="col-md-3 fb-album"><div class="thumbnail" data-id="'+album.id+'" data-title="'+album.name+'"><img src="https://graph.facebook.com/'+album.cover_photo+'/picture" alt="'+album.name+'"><div class="caption"><p class="text-center">'+album.name+'</p></div></div></div>');
+                }
+            });
+
+            $('.thumbnail').on('click', function(e) {
+            	$('#album-title').html($(e.currentTarget).data('title'));
+            	$('#galery-breadcrumb').addClass('hidden').removeClass('active');
+            	$('#galery-breadcrumb-link').removeClass('hidden');
+            	$('#album-breadcrumb').removeClass('hidden').addClass('active').html($(e.currentTarget).data('title'));
+            	$('.prev-button').removeClass('hidden');
+            	$('#photos-container').html('');
+            	$.getJSON("http://graph.facebook.com/"+$(e.currentTarget).data('id')+"/photos?fields=source", function(result) {
+            		var photos = result.data;
+            		$.each(photos, function(j, photo) {
+            			$('#albums-container').addClass('hidden');
+            			$('#photos-container').removeClass('hidden');
+            			$('#photos-container').append('<div class="fb-photo col-md-4"><div style="background:url('+photo.source+') 50% 50% / cover no-repeat; height:200px; width:100%;"></div></div>');
+            		});
+            	});
+	        });
+
+	        $('.prev-button').on('click', function(e) {
+	        	$('#photos-container').addClass('hidden');
+	        	$('#album-title').html('Galerie');
+	        	$('#galery-breadcrumb').removeClass('hidden').addClass('active');
+	        	$('#galery-breadcrumb-link').addClass('hidden');
+	        	$('#album-breadcrumb').addClass('hidden').removeClass('active');
+	        	$('.prev-button').addClass('hidden');
+	        	$('#albums-container').removeClass('hidden');
+	        });
+        });
+	});
+</script>
+{% endblock %}
